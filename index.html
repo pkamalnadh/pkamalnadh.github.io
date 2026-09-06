@@ -1,77 +1,143 @@
-<div class="chart-area">
+<!-- FUTURISTIC LIVE ANALYTICS CHART -->
 
-    <div class="chart-top">
-        <span>PERFORMANCE ANALYTICS</span>
-        <span class="live">
-            <i></i> LIVE DATA
-        </span>
+<div class="live-chart">
+
+    <div class="chart-header">
+        <div>
+            <span class="chart-label">BUSINESS INTELLIGENCE</span>
+            <h3>Performance Analytics</h3>
+        </div>
+
+        <div class="live-status">
+            <span></span> LIVE DATA
+        </div>
     </div>
 
-    <div class="chart-grid">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="chart">
+
+        <!-- background grid -->
+        <div class="chart-grid">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+        </div>
+
+        <!-- animated bars -->
+        <div class="chart-bars">
+
+            <div class="chart-column">
+                <b></b>
+                <div class="bar blue"></div>
+            </div>
+
+            <div class="chart-column">
+                <b></b>
+                <div class="bar yellow"></div>
+            </div>
+
+            <div class="chart-column">
+                <b></b>
+                <div class="bar blue"></div>
+            </div>
+
+            <div class="chart-column">
+                <b></b>
+                <div class="bar purple"></div>
+            </div>
+
+            <div class="chart-column">
+                <b></b>
+                <div class="bar blue"></div>
+            </div>
+
+            <div class="chart-column">
+                <b></b>
+                <div class="bar yellow"></div>
+            </div>
+
+            <div class="chart-column">
+                <b></b>
+                <div class="bar blue"></div>
+            </div>
+
+            <div class="chart-column">
+                <b></b>
+                <div class="bar purple"></div>
+            </div>
+
+            <div class="chart-column">
+                <b></b>
+                <div class="bar blue"></div>
+            </div>
+
+        </div>
+
+        <!-- CROSSING CHART LINES -->
+
+        <svg class="chart-lines"
+             viewBox="0 0 1000 430"
+             preserveAspectRatio="none">
+
+            <!-- cyan line -->
+            <polyline
+                id="cyanLine"
+                points="30,300 145,220 255,270 365,145 475,190 585,110 700,180 810,85 970,145"
+            />
+
+            <!-- yellow line -->
+            <polyline
+                id="yellowLine"
+                points="30,150 145,270 255,130 365,250 475,105 585,215 700,125 810,220 970,75"
+            />
+
+            <!-- purple line -->
+            <polyline
+                id="purpleLine"
+                points="30,350 145,180 255,230 365,105 475,270 585,155 700,285 810,135 970,200"
+            />
+
+        </svg>
+
+        <!-- glowing moving points -->
+        <div class="moving-point point-one"></div>
+        <div class="moving-point point-two"></div>
+        <div class="moving-point point-three"></div>
+
+        <!-- bottom labels -->
+        <div class="chart-months">
+            <span>JAN</span>
+            <span>FEB</span>
+            <span>MAR</span>
+            <span>APR</span>
+            <span>MAY</span>
+            <span>JUN</span>
+            <span>JUL</span>
+            <span>AUG</span>
+            <span>SEP</span>
+        </div>
+
     </div>
 
-    <div class="bars" id="bars">
+    <div class="chart-bottom">
 
-        <div class="bar-box">
-            <strong>0</strong>
-            <div class="bar"></div>
-            <small>JAN</small>
+        <div>
+            <small>REVENUE</small>
+            <strong id="revenueValue">$248,630</strong>
         </div>
 
-        <div class="bar-box">
-            <strong>0</strong>
-            <div class="bar"></div>
-            <small>FEB</small>
+        <div>
+            <small>GROWTH</small>
+            <strong id="growthValue">+18.7%</strong>
         </div>
 
-        <div class="bar-box">
-            <strong>0</strong>
-            <div class="bar"></div>
-            <small>MAR</small>
-        </div>
-
-        <div class="bar-box">
-            <strong>0</strong>
-            <div class="bar"></div>
-            <small>APR</small>
-        </div>
-
-        <div class="bar-box">
-            <strong>0</strong>
-            <div class="bar"></div>
-            <small>MAY</small>
-        </div>
-
-        <div class="bar-box">
-            <strong>0</strong>
-            <div class="bar"></div>
-            <small>JUN</small>
-        </div>
-
-        <div class="bar-box">
-            <strong>0</strong>
-            <div class="bar"></div>
-            <small>JUL</small>
-        </div>
-
-        <div class="bar-box">
-            <strong>0</strong>
-            <div class="bar"></div>
-            <small>AUG</small>
+        <div>
+            <small>PERFORMANCE</small>
+            <strong id="performanceValue">92.4%</strong>
         </div>
 
     </div>
 
-    <!-- Moving line -->
-    <svg class="trend-line"
-         viewBox="0 0 1000 350"
-         preserveAspectRatio="none">
-
-        <polyline
-            id="trendLine"
-            points="50,260 175,200 300,230 425,150 550,190 675,110 800,
+</div>
