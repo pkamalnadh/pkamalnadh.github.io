@@ -1,143 +1,164 @@
-<!-- FUTURISTIC LIVE ANALYTICS CHART -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div class="live-chart">
+<title>PK Amalnadh | Business Intelligence Analyst</title>
 
-    <div class="chart-header">
-        <div>
-            <span class="chart-label">BUSINESS INTELLIGENCE</span>
-            <h3>Performance Analytics</h3>
-        </div>
+<meta name="description"
+content="PK Amalnadh — Business Intelligence and Data Analytics Portfolio">
 
-        <div class="live-status">
-            <span></span> LIVE DATA
-        </div>
-    </div>
+<style>
 
-    <div class="chart">
+/* =========================================================
+   RESET
+========================================================= */
 
-        <!-- background grid -->
-        <div class="chart-grid">
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-        </div>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        <!-- animated bars -->
-        <div class="chart-bars">
+html{
+    scroll-behavior:smooth;
+}
 
-            <div class="chart-column">
-                <b></b>
-                <div class="bar blue"></div>
-            </div>
+body{
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
 
-            <div class="chart-column">
-                <b></b>
-                <div class="bar yellow"></div>
-            </div>
+    background:#020817;
+    color:#f4f8ff;
 
-            <div class="chart-column">
-                <b></b>
-                <div class="bar blue"></div>
-            </div>
+    overflow-x:hidden;
+}
 
-            <div class="chart-column">
-                <b></b>
-                <div class="bar purple"></div>
-            </div>
+a{
+    color:inherit;
+    text-decoration:none;
+}
 
-            <div class="chart-column">
-                <b></b>
-                <div class="bar blue"></div>
-            </div>
+button{
+    font-family:inherit;
+}
 
-            <div class="chart-column">
-                <b></b>
-                <div class="bar yellow"></div>
-            </div>
 
-            <div class="chart-column">
-                <b></b>
-                <div class="bar blue"></div>
-            </div>
+/* =========================================================
+   BACKGROUND
+========================================================= */
 
-            <div class="chart-column">
-                <b></b>
-                <div class="bar purple"></div>
-            </div>
+body::before{
+    content:"";
 
-            <div class="chart-column">
-                <b></b>
-                <div class="bar blue"></div>
-            </div>
+    position:fixed;
 
-        </div>
+    inset:0;
 
-        <!-- CROSSING CHART LINES -->
+    pointer-events:none;
 
-        <svg class="chart-lines"
-             viewBox="0 0 1000 430"
-             preserveAspectRatio="none">
+    z-index:-3;
 
-            <!-- cyan line -->
-            <polyline
-                id="cyanLine"
-                points="30,300 145,220 255,270 365,145 475,190 585,110 700,180 810,85 970,145"
-            />
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(0,140,255,.15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(125,45,255,.13),
+            transparent 30%
+        );
+}
 
-            <!-- yellow line -->
-            <polyline
-                id="yellowLine"
-                points="30,150 145,270 255,130 365,250 475,105 585,215 700,125 810,220 970,75"
-            />
 
-            <!-- purple line -->
-            <polyline
-                id="purpleLine"
-                points="30,350 145,180 255,230 365,105 475,270 585,155 700,285 810,135 970,200"
-            />
+/* futuristic grid */
 
-        </svg>
+body::after{
+    content:"";
 
-        <!-- glowing moving points -->
-        <div class="moving-point point-one"></div>
-        <div class="moving-point point-two"></div>
-        <div class="moving-point point-three"></div>
+    position:fixed;
 
-        <!-- bottom labels -->
-        <div class="chart-months">
-            <span>JAN</span>
-            <span>FEB</span>
-            <span>MAR</span>
-            <span>APR</span>
-            <span>MAY</span>
-            <span>JUN</span>
-            <span>JUL</span>
-            <span>AUG</span>
-            <span>SEP</span>
-        </div>
+    inset:0;
 
-    </div>
+    pointer-events:none;
 
-    <div class="chart-bottom">
+    z-index:-2;
 
-        <div>
-            <small>REVENUE</small>
-            <strong id="revenueValue">$248,630</strong>
-        </div>
+    opacity:.25;
 
-        <div>
-            <small>GROWTH</small>
-            <strong id="growthValue">+18.7%</strong>
-        </div>
+    background-image:
+        linear-gradient(
+            rgba(40,180,255,.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(40,180,255,.08) 1px,
+            transparent 1px
+        );
 
-        <div>
-            <small>PERFORMANCE</small>
-            <strong id="performanceValue">92.4%</strong>
-        </div>
+    background-size:70px 70px;
 
-    </div>
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 85%
+        );
+}
 
-</div>
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:72px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 7%;
+
+    background:
+        rgba(2,8,23,.78);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+        1px solid rgba(100,180,255,.08);
+
+    z-index:100;
+}
+
+.logo{
+
+    font-size:22px;
+
+    font-weight:800;
+
+    letter-spacing:-.5px;
+}
+
+.logo span{
+    color:#42cfff;
+
+    text-shadow:
+        0 0 15px
