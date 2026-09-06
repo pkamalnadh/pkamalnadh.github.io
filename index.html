@@ -4,16 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PK Amalnadh | Business Intelligence Analyst</title>
-
-<meta name="description"
-content="PK Amalnadh — Business Intelligence and Data Analytics Portfolio">
+<title>PK. Amalnadh | Business Intelligence Analyst</title>
 
 <style>
-
-/* =========================================================
-   RESET
-========================================================= */
 
 *{
     margin:0;
@@ -26,139 +19,355 @@ html{
 }
 
 body{
-    font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-
+    font-family:Arial, Helvetica, sans-serif;
     background:#020817;
-    color:#f4f8ff;
-
+    color:white;
     overflow-x:hidden;
 }
 
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-button{
-    font-family:inherit;
-}
-
-
-/* =========================================================
-   BACKGROUND
-========================================================= */
+/* ================= BACKGROUND ================= */
 
 body::before{
     content:"";
-
     position:fixed;
-
     inset:0;
-
-    pointer-events:none;
-
-    z-index:-3;
+    z-index:-5;
 
     background:
-        radial-gradient(
-            circle at 10% 20%,
-            rgba(0,140,255,.15),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 90% 70%,
-            rgba(125,45,255,.13),
-            transparent 30%
-        );
+        radial-gradient(circle at 15% 20%, rgba(0,150,255,.20), transparent 30%),
+        radial-gradient(circle at 85% 25%, rgba(130,40,255,.18), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(0,220,255,.12), transparent 35%),
+        #020817;
 }
 
-
-/* futuristic grid */
-
-body::after{
-    content:"";
-
+.grid{
     position:fixed;
-
     inset:0;
-
-    pointer-events:none;
-
-    z-index:-2;
-
-    opacity:.25;
+    z-index:-4;
 
     background-image:
-        linear-gradient(
-            rgba(40,180,255,.08) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(40,180,255,.08) 1px,
-            transparent 1px
-        );
+        linear-gradient(rgba(0,180,255,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,180,255,.07) 1px, transparent 1px);
 
-    background-size:70px 70px;
+    background-size:55px 55px;
 
-    mask-image:
-        linear-gradient(
-            to bottom,
-            black,
-            transparent 85%
-        );
+    animation:gridMove 12s linear infinite;
 }
 
+@keyframes gridMove{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(55px);
+    }
+}
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
+/* ================= NAVBAR ================= */
 
 nav{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-    right:0;
-
-    height:72px;
-
+    height:75px;
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
     padding:0 7%;
 
-    background:
-        rgba(2,8,23,.78);
-
-    backdrop-filter:blur(18px);
-
-    border-bottom:
-        1px solid rgba(100,180,255,.08);
+    position:sticky;
+    top:0;
 
     z-index:100;
+
+    background:rgba(2,8,23,.80);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(80,160,255,.15);
 }
 
 .logo{
-
-    font-size:22px;
-
+    font-size:26px;
     font-weight:800;
-
-    letter-spacing:-.5px;
 }
 
 .logo span{
-    color:#42cfff;
+    color:#36b9ff;
+}
 
-    text-shadow:
-        0 0 15px
+nav ul{
+    display:flex;
+    gap:32px;
+    list-style:none;
+}
+
+nav a{
+    color:#b9c8df;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#43d9ff;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    padding:100px 7% 80px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+}
+
+.hero-content{
+    width:100%;
+    max-width:1200px;
+}
+
+.small-title{
+    color:#43d9ff;
+    letter-spacing:3px;
+    font-size:14px;
+    margin-bottom:22px;
+}
+
+h1{
+    font-size:clamp(48px,8vw,95px);
+    line-height:1;
+    margin-bottom:25px;
+}
+
+.gradient-name{
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #37b9ff,
+        #7d5cff,
+        #ff4ecd
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+
+    background-size:300%;
+
+    animation:gradientMove 5s ease infinite;
+}
+
+@keyframes gradientMove{
+    0%,100%{background-position:0%}
+    50%{background-position:100%}
+}
+
+.typing{
+    font-size:clamp(25px,4vw,45px);
+    color:#41dfff;
+    min-height:55px;
+}
+
+.cursor{
+    color:#ffb52e;
+    animation:blink .7s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0}
+}
+
+.description{
+    max-width:720px;
+    margin-top:25px;
+
+    font-size:19px;
+    line-height:1.8;
+
+    color:#a7b6ce;
+}
+
+/* ================= BUTTONS ================= */
+
+.buttons{
+    display:flex;
+    gap:20px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:17px 30px;
+    border-radius:12px;
+
+    text-decoration:none;
+    font-weight:700;
+
+    transition:.35s;
+
+    border:1px solid rgba(100,200,255,.4);
+}
+
+.primary{
+    color:#00111d;
+
+    background:linear-gradient(
+        90deg,
+        #32cfff,
+        #54e8ff
+    );
+
+    box-shadow:0 0 35px rgba(40,210,255,.25);
+}
+
+.secondary{
+    color:white;
+    background:rgba(255,255,255,.03);
+}
+
+.btn:hover{
+    transform:translateY(-5px) scale(1.02);
+    box-shadow:0 0 35px rgba(40,210,255,.35);
+}
+
+/* ================= CHART CARD ================= */
+
+.chart-section{
+    padding:40px 7% 100px;
+}
+
+.chart-card{
+
+    max-width:1150px;
+    margin:auto;
+
+    position:relative;
+
+    border-radius:25px;
+
+    padding:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8,42,78,.95),
+            rgba(3,14,34,.95)
+        );
+
+    border:1px solid rgba(70,180,255,.30);
+
+    box-shadow:
+        0 0 70px rgba(0,120,255,.15),
+        inset 0 0 60px rgba(0,150,255,.04);
+
+    overflow:hidden;
+}
+
+.chart-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+.chart-title{
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.live{
+    color:#46f0ad;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    font-size:14px;
+}
+
+.live-dot{
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:#46f0ad;
+
+    box-shadow:
+        0 0 10px #46f0ad,
+        0 0 25px #46f0ad;
+
+    animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.7);
+        opacity:.5;
+    }
+}
+
+/* ================= CHART ================= */
+
+.chart{
+    height:450px;
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        );
+
+    background-size:50px 50px;
+
+    border-radius:15px;
+}
+
+/* horizontal glow lines */
+
+.chart::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 50% 60%,
+            rgba(0,190,255,.10),
+            transparent 50%
+        );
+
+    pointer-events:none;
+}
+
+/* ================= BARS ================= */
+
+.bars{
+    position:absolute;
+
+    left:40px;
+    right:40px;
+    bottom:50px;
+    height:300px;
+
+    display:flex;
+    align-items:flex-end;
+
+    gap:20px;
+}
+
+.bar{
+    flex:1;
+
+    min
