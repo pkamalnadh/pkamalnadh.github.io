@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PK Amalnadh | Business Intelligence & Data Analytics</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #172033;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #10243e;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #39a0ff;
+    }
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      padding: 70px 7%;
+      background: linear-gradient(120deg, #f5f9fd, #eaf3fb);
+    }
+
+    .hero-text {
+      max-width: 650px;
+    }
+
+    .hello {
+      color: #1769aa;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.05;
+      color: #10243e;
+      margin-bottom: 15px;
+    }
+
+    h1 span {
+      color: #1769aa;
+    }
+
+    .hero h2 {
+      font-size: 26px;
+      color: #294866;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      font-size: 18px;
+      color: #4b5c70;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .primary {
+      background: #1769aa;
+      color: white;
+    }
+
+    .secondary {
+      border: 2px solid #1769aa;
+      color: #1769aa;
+      background: white;
+    }
+
+    section {
+      padding: 80px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title small {
+      color: #1769aa;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: #10243e;
+      margin-top: 5px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about h3 {
+      font-size: 30px;
+      color: #10243e;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      color: #536477;
+      font-size: 17px;
+      margin-bottom: 15px;
+    }
+
+    .focus-box {
+      background: #f2f7fc;
+      border-left: 5px solid #1769aa;
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    .focus-box h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .focus-box li {
+      margin: 12px 0;
+      color: #43566a;
+    }
+
+    .education {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .education div {
+      background: #f6f8fa;
+      padding: 15px;
+      border-radius: 6px;
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .skills {
+      background: #f5f9fd;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: white;
+      border: 1px solid #dce5ee;
+      border-radius: 10px;
+      padding: 25px;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(20, 60, 100, 0.1);
+    }
+
+    .skill-card h3 {
+      color: #10243e;
+      margin-bottom: 8px;
+    }
+
+    .skill-card p {
+      color: #657587;
+      font-size: 14px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .project {
+      border: 1px solid #dce5ee;
+      border-radius: 10px;
+      overflow: hidden;
+      background: white;
+      padding: 25px;
+    }
+
+    .project-number {
+      color: #1769aa;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .project h3 {
+      color: #10243e;
+      font-size: 21px;
+      margin: 10px 0;
+    }
+
+    .project p {
+      color: #5a6b7d;
+      font-size: 15px;
+    }
+
+    .tags {
+      margin: 15px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #edf5fc;
+      color: #1769aa;
+      padding: 5px 9px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin: 3px;
+    }
+
+    .project a {
+      color: #1769aa;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .resume {
+      background: #10243e;
+      color: white;
+      text-align: center;
+    }
+
+    .resume h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .resume p {
+      color: #d7e2ee;
+      margin-bottom: 25px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      color: #5a6b7d;
+      margin: 10px 0;
+    }
+
+    .contact a {
+      color: #1769aa;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #0b1a2d;
+      color: #cbd6e2;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      nav ul {
+        display: none;
+      }
+
+      .hero {
+        min-height: 580px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">PK Amalnadh</div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-text">
+
+      <div class="hello">Hello, I'm</div>
+
+      <h1>PK <span>Amalnadh</span></h1>
+
+      <h2>Business Intelligence & Data Analytics</h2>
+
+      <p>
+        I transform data into meaningful insights and practical business
+        solutions using Power BI, SQL, Excel and Python.
+      </p>
+
+      <div class="buttons">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn secondary" href="#resume">Download CV</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="about">
+
+    <div class="section-title">
+      <small>ABOUT ME</small>
+      <h2>Turning Data Into Business Insights</h2>
+    </div>
+
+    <div class="about">
+
+      <div>
+        <h3>Business Intelligence & Analytics</h3>
+
+        <p>
+          I am pursuing an MSc in Business Analytics and have a background
+          in Business Administration and Data Analytics.
+        </p>
+
+        <p>
+          My interests include business intelligence, data analysis,
+          data visualization and using data to support better business
+          decisions.
+        </p>
+
+        <div class="education">
+          <div>
+            <strong>MSc Business Analytics</strong><br>
+            Business Analytics
+          </div>
+
+          <div>
+            <strong>BBA</strong><br>
+            Business Administration
+          </div>
+
+          <div>
+            <strong>Diploma</strong><br>
+            Data Analytics
+          </div>
+        </div>
+      </div>
+
+      <div class="focus-box">
+        <h3>My Focus</h3>
+
+        <ul>
+          <li>Building impactful BI dashboards</li>
+          <li>Analysing data to identify trends</li>
+          <li>Creating clear data visualizations</li>
+          <li>Supporting data-driven decisions</li>
+          <li>Developing as a Business Intelligence Analyst</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+
+    <div class="section-title">
+      <small>TECHNICAL SKILLS</small>
+      <h2>Tools & Technologies</h2>
+    </div>
+
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <h3>Power BI</h3>
+        <p>Dashboards • DAX • Power Query</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>SQL</h3>
+        <p>Queries • Joins • Data Analysis</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Excel</h3>
+        <p>Pivot Tables • Charts • Analysis</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Python</h3>
+        <p>Pandas • Data Analysis • Visualization</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Data Visualization</h3>
+        <p>Business Dashboards • Reporting</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Business Analysis</h3>
+        <p>Problem Solving • Insights • Reporting</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="projects">
+
+    <div class="section-title">
+      <small>PORTFOLIO</small>
+      <h2>Featured Projects</h2>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project">
+        <div class="project-number">PROJECT 01</div>
+        <h3>Sales Performance Dashboard</h3>
+
+        <div class="tags">
+          <span class="tag">Power BI</span>
+          <span class="tag">SQL</span>
+          <span class="tag">DAX</span>
+        </div>
+
+        <p>
+          Interactive dashboard analysing sales, revenue, profit,
+          products and regional performance.
+        </p>
+
+        <br>
+        <a href="#">View Project →</a>
+      </div>
+
+      <div class="project">
+        <div class="project-number">PROJECT 02</div>
+        <h3>Customer Churn Analysis</h3>
+
+        <div class="tags">
+          <span class="tag">SQL</span>
+          <span class="tag">Power BI</span>
+        </div>
+
+        <p>
+          Analysis of customer behaviour and churn patterns with
+          actionable business recommendations.
+        </p>
+
+        <br>
+        <a href="#">View Project →</a>
+      </div>
+
+      <div class="project">
+        <div class="project-number">PROJECT 03</div>
+        <h3>Financial Performance Dashboard</h3>
+
+        <div class="tags">
+          <span class="tag">Excel</span>
+          <span class="tag">Power BI</span>
+        </div>
+
+        <p>
+          Business dashboard analysing revenue, expenses,
+          profitability and financial trends.
+        </p>
+
+        <br>
+        <a href="#">View Project →</a>
+      </div>
+
+      <div class="project">
+        <div class="project-number">PROJECT 04</div>
+        <h3>Customer Segmentation</h3>
+
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Data Analysis</span>
+        </div>
+
+        <p>
+          Customer segmentation analysis to identify behavioural
+          patterns and meaningful customer groups.
+        </p>
+
+        <br>
+        <a href="#">View Project →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="resume" id="resume">
+
+    <h2>Interested in my work?</h2>
+
+    <p>
+      View my CV and learn more about my education, skills and experience.
+    </p>
+
+    <!-- Replace # with your CV file link later -->
+    <a class="btn primary" href="#">Download CV</a>
+
+  </section>
+
+  <section class="contact" id="contact">
+
+    <div class="section-title">
+      <small>CONTACT</small>
+      <h2>Let's Connect</h2>
+    </div>
+
+    <p>Email: <a href="mailto:YOUR_EMAIL@example.com">
+      YOUR_EMAIL@example.com
+    </a></p>
+
+    <p>
+      LinkedIn:
+      <a href="#" target="_blank">View LinkedIn Profile</a>
+    </p>
+
+    <p>
+      GitHub:
+      <a href="https://github.com/pkamalnadh" target="_blank">
+        github.com/pkamalnadh
+      </a>
+    </p>
+
+  </section>
+
+  <footer>
+    © 2026 PK Amalnadh | Business Intelligence & Data Analytics
+  </footer>
+
+</body>
+</html>
