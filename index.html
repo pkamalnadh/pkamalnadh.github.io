@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>PK. Amalnadh | Business Intelligence</title>
 
+
 <style>
 
-/* ==============================
+/* =====================================================
    RESET
-============================== */
+===================================================== */
 
 *{
     margin:0;
@@ -23,1981 +28,329 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#08101e;
-    color:#fff;
+
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:#020817;
+
+    color:#ffffff;
+
     overflow-x:hidden;
 }
 
 
-/* ==============================
-   GRID BACKGROUND
-============================== */
+/* =====================================================
+   BACKGROUND
+===================================================== */
 
 body{
-    background-color:#08101e;
 
-    background-image:
-        linear-gradient(
-            rgba(40,180,170,.10) 1px,
-            transparent 1px
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(0,160,255,.13),
+            transparent 30%
         ),
-        linear-gradient(
-            90deg,
-            rgba(40,180,170,.10) 1px,
-            transparent 1px
-        );
 
-    background-size:85px 85px;
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(120,50,255,.13),
+            transparent 30%
+        ),
+
+        #020817;
 }
 
 
-/* ==============================
-   NAVBAR
-============================== */
-
-nav{
-    height:78px;
-
-    position:sticky;
-    top:0;
-
-    z-index:1000;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:0 30px;
-
-    background:rgba(7,15,27,.94);
-
-    border-bottom:1px solid rgba(150,200,220,.15);
-
-    backdrop-filter:blur(15px);
-}
-
-.logo{
-    font-size:25px;
-    font-weight:800;
-}
-
-.logo span{
-    color:#fff;
-}
-
-.nav-links{
-    display:flex;
-    gap:30px;
-    list-style:none;
-}
-
-.nav-links a{
-    color:#aeb9c8;
-    text-decoration:none;
-    font-size:15px;
-}
-
-.nav-links a:hover{
-    color:#42dcff;
-}
-
-.menu{
-    display:none;
-
-    width:42px;
-    height:42px;
-
-    background:none;
-    border:0;
-
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    gap:5px;
-}
-
-.menu span{
-    width:26px;
-    height:3px;
-    background:#fff;
-    border-radius:5px;
-}
-
-
-/* ==============================
-   MOBILE MENU
-============================== */
-
-.mobile-nav{
-    display:none;
+.grid{
 
     position:fixed;
 
-    top:78px;
-    left:0;
-    right:0;
+    inset:0;
 
-    z-index:999;
+    z-index:-2;
 
-    background:#091222;
+    background-image:
 
-    border-bottom:1px solid rgba(100,200,255,.15);
+        linear-gradient(
+            rgba(40,150,255,.045) 1px,
+            transparent 1px
+        ),
 
-    padding:10px 25px;
+        linear-gradient(
+            90deg,
+            rgba(40,150,255,.045) 1px,
+            transparent 1px
+        );
+
+    background-size:55px 55px;
+
+    animation:gridMove 18s linear infinite;
 }
 
-.mobile-nav a{
-    display:block;
 
-    color:#fff;
+@keyframes gridMove{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(55px);
+    }
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    height:76px;
+
+    padding:0 7%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    background:
+        rgba(2,8,23,.82);
+
+    backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid
+        rgba(100,180,255,.12);
+}
+
+
+.logo{
+
+    font-size:25px;
+
+    font-weight:800;
+}
+
+
+.logo span{
+
+    color:#38c9ff;
+}
+
+
+nav ul{
+
+    display:flex;
+
+    gap:30px;
+
+    list-style:none;
+}
+
+
+nav a{
+
+    color:#9eacc0;
 
     text-decoration:none;
 
-    padding:17px 5px;
-
-    border-bottom:1px solid rgba(255,255,255,.07);
-}
-
-.mobile-nav.show{
-    display:block;
+    transition:.3s;
 }
 
 
-/* ==============================
+nav a:hover{
+
+    color:#42d9ff;
+}
+
+
+/* =====================================================
    HERO
-============================== */
+===================================================== */
 
 .hero{
-    padding:32px 15px 70px;
+
+    min-height:
+        calc(100vh - 76px);
+
+    padding:
+        70px 7%;
+
+    display:flex;
+
+    align-items:center;
 }
 
-.container{
-    max-width:1000px;
+
+.hero-wrap{
+
+    width:100%;
+
+    max-width:1250px;
+
     margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        .9fr 1.1fr;
+
+    gap:55px;
+
+    align-items:center;
 }
 
 
-/* ==============================
-   CODE CARD
-============================== */
+/* =====================================================
+   HERO TEXT
+===================================================== */
 
-.code-card{
+.small-title{
 
-    background:#202020;
+    color:#48d7ff;
 
-    border:1px solid #383838;
+    font-size:13px;
 
-    border-radius:15px;
+    font-weight:700;
 
-    padding:25px 27px;
+    letter-spacing:3px;
 
-    margin-bottom:45px;
-
-    box-shadow:
-        0 15px 45px rgba(0,0,0,.25);
-
-    font-family:"Courier New",monospace;
-}
-
-.code-comment{
-    color:#48e487;
-    font-size:17px;
-    margin-bottom:9px;
-}
-
-.code-function{
-    color:#ffcf24;
-    font-size:17px;
-    margin-bottom:10px;
-}
-
-.code-function span{
-    color:#54a5ff;
-}
-
-.code-description{
-    color:#d4d4d4;
-    font-size:16px;
-    line-height:1.6;
-    padding-left:25px;
-}
-
-.code-return{
-    color:#bc7aff;
-    font-size:16px;
-    margin-top:8px;
-    padding-left:25px;
-}
-
-.code-return span{
-    color:#45df80;
+    margin-bottom:20px;
 }
 
 
-/* ==============================
-   HERO TITLE
-============================== */
+h1{
 
-.hero-title{
-    font-size:52px;
-    line-height:1.08;
+    font-size:
+        clamp(
+            55px,
+            7vw,
+            90px
+        );
 
-    letter-spacing:-2px;
+    line-height:.95;
+
+    letter-spacing:-4px;
 
     margin-bottom:25px;
 }
 
-.hero-title .green{
-    color:#43df76;
 
-    text-shadow:
-        0 0 20px rgba(40,240,100,.35);
+.name{
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #209cff,
+            #39ddff,
+            #7868ff,
+            #ff55d6
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+    animation:
+        gradient 7s ease infinite;
 }
 
 
-/* ==============================
-   ROLE
-============================== */
+@keyframes gradient{
 
-.role{
-    color:#43dfff;
+    0%{
+        background-position:0%;
+    }
 
-    font-size:28px;
+    50%{
+        background-position:100%;
+    }
 
-    line-height:1.4;
+    100%{
+        background-position:0%;
+    }
+}
+
+
+/* =====================================================
+   TYPING
+===================================================== */
+
+.typing{
+
+    font-size:
+        clamp(
+            23px,
+            3vw,
+            35px
+        );
+
+    font-weight:700;
+
+    color:#3edcff;
 
     min-height:45px;
-
-    margin-bottom:27px;
 }
+
 
 .cursor{
-    display:inline-block;
 
-    width:3px;
-    height:34px;
+    color:#42ff68;
 
-    background:#21ef54;
-
-    margin-left:7px;
-
-    vertical-align:middle;
-
-    box-shadow:
-        0 0 10px #21ef54;
-
-    animation:blink .8s infinite;
+    animation:
+        blink .7s infinite;
 }
 
+
 @keyframes blink{
+
     50%{
         opacity:0;
     }
 }
 
 
-/* ==============================
+/* =====================================================
    DESCRIPTION
-============================== */
+===================================================== */
 
-.hero-description{
+.description{
 
-    color:#f0f2f5;
+    max-width:650px;
 
-    font-size:18px;
+    margin-top:20px;
 
-    line-height:1.65;
+    color:#e4eaf2;
 
-    max-width:900px;
+    line-height:1.8;
 
-    margin-bottom:27px;
+    font-size:17px;
 }
 
 
-/* ==============================
-   SKILL PILLS
-============================== */
-
-.pills{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:13px;
-
-    margin-bottom:38px;
-}
-
-.pill{
-
-    padding:10px 23px;
-
-    border-radius:30px;
-
-    background:rgba(255,255,255,.025);
-
-    font-size:16px;
-}
-
-.pill.python{
-    color:#5bea96;
-
-    border:1px solid rgba(50,230,120,.4);
-
-    box-shadow:0 0 18px rgba(50,230,120,.08);
-}
-
-.pill.ml{
-    color:#77b2ff;
-
-    border:1px solid rgba(60,130,255,.45);
-}
-
-.pill.tableau{
-    color:#d28aff;
-
-    border:1px solid rgba(170,70,255,.45);
-}
-
-.pill.aws{
-    color:#ffad68;
-
-    border:1px solid rgba(255,120,30,.45);
-}
-
-
-/* ==============================
-   BUTTONS
-============================== */
-
-.buttons{
-
-    display:flex;
-
-    gap:27px;
-
-    margin-bottom:45px;
-}
-
-.button{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    min-height:88px;
-
-    flex:1;
-
-    border-radius:13px;
-
-    text-decoration:none;
-
-    font-size:20px;
-
-    font-weight:bold;
-
-    transition:.3s;
-}
-
-.button:hover{
-    transform:translateY(-4px);
-}
-
-.get-touch{
-
-    background:#20d15d;
-
-    color:#041007;
-
-    box-shadow:
-        0 0 30px rgba(30,220,90,.15);
-}
-
-.experience{
-
-    color:#3cdbff;
-
-    border:3px solid #22d4ef;
-
-    background:rgba(0,130,255,.02);
-}
-
-
-/* ==============================
-   DATA INSIGHTS GRAPHIC
-============================== */
-
-.visual{
-
-    position:relative;
-
-    width:100%;
-
-    height:380px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-}
-
-
-/* OUTER GREEN SHAPE */
-
-.green-shape{
-
-    position:absolute;
-
-    width:82%;
-
-    height:75%;
-
-    border:2px solid #00ed4c;
-
-    border-radius:
-        48% 52% 45% 55% /
-        55% 45% 55% 45%;
-
-    transform:rotate(-3deg);
-
-    box-shadow:
-        0 0 8px #00ef50,
-        0 0 25px rgba(0,255,70,.65),
-        0 0 55px rgba(0,255,70,.25);
-
-    background:
-        rgba(0,100,60,.05);
-
-    animation:floatShape 5s ease-in-out infinite;
-}
-
-@keyframes floatShape{
-
-    0%,100%{
-        transform:rotate(-3deg) translateY(0);
-    }
-
-    50%{
-        transform:rotate(-1deg) translateY(-7px);
-    }
-}
-
-
-/* INNER GREEN */
-
-.green-shape:before{
-
-    content:"";
-
-    position:absolute;
-
-    top:25px;
-    left:30px;
-    right:30px;
-    bottom:25px;
-
-    border-radius:
-        48% 52% 45% 55% /
-        55% 45% 55% 45%;
-
-    background:
-        linear-gradient(
-            130deg,
-            #073c31,
-            #08783d,
-            #07542f
-        );
-
-    box-shadow:
-        inset 0 0 55px rgba(0,255,80,.15);
-}
-
-
-/* DATA ICON */
-
-.data-icon{
-
-    position:relative;
-
-    z-index:3;
-
-    width:95px;
-    height:95px;
-
-    opacity:.55;
-}
-
-.data-icon svg{
-    width:100%;
-    height:100%;
-}
-
-
-/* DATA TEXT */
-
-.data-text{
-
-    position:absolute;
-
-    z-index:4;
-
-    bottom:82px;
-
-    font-family:"Courier New",monospace;
-
-    color:#46e77d;
-
-    font-size:20px;
-
-    text-shadow:
-        0 0 10px rgba(50,240,100,.35);
-}
-
-
-/* LIGHTNING */
-
-.lightning{
-
-    position:absolute;
-
-    left:0;
-
-    top:47%;
-
-    z-index:5;
-
-    color:#ffd21e;
-
-    font-size:32px;
-
-    transform:rotate(-10deg);
-
-    filter:
-        drop-shadow(0 0 6px #ffc400);
-}
-
-
-/* ==============================
-   JOURNEY
-============================== */
-
-section{
-    padding:75px 27px;
-}
-
-.section{
-    max-width:1000px;
-    margin:auto;
-}
-
-.section-title{
-
-    font-size:42px;
-
-    margin-bottom:35px;
-}
-
-.section-title span{
-    color:#42ddff;
-}
-
-
-/* ==============================
-   JOURNEY TEXT
-============================== */
-
-.journey-text{
-
-    color:#d9dde5;
-
-    font-size:19px;
-
-    line-height:1.65;
-
-    margin-bottom:42px;
-}
-
-
-/* ==============================
-   STATS
-============================== */
-
-.stats{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:38px;
-
-    margin-bottom:55px;
-}
-
-.stat{
-
-    min-height:150px;
-
-    border-radius:17px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    background:
-        rgba(20,40,72,.65);
-
-    border:
-        1px solid
-        rgba(50,150,255,.3);
-
-    box-shadow:
-        0 0 25px
-        rgba(0,130,255,.08);
-}
-
-.stat.green-stat{
-
-    background:
-        rgba(15,60,48,.55);
-
-    border-color:
-        rgba(40,220,120,.3);
-
-    box-shadow:
-        0 0 25px
-        rgba(30,220,110,.08);
-}
-
-.stat-number{
-
-    font-size:50px;
-
-    font-weight:bold;
-
-    color:#5aa4ff;
-
-    margin-bottom:5px;
-}
-
-.green-stat .stat-number{
-    color:#4be487;
-}
-
-.stat-label{
-
-    color:#dce0e7;
-
-    font-size:20px;
-}
-
-
-/* ==============================
-   FOCUS CARD
-============================== */
-
-.focus{
-
-    padding:34px 30px;
-
-    border-radius:19px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #15233a,
-            #101b2d
-        );
-
-    border:
-        1px solid
-        rgba(80,160,255,.15);
-
-    box-shadow:
-        0 0 35px
-        rgba(0,100,255,.06);
-}
-
-.focus h3{
-
-    color:#29d8ff;
-
-    font-size:27px;
-
-    margin-bottom:25px;
-}
-
-.focus ul{
-    list-style:none;
-}
-
-.focus li{
-
-    position:relative;
-
-    padding-left:28px;
-
-    margin-bottom:20px;
-
-    color:#d5dae3;
-
-    font-size:18px;
-
-    line-height:1.5;
-}
-
-.focus li:before{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    top:10px;
-
-    width:10px;
-    height:10px;
-
-    border-radius:50%;
-
-    background:#46e58b;
-
-    box-shadow:
-        0 0 10px #46e58b;
-}
-
-
-/* ==============================
-   OTHER SECTIONS
-============================== */
-
-.cards{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(250px,1fr)
-        );
-
-    gap:20px;
-}
-
-.card{
-
-    padding:28px;
-
-    border-radius:17px;
-
-    background:
-        rgba(15,32,55,.8);
-
-    border:
-        1px solid
-        rgba(70,160,220,.14);
-}
-
-.card h3{
-
-    color:#42dcff;
-
-    font-size:21px;
-
-    margin-bottom:13px;
-}
-
-.card p{
-
-    color:#abb7c7;
-
-    line-height:1.7;
-
-    font-size:16px;
-}
-
-
-/* ==============================
-   SKILLS
-============================== */
-
-.skill{
-    margin-bottom:23px;
-}
-
-.skill:last-child{
-    margin-bottom:0;
-}
-
-.skill-head{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    color:#e3e7ed;
-
-    margin-bottom:8px;
-}
-
-.skill-head span:last-child{
-    color:#42dcff;
-}
-
-.progress{
-
-    height:7px;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    background:rgba(255,255,255,.07);
-}
-
-.progress span{
-
-    display:block;
-
-    height:100%;
-
-    width:var(--value);
-
-    border-radius:20px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #168cff,
-            #43ddff
-        );
-}
-
-
-/* ==============================
-   FOOTER
-============================== */
-
-footer{
-
-    text-align:center;
-
-    padding:40px 20px;
-
-    color:#73849a;
-
-    border-top:
-        1px solid
-        rgba(100,180,220,.1);
-}
-
-
-/* ==============================
-   MOBILE
-============================== */
-
-@media(max-width:700px){
-
-    nav{
-        height:70px;
-        padding:0 29px;
-    }
-
-    .nav-links{
-        display:none;
-    }
-
-    .menu{
-        display:flex;
-    }
-
-    .mobile-nav{
-        top:70px;
-    }
-
-    .hero{
-        padding:
-            32px 15px
-            50px;
-    }
-
-    .code-card{
-        margin-bottom:44px;
-    }
-
-    .code-comment{
-        font-size:16px;
-    }
-
-    .code-function{
-        font-size:16px;
-    }
-
-    .code-description{
-        font-size:15px;
-    }
-
-    .code-return{
-        font-size:15px;
-    }
-
-    .hero-title{
-        font-size:50px;
-    }
-
-    .role{
-        font-size:27px;
-        min-height:75px;
-    }
-
-    .hero-description{
-        font-size:17px;
-    }
-
-    .pills{
-        gap:12px;
-    }
-
-    .pill{
-        font-size:15px;
-        padding:10px 21px;
-    }
-
-    .buttons{
-        display:grid;
-
-        grid-template-columns:1fr 1fr;
-
-        gap:26px;
-    }
-
-    .button{
-        min-height:88px;
-        font-size:17px;
-        padding:10px;
-    }
-
-    .visual{
-        height:315px;
-    }
-
-    .green-shape{
-        width:94%;
-        height:74%;
-    }
-
-    .data-text{
-        bottom:66px;
-        font-size:17px;
-    }
-
-    .data-icon{
-        width:75px;
-        height:75px;
-    }
-
-    .lightning{
-        font-size:27px;
-        left:-4px;
-    }
-
-    section{
-        padding:
-            70px 27px;
-    }
-
-    .section-title{
-        font-size:40px;
-    }
-
-    .journey-text{
-        font-size:18px;
-    }
-
-    .stats{
-        gap:17px;
-    }
-
-    .stat{
-        min-height:145px;
-    }
-
-    .stat-number{
-        font-size:46px;
-    }
-
-    .stat-label{
-        font-size:17px;
-    }
-
-    .focus{
-        padding:
-            30px 28px;
-    }
-
-    .focus h3{
-        font-size:25px;
-    }
-
-    .focus li{
-        font-size:17px;
-    }
-
-}
-
-
-/* ==============================
-   SMALL MOBILE
-============================== */
-
-@media(max-width:380px){
-
-    .hero-title{
-        font-size:45px;
-    }
-
-    .role{
-        font-size:23px;
-    }
-
-    .buttons{
-        gap:12px;
-    }
-
-    .button{
-        font-size:15px;
-    }
-
-    .pill{
-        font-size:14px;
-        padding:
-            9px 17px;
-    }
-
-    .stats{
-        gap:10px;
-    }
-
-    .stat-number{
-        font-size:40px;
-    }
-
-    .stat-label{
-        font-size:15px;
-    }
-
-}
-
-</style>
-</head>
-
-
-<body>
-
-
-<!-- ==============================
-     NAVBAR
-============================== -->
-
-<nav>
-
-    <div class="logo">
-        PK. Amalnadh
-    </div>
-
-    <ul class="nav-links">
-
-        <li>
-            <a href="#home">Home</a>
-        </li>
-
-        <li>
-            <a href="#journey">About</a>
-        </li>
-
-        <li>
-            <a href="#skills">Skills</a>
-        </li>
-
-        <li>
-            <a href="#projects">Projects</a>
-        </li>
-
-        <li>
-            <a href="#education">Education</a>
-        </li>
-
-        <li>
-            <a href="#contact">Contact</a>
-        </li>
-
-    </ul>
-
-
-    <button
-        class="menu"
-        id="menu"
-    >
-
-        <span></span>
-        <span></span>
-        <span></span>
-
-    </button>
-
-</nav>
-
-
-<!-- MOBILE MENU -->
-
-<div
-    class="mobile-nav"
-    id="mobileNav"
->
-
-    <a href="#home">Home</a>
-
-    <a href="#journey">About</a>
-
-    <a href="#skills">Skills</a>
-
-    <a href="#projects">Projects</a>
-
-    <a href="#education">Education</a>
-
-    <a href="#contact">Contact</a>
-
-</div>
-
-
-
-<!-- ==============================
-     HERO
-============================== -->
-
-<section
-    class="hero"
-    id="home"
->
-
-<div class="container">
-
-
-    <!-- CODE -->
-
-    <div class="code-card">
-
-        <div class="code-comment">
-            # From Data to Decisions
-        </div>
-
-        <div class="code-function">
-            def <span>transform_data_to_insights</span>():
-        </div>
-
-        <div class="code-description">
-
-            """In data we trust, in insights we
-            <br>
-            act"""
-
-        </div>
-
-        <div class="code-return">
-
-            return
-            <span>
-                "Actionable_Intelligence"
-            </span>
-
-        </div>
-
-    </div>
-
-
-    <!-- TITLE -->
-
-    <h1 class="hero-title">
-
-        Hi, I'm
-        <span class="green">
-            Amalnadh
-        </span>
-
-    </h1>
-
-
-    <!-- ROLE -->
-
-    <div class="role">
-
-        <span id="typing"></span>
-
-        <span class="cursor"></span>
-
-    </div>
-
-
-    <!-- DESCRIPTION -->
-
-    <p class="hero-description">
-
-        Transforming complex data into actionable insights
-        with a strong focus on Business Intelligence,
-        data analytics and data-driven decision making.
-
-    </p>
-
-
-    <!-- PILLS -->
-
-    <div class="pills">
-
-        <span class="pill python">
-            Python
-        </span>
-
-        <span class="pill ml">
-            Machine Learning
-        </span>
-
-        <span class="pill tableau">
-            Tableau
-        </span>
-
-        <span class="pill aws">
-            AWS
-        </span>
-
-    </div>
-
-
-    <!-- BUTTONS -->
-
-    <div class="buttons">
-
-        <a
-            href="#contact"
-            class="button get-touch"
-        >
-            Get In Touch
-        </a>
-
-        <a
-            href="#journey"
-            class="button experience"
-        >
-            View Experience
-        </a>
-
-    </div>
-
-
-    <!-- GREEN GRAPHIC -->
-
-    <div class="visual">
-
-        <div class="lightning">
-            ⚡
-        </div>
-
-        <div class="green-shape"></div>
-
-
-        <div class="data-icon">
-
-            <svg
-                viewBox="0 0 100 100"
-                fill="none"
-            >
-
-                <path
-                    d="
-                    M50 10
-                    L63 27
-                    L82 22
-                    L75 41
-                    L91 50
-                    L75 59
-                    L82 78
-                    L63 73
-                    L50 90
-                    L37 73
-                    L18 78
-                    L25 59
-                    L9 50
-                    L25 41
-                    L18 22
-                    L37 27
-                    Z
-                    "
-                    stroke="#8ac39a"
-                    stroke-width="5"
-                    stroke-linejoin="round"
-                />
-
-                <path
-                    d="M50 10V90"
-                    stroke="#8ac39a"
-                    stroke-width="3"
-                />
-
-                <path
-                    d="M9 50H91"
-                    stroke="#8ac39a"
-                    stroke-width="3"
-                />
-
-                <path
-                    d="M25 41L75 59"
-                    stroke="#8ac39a"
-                    stroke-width="3"
-                />
-
-                <path
-                    d="M75 41L25 59"
-                    stroke="#8ac39a"
-                    stroke-width="3"
-                />
-
-            </svg>
-
-        </div>
-
-
-        <div class="data-text">
-            data.insights()
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- ==============================
-     JOURNEY
-============================== -->
-
-<section id="journey">
-
-<div class="section">
-
-
-    <h2 class="section-title">
-        My Journey
-    </h2>
-
-
-    <p class="journey-text">
-
-        I hold an MSc in Business Analytics and bring
-        hands-on experience across data analytics,
-        Business Intelligence and technology. I focus
-        on transforming complex information into
-        practical business insights and data-driven
-        solutions.
-
-    </p>
-
-
-    <!-- STATS -->
-
-    <div class="stats">
-
-        <div class="stat">
-
-            <div class="stat-number">
-                3
-            </div>
-
-            <div class="stat-label">
-                Years Experience
-            </div>
-
-        </div>
-
-
-        <div class="stat green-stat">
-
-            <div class="stat-number">
-                90%+
-            </div>
-
-            <div class="stat-label">
-                Accuracy
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- FOCUS -->
-
-    <div class="focus">
-
-        <h3>
-            Most Recent Focus
-        </h3>
-
-
-        <ul>
-
-            <li>
-                MSc Business Analytics
-            </li>
-
-            <li>
-                Business Intelligence & Data Analytics
-            </li>
-
-            <li>
-                Power BI, SQL, Excel & DAX
-            </li>
-
-            <li>
-                Data Visualization & Dashboard Development
-            </li>
-
-            <li>
-                Python, Machine Learning & Generative AI
-            </li>
-
-        </ul>
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- ==============================
-     ABOUT
-============================== -->
-
-<section id="about">
-
-<div class="section">
-
-    <h2 class="section-title">
-        About <span>Me</span>
-    </h2>
-
-
-    <div class="cards">
-
-        <div class="card">
-
-            <h3>
-                Business Intelligence
-            </h3>
-
-            <p>
-                Turning complex datasets into useful
-                business insights and dashboards.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Data Analytics
-            </h3>
-
-            <p>
-                Analysing data, finding patterns and
-                supporting better business decisions.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Data Visualization
-            </h3>
-
-            <p>
-                Creating clear and interactive reports
-                that make business data easy to understand.
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- ==============================
-     SKILLS
-============================== -->
-
-<section id="skills">
-
-<div class="section">
-
-    <h2 class="section-title">
-        My <span>Skills</span>
-    </h2>
-
-
-    <div class="cards">
-
-
-        <div class="card">
-
-            <div class="skill">
-
-                <div class="skill-head">
-                    <span>Power BI</span>
-                    <span>90%</span>
-                </div>
-
-                <div class="progress">
-                    <span style="--value:90%"></span>
-                </div>
-
-            </div>
-
-
-            <div class="skill">
-
-                <div class="skill-head">
-                    <span>SQL</span>
-                    <span>85%</span>
-                </div>
-
-                <div class="progress">
-                    <span style="--value:85%"></span>
-                </div>
-
-            </div>
-
-
-            <div class="skill">
-
-                <div class="skill-head">
-                    <span>Excel</span>
-                    <span>88%</span>
-                </div>
-
-                <div class="progress">
-                    <span style="--value:88%"></span>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="skill">
-
-                <div class="skill-head">
-                    <span>Python</span>
-                    <span>80%</span>
-                </div>
-
-                <div class="progress">
-                    <span style="--value:80%"></span>
-                </div>
-
-            </div>
-
-
-            <div class="skill">
-
-                <div class="skill-head">
-                    <span>Power Query</span>
-                    <span>85%</span>
-                </div>
-
-                <div class="progress">
-                    <span style="--value:85%"></span>
-                </div>
-
-            </div>
-
-
-            <div class="skill">
-
-                <div class="skill-head">
-                    <span>DAX</span>
-                    <span>82%</span>
-                </div>
-
-                <div class="progress">
-                    <span style="--value:82%"></span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- ==============================
-     PROJECTS
-============================== -->
-
-<section id="projects">
-
-<div class="section">
-
-    <h2 class="section-title">
-        Featured <span>Projects</span>
-    </h2>
-
-
-    <div class="cards">
-
-        <div class="card">
-
-            <h3>
-                Business Intelligence Dashboard
-            </h3>
-
-            <p>
-                Interactive dashboard for analysing
-                business KPIs, performance and trends.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Sales Analytics
-            </h3>
-
-            <p>
-                Sales performance analysis focused on
-                trends and actionable insights.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Data Analysis Project
-            </h3>
-
-            <p>
-                Exploratory analysis and visualization
-                for discovering patterns in business data.
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- ==============================
-     EDUCATION
-============================== -->
-
-<section id="education">
-
-<div class="section">
-
-    <h2 class="section-title">
-        <span>Education</span>
-    </h2>
-
-
-    <div class="cards">
-
-        <div class="card">
-
-            <h3>
-                MSc Business Analytics
-            </h3>
-
-            <p>
-                Business Analytics
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                BBA
-            </h3>
-
-            <p>
-                Bachelor of Business Administration
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Diploma in Data Analytics
-            </h3>
-
-            <p>
-                Data Analytics
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- ==============================
-     CONTACT
-============================== -->
-
-<section id="contact">
-
-<div class="section">
-
-    <h2 class="section-title">
-        Let's <span>Connect</span>
-    </h2>
-
-
-    <div class="cards">
-
-        <div class="card">
-
-            <h3>
-                Email
-            </h3>
-
-            <p>
-                YOUR_EMAIL@example.com
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                LinkedIn
-            </h3>
-
-            <p>
-                Your LinkedIn profile
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                GitHub
-            </h3>
-
-            <p>
-                github.com/pkamalnadh
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- ==============================
-     FOOTER
-============================== -->
-
-<footer>
-
-    © 2026 PK. Amalnadh ·
-    Business Intelligence & Data Analytics
-
-</footer>
-
-
-
-<script>
-
-/* ==============================
-   TYPING
-============================== */
-
-const words = [
-    "Data Science, AI & Analytics Expert",
-    "Business Intelligence Analyst",
-    "Data Analytics Professional",
-    "BI & Data Visualization"
-];
-
-let word = 0;
-let letter = 0;
-let deleting = false;
-
-const typing =
-    document.getElementById("typing");
-
-
-function typingEffect(){
-
-    const current =
-        words[word];
-
-
-    if(!deleting){
-
-        typing.textContent =
-            current.substring(
-                0,
-                letter + 1
-            );
-
-        letter++;
-
-
-        if(letter === current.length){
-
-            deleting = true;
-
-            setTimeout(
-                typingEffect,
-                1600
-            );
-
-            return;
-        }
-
-    }
-    else{
-
-        typing.textContent =
-            current.substring(
-                0,
-                letter - 1
-            );
-
-        letter--;
-
-
-        if(letter === 0){
-
-            deleting = false;
-
-            word++;
-
-            if(word >= words.length){
-                word = 0;
-            }
-
-        }
-
-    }
-
-
-    setTimeout(
-        typingEffect,
-        deleting ? 45 : 70
-    );
-}
-
-
-typingEffect();
-
-
-/* ==============================
-   MOBILE MENU
-============================== */
-
-const menu =
-    document.getElementById("menu");
-
-const mobileNav =
-    document.getElementById("mobileNav");
-
-
-menu.addEventListener(
-    "click",
-    function(){
-
-        mobileNav.classList.toggle(
-            "show"
-        );
-
-    }
-);
-
-
-document
-    .querySelectorAll(".mobile-nav a")
-    .forEach(
-        function(link){
-
-            link.addEventListener(
-                "click",
-                function(){
-
-                    mobileNav.classList.remove(
-                        "show"
-                    );
-
-                }
-            );
-
-        }
-    );
-
-</script>
-
-</body>
-</html>
+/* =====================================================
+   TOOLS / SKILLS
+===================================================== */
+
+.hero
