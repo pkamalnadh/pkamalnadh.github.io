@@ -1,350 +1,739 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Data Science & Analytics</title>
-    <style>
-        /* CSS Reset & Variables */
-        :root {
-            --bg-main: #0b111e;
-            --bg-card: #0f172a;
-            --bg-code: #050914;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent-green: #10b981;
-            --accent-blue: #3b82f6;
-            --accent-purple: #a855f7;
-            --border-color: #1e293b;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
+<title>PK. Amalnadh | Business Intelligence</title>
 
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            padding-bottom: 60px;
-        }
+<style>
 
-        /* Layout Container */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+/* =========================================================
+   RESET
+========================================================= */
 
-        /* Navigation Bar */
-        nav {
-            position: sticky;
-            top: 0;
-            background-color: rgba(11, 17, 30, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 100;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        .nav-logo {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--text-main);
-            text-decoration: none;
-        }
+body{
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
 
-        .nav-logo span {
-            color: var(--accent-green);
-        }
+    background:#08101f;
+    color:#f5f7fb;
+    overflow-x:hidden;
+}
 
-        .nav-links {
-            display: flex;
-            gap: 24px;
-            list-style: none;
-        }
 
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
+/* =========================================================
+   BACKGROUND
+========================================================= */
 
-        .nav-links a:hover {
-            color: var(--accent-green);
-        }
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-3;
 
-        /* Sections General Styling */
-        section {
-            padding: 80px 0 40px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0,210,255,.08),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 65%,
+            rgba(0,255,130,.06),
+            transparent 30%
+        ),
+        #08101f;
+}
 
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            position: relative;
-            display: inline-block;
-        }
+.grid-bg{
+    position:fixed;
+    inset:0;
+    z-index:-2;
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -6px;
-            width: 40px;
-            height: 3px;
-            background-color: var(--accent-green);
-            border-radius: 2px;
-        }
+    background-image:
+        linear-gradient(
+            rgba(45,180,170,.10) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(45,180,170,.10) 1px,
+            transparent 1px
+        );
 
-        /* Hero / Header Section */
-        .hero {
-            padding-top: 60px;
-        }
+    background-size:85px 85px;
 
-        .code-box {
-            background-color: var(--bg-code);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-            font-size: 0.9rem;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            overflow-x: auto;
-        }
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black 0%,
+            rgba(0,0,0,.8) 70%,
+            transparent 100%
+        );
 
-        .code-comment { color: #6a737d; font-style: italic; }
-        .code-keyword { color: #ff7b72; }
-        .code-function { color: #d2a6ff; }
-        .code-string { color: #a5d6ff; }
-        .code-return { color: #ff7b72; }
+    animation:gridMove 20s linear infinite;
+}
 
-        .hero-title {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            letter-spacing: -0.5px;
-        }
+@keyframes gridMove{
 
-        .hero-title span {
-            color: var(--accent-green);
-        }
+    from{
+        background-position:0 0;
+    }
 
-        .hero-subtitle {
-            font-size: 1.4rem;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            font-weight: 500;
-        }
+    to{
+        background-position:0 85px;
+    }
+}
 
-        .hero-desc {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 650px;
-            margin-bottom: 30px;
-        }
 
-        /* Skills Tags */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 40px;
-        }
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
-        .tag {
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            background: rgba(255, 255, 255, 0.02);
-            transition: all 0.3s ease;
-        }
+nav{
 
-        .tag.python { border: 1px solid rgba(16, 185, 129, 0.3); color: var(--accent-green); }
-        .tag.ml { border: 1px solid rgba(59, 130, 246, 0.3); color: var(--accent-blue); }
-        .tag.tableau { border: 1px solid rgba(168, 85, 247, 0.3); color: var(--accent-purple); }
-        .tag.cloud { border: 1px solid rgba(245, 158, 11, 0.3); color: #f59e0b; }
+    position:sticky;
+    top:0;
+    z-index:1000;
 
-        .tag:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
+    height:78px;
 
-        /* Buttons */
-        .btn-group {
-            display: flex;
-            gap: 16px;
-        }
+    padding:0 5%;
 
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-        .btn-primary {
-            background-color: var(--accent-green);
-            color: #050914;
-        }
+    background:
+        rgba(7,15,28,.92);
 
-        .btn-primary:hover {
-            background-color: #059669;
-            transform: translateY(-1px);
-        }
+    backdrop-filter:blur(16px);
 
-        .btn-secondary {
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            background-color: transparent;
-        }
+    border-bottom:
+        1px solid
+        rgba(120,180,220,.14);
+}
 
-        .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.03);
-            border-color: var(--text-muted);
-        }
+.logo{
 
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:-.5px;
+}
 
-        .project-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 24px;
-            transition: all 0.3s ease;
-        }
+.logo span{
+    color:#ffffff;
+}
 
-        .project-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(16, 185, 129, 0.4);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
+.menu{
 
-        .project-title {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-            color: var(--text-main);
-        }
+    width:43px;
+    height:43px;
 
-        .project-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
+    border:0;
+    background:transparent;
 
-        .project-tech {
-            display: flex;
-            gap: 8px;
-            font-family: monospace;
-            font-size: 0.8rem;
-            color: var(--accent-green);
-        }
+    display:none;
 
-        /* Experience Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 24px;
-            border-left: 2px solid var(--border-color);
-        }
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 40px;
-        }
+    gap:6px;
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -31px;
-            top: 6px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: var(--bg-main);
-            border: 2px solid var(--accent-green);
-        }
+    cursor:pointer;
+}
 
-        .timeline-date {
-            font-size: 0.85rem;
-            color: var(--accent-green);
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
+.menu span{
 
-        .timeline-role {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
+    display:block;
 
-        .timeline-company {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 12px;
-        }
+    width:26px;
+    height:3px;
 
-        /* Responsive Configuration */
-        @media (max-width: 600px) {
-            .hero-title { font-size: 2.2rem; }
-            .nav-links { display: none; } /* Simplified mobile view */
-            .btn-group { flex-direction: column; }
-            .btn { text-align: center; }
-        }
-    </style>
-</head>
-<body>
+    border-radius:10px;
 
-    <!-- Sticky Navigation header -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="nav-logo">Data<span>.insights()</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Journey</a></li>
-            </ul>
-        </div>
-    </nav>
+    background:#ffffff;
+}
 
-    <div class="container">
-        
-        <!-- Hero Section -->
-        <section id="about" class="hero">
-            <!-- Professional Python Mock Block -->
-            <div class="code-box">
-                <span class="code-comment"># From Data to Decisions</span><br>
-                <span class="code-keyword">def</span> <span class="code-function">transform_data_to_insights</span>():<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">"""In data we trust, in insights we act"""</span><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-return">return</span> <span class="code-string">"Actionable Intelligence"</span>
-            </div>
+nav ul{
 
-            <h1 class="hero-title">Hi, I'm <span>Your Name</span></h1>
-            <div class="hero-subtitle">Data Science, AI & Analytics Expert</div>
-            <p class="hero-desc">
+    display:flex;
+
+    list-style:none;
+
+    gap:32px;
+}
+
+nav a{
+
+    color:#aebaca;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#3de4ff;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu{
+
+    display:none;
+
+    position:fixed;
+
+    top:78px;
+    left:0;
+    right:0;
+
+    z-index:999;
+
+    background:
+        rgba(7,15,28,.97);
+
+    border-bottom:
+        1px solid
+        rgba(100,190,255,.15);
+
+    padding:15px 25px 25px;
+
+    backdrop-filter:blur(20px);
+}
+
+.mobile-menu a{
+
+    display:block;
+
+    padding:16px 5px;
+
+    color:#d8e0ea;
+
+    text-decoration:none;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.06);
+}
+
+.mobile-menu.active{
+    display:block;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:
+        calc(100vh - 78px);
+
+    padding:
+        45px 5% 80px;
+
+    position:relative;
+}
+
+.hero-container{
+
+    max-width:1180px;
+
+    margin:auto;
+}
+
+
+/* =========================================================
+   CODE CARD
+========================================================= */
+
+.code-card{
+
+    width:100%;
+
+    max-width:670px;
+
+    margin:0 auto 48px;
+
+    padding:27px 30px;
+
+    border-radius:17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #202020,
+            #1a1a1a
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.22);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    overflow:hidden;
+}
+
+.code-comment{
+
+    color:#43e58a;
+
+    font-size:19px;
+
+    margin-bottom:8px;
+}
+
+.code-function{
+
+    font-size:19px;
+
+    color:#ffc928;
+
+    margin-bottom:10px;
+}
+
+.code-function span{
+    color:#57a5ff;
+}
+
+.code-text{
+
+    color:#d7d7d7;
+
+    font-size:18px;
+
+    line-height:1.6;
+
+    margin-left:25px;
+}
+
+.code-return{
+
+    color:#b77cff;
+
+    font-size:18px;
+
+    margin-top:8px;
+
+    margin-left:25px;
+}
+
+.code-return span{
+    color:#42df83;
+}
+
+
+/* =========================================================
+   HERO INTRO
+========================================================= */
+
+.hero-intro{
+
+    text-align:left;
+
+    max-width:950px;
+
+    margin:auto;
+}
+
+.hero-title{
+
+    font-size:
+        clamp(
+            48px,
+            8vw,
+            76px
+        );
+
+    line-height:1.05;
+
+    letter-spacing:-3px;
+
+    font-weight:800;
+
+    margin-bottom:25px;
+}
+
+.hero-title .green{
+    color:#43df78;
+
+    text-shadow:
+        0 0 20px
+        rgba(40,230,100,.35);
+}
+
+
+/* =========================================================
+   TYPING
+========================================================= */
+
+.hero-role{
+
+    display:flex;
+    align-items:center;
+
+    font-size:
+        clamp(
+            24px,
+            4vw,
+            34px
+        );
+
+    color:#45dfff;
+
+    min-height:45px;
+
+    margin-bottom:30px;
+}
+
+.cursor{
+
+    display:inline-block;
+
+    width:4px;
+    height:43px;
+
+    margin-left:10px;
+
+    background:#27f05e;
+
+    box-shadow:
+        0 0 12px
+        rgba(39,240,94,.7);
+
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+
+    50%{
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.hero-description{
+
+    max-width:930px;
+
+    font-size:19px;
+
+    line-height:1.65;
+
+    color:#f0f2f6;
+
+    margin-bottom:30px;
+}
+
+
+/* =========================================================
+   SKILL PILLS
+========================================================= */
+
+.hero-skills{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:42px;
+}
+
+.skill-pill{
+
+    padding:
+        11px 25px;
+
+    border-radius:30px;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    border:1px solid;
+
+    background:
+        rgba(255,255,255,.025);
+
+    transition:.35s;
+}
+
+.skill-pill:hover{
+    transform:translateY(-4px);
+}
+
+.python{
+
+    color:#63ed9b;
+
+    border-color:
+        rgba(50,230,120,.35);
+
+    box-shadow:
+        0 0 22px
+        rgba(40,220,100,.08);
+}
+
+.ml{
+
+    color:#79b7ff;
+
+    border-color:
+        rgba(50,130,255,.4);
+
+    box-shadow:
+        0 0 22px
+        rgba(30,120,255,.08);
+}
+
+.tableau{
+
+    color:#d58bff;
+
+    border-color:
+        rgba(170,70,255,.4);
+}
+
+.aws{
+
+    color:#ffb067;
+
+    border-color:
+        rgba(255,120,30,.4);
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:26px;
+
+    margin-bottom:55px;
+}
+
+.hero-btn{
+
+    min-width:275px;
+
+    padding:18px 30px;
+
+    border-radius:13px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    transition:.35s;
+}
+
+.btn-green{
+
+    color:#07100a;
+
+    background:
+        linear-gradient(
+            135deg,
+            #20d45d,
+            #25c96a
+        );
+
+    box-shadow:
+        0 0 35px
+        rgba(30,220,90,.18);
+}
+
+.btn-outline{
+
+    color:#42dcff;
+
+    border:
+        2px solid
+        #23d4f5;
+
+    background:
+        rgba(0,130,255,.02);
+
+    box-shadow:
+        inset 0 0 20px
+        rgba(0,180,255,.025);
+}
+
+.hero-btn:hover{
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,200,255,.15);
+}
+
+
+/* =========================================================
+   ABSTRACT DATA GRAPHIC
+========================================================= */
+
+.data-visual{
+
+    position:relative;
+
+    width:90%;
+
+    max-width:570px;
+
+    height:370px;
+
+    margin:
+        20px auto
+        0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.data-orbit{
+
+    position:absolute;
+
+    width:100%;
+    height:75%;
+
+    border-radius:
+        48%
+        53%
+        45%
+        52%;
+
+    border:
+        2px solid
+        #00e74e;
+
+    transform:
+        rotate(-4deg);
+
+    box-shadow:
+
+        0 0 8px #00e74e,
+
+        0 0 28px
+        rgba(0,255,70,.65),
+
+        0 0 65px
+        rgba(0,255,70,.3);
+
+    animation:
+        orbitFloat 5s ease-in-out infinite;
+}
+
+.data-orbit::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:18px 35px 15px 27px;
+
+    border-radius:
+        50%
+        45%
+        52%
+        48%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(3,62,50,.85),
+            rgba(0,108,47,.92)
+        );
+
+    border:
+        1px solid
+        rgba(0,255,100,.15);
+
+    box-shadow:
+        inset 0 0 55px
+        rgba(0,255,80,.18);
+}
+
+@keyframes orbitFloat{
+
+    0%,100%{
+        transform:
+            rotate(-4deg)
+            translateY(0);
+    }
+
+    50%{
+        transform:
+            rotate(-2deg)
+            translateY(-8px);
+    }
+}
+
+
+/* =========================================================
+   DATA ICON
+========================================================= */
+
+.data-icon{
+
+    position:relative;
+
+    z-index:2;
+
+    width:105px;
+    height:105px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#77c18e
