@@ -1,113 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Data Science & Analytics</title>
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --bg-main: #0b111e;
+            --bg-card: #0f172a;
+            --bg-code: #050914;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-green: #10b981;
+            --accent-blue: #3b82f6;
+            --accent-purple: #a855f7;
+            --border-color: #1e293b;
+        }
 
-<title>PK. Amalnadh | Business Intelligence</title>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
 
-<style>
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
 
-/* ================================
-   RESET
-================================ */
+        /* Layout Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Navigation Bar */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: rgba(11, 17, 30, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
 
-html {
-    scroll-behavior: smooth;
-}
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #07101d;
-    color: white;
-    overflow-x: hidden;
-}
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-main);
+            text-decoration: none;
+        }
 
+        .nav-logo span {
+            color: var(--accent-green);
+        }
 
-/* ================================
-   BACKGROUND
-================================ */
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -2;
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
 
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(0, 255, 120, 0.08),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 85% 60%,
-            rgba(0, 150, 255, 0.08),
-            transparent 30%
-        ),
-        #07101d;
-}
+        .nav-links a:hover {
+            color: var(--accent-green);
+        }
 
+        /* Sections General Styling */
+        section {
+            padding: 80px 0 40px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-/* GRID */
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
 
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-green);
+            border-radius: 2px;
+        }
 
-    background-image:
-        linear-gradient(
-            rgba(80, 180, 255, 0.055) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(80, 180, 255, 0.055) 1px,
-            transparent 1px
-        );
+        /* Hero / Header Section */
+        .hero {
+            padding-top: 60px;
+        }
 
-    background-size: 55px 55px;
+        .code-box {
+            background-color: var(--bg-code);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow-x: auto;
+        }
 
-    pointer-events: none;
-}
+        .code-comment { color: #6a737d; font-style: italic; }
+        .code-keyword { color: #ff7b72; }
+        .code-function { color: #d2a6ff; }
+        .code-string { color: #a5d6ff; }
+        .code-return { color: #ff7b72; }
 
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
 
-/* ================================
-   NAVIGATION
-================================ */
+        .hero-title span {
+            color: var(--accent-green);
+        }
 
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
 
-    height: 76px;
+        .hero-desc {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+        /* Skills Tags */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
 
-    padding: 0 7%;
+        .tag {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.02);
+            transition: all 0.3s ease;
+        }
 
-    background: rgba(5, 13, 25, 0.92);
+        .tag.python { border: 1px solid rgba(16, 185, 129, 0.3); color: var(--accent-green); }
+        .tag.ml { border: 1px solid rgba(59, 130, 246, 0.3); color: var(--accent-blue); }
+        .tag.tableau { border: 1px solid rgba(168, 85, 247, 0.3); color: var(--accent-purple); }
+        .tag.cloud { border: 1px solid rgba(245, 158, 11, 0.3); color: #f59e0b; }
 
-    backdrop-filter: blur(15px);
+        .tag:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
 
-    border-bottom: 1px solid rgba(100, 180, 255, 0.15);
-}
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 16px;
+        }
 
-.logo {
-    font-size: 25px;
-    font-weight: 800;
-}
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
 
-.logo span {
-    color: #35df72
+        .btn-primary {
+            background-color: var(--accent-green);
+            color: #050914;
+        }
+
+        .btn-primary:hover {
+            background-color: #059669;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            background-color: transparent;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.03);
+            border-color: var(--text-muted);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(16, 185, 129, 0.4);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 8px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: var(--accent-green);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--bg-main);
+            border: 2px solid var(--accent-green);
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-role {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .timeline-company {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        /* Responsive Configuration */
+        @media (max-width: 600px) {
+            .hero-title { font-size: 2.2rem; }
+            .nav-links { display: none; } /* Simplified mobile view */
+            .btn-group { flex-direction: column; }
+            .btn { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation header -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Data<span>.insights()</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Journey</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <section id="about" class="hero">
+            <!-- Professional Python Mock Block -->
+            <div class="code-box">
+                <span class="code-comment"># From Data to Decisions</span><br>
+                <span class="code-keyword">def</span> <span class="code-function">transform_data_to_insights</span>():<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">"""In data we trust, in insights we act"""</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-return">return</span> <span class="code-string">"Actionable Intelligence"</span>
+            </div>
+
+            <h1 class="hero-title">Hi, I'm <span>Your Name</span></h1>
+            <div class="hero-subtitle">Data Science, AI & Analytics Expert</div>
+            <p class="hero-desc">
