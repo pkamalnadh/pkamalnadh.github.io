@@ -199,3 +199,397 @@ stroke-dasharray:600;stroke-dashoffset:600;animation:draw 4s ease forwards,glow 
 </main>
 </body>
 </html>
+
+
+/* ADD THIS CSS BEFORE THE CLOSING </style> IN PART 1 */
+
+.skill-grid,.project-grid,.process-grid,.stats-grid {
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px
+}
+.skill-card,.project-card,.process-card,.stat-card {
+  padding:23px;transition:.25s
+}
+.skill-card:hover,.project-card:hover,.process-card:hover {
+  transform:translateY(-6px);border-color:#54f3ff70;
+  box-shadow:0 15px 40px #54f3ff12
+}
+.skill-card h3,.project-card h3,.process-card h3{margin-bottom:9px}
+.skill-card p,.project-card p,.process-card p{color:var(--muted);font-size:.92rem}
+.skill-icon{font-size:1.6rem;margin-bottom:10px}
+.skill-bar{height:5px;background:#ffffff12;border-radius:10px;margin-top:16px;overflow:hidden}
+.skill-bar span{display:block;height:100%;width:var(--level);
+background:linear-gradient(90deg,var(--cyan),var(--purple));border-radius:10px}
+.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.tag{font-size:.74rem;color:#cbd5f1;border:1px solid var(--line);
+padding:5px 9px;border-radius:30px;background:#ffffff05}
+.project-card{display:flex;flex-direction:column;min-height:300px}
+.project-visual{height:125px;border-radius:14px;margin-bottom:18px;
+display:grid;place-items:center;font-size:2.4rem;
+background:radial-gradient(circle at 30% 20%,#54f3ff22,transparent 45%),#ffffff05;
+border:1px solid var(--line)}
+.project-card .tag-list{margin-top:auto;padding-top:18px}
+.project-filter{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.filter-btn{background:#ffffff06;color:var(--muted);border:1px solid var(--line);
+border-radius:25px;padding:8px 14px}
+.filter-btn.active{background:var(--cyan);color:#07101c}
+.timeline{max-width:850px;margin:auto;border-left:1px solid #54f3ff65;padding-left:28px}
+.timeline-item{position:relative;padding:0 0 35px}
+.timeline-item:before{content:"";position:absolute;width:11px;height:11px;
+border-radius:50%;background:var(--cyan);left:-34px;top:8px;box-shadow:0 0 15px var(--cyan)}
+.timeline-item h3{margin:6px 0}
+.timeline-item p{color:var(--muted)}
+.timeline-date{font-size:.8rem;color:var(--cyan);font-weight:bold}
+.stat-card strong{display:block;font-size:2rem;color:var(--cyan)}
+.stat-card span{color:var(--muted);font-size:.85rem}
+.process-number{font-size:2rem;font-weight:900;color:var(--purple);margin-bottom:10px}
+.project-card[hidden]{display:none}
+@media(max-width:850px){
+ .hero-grid,.about-grid{grid-template-columns:1fr}
+ .skill-grid,.project-grid,.process-grid,.stats-grid{grid-template-columns:repeat(2,1fr)}
+ .hero{padding-top:60px}
+ .nav-links{display:none;position:absolute;top:75px;left:0;right:0;padding:20px;
+ background:#0a0e20;flex-direction:column;border-bottom:1px solid var(--line)}
+ .nav-links.open{display:flex}.menu-btn{display:block}
+}
+@media(max-width:560px){
+ section{padding:65px 0}
+ .skill-grid,.project-grid,.process-grid,.stats-grid{grid-template-columns:1fr}
+ .hero h1{letter-spacing:-3px}
+ .metrics{grid-template-columns:1fr}
+ .dashboard{padding:15px}
+ .quick-facts{gap:10px}
+}
+
+/* ADD THE FOLLOWING HTML SECTIONS BEFORE </main> IN PART 1 */
+
+<section id="skills">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">02 / Skills</div>
+      <h2>Building my <span class="gradient">product toolkit.</span></h2>
+      <p class="muted">Areas I am developing for AI product management and cross-functional collaboration.</p>
+    </div>
+    <div class="skill-grid">
+      <article class="glass skill-card">
+        <div class="skill-icon">🧠</div><h3>AI Product Thinking</h3>
+        <p>Understanding AI use cases, customer problems, product value and responsible AI principles.</p>
+        <div class="tag-list"><span class="tag">AI use cases</span><span class="tag">Product vision</span><span class="tag">Ethics</span></div>
+      </article>
+      <article class="glass skill-card">
+        <div class="skill-icon">🎯</div><h3>Product Strategy</h3>
+        <p>Learning to define product goals, prioritise opportunities and organise a roadmap.</p>
+        <div class="tag-list"><span class="tag">Roadmaps</span><span class="tag">Prioritisation</span><span class="tag">KPIs</span></div>
+      </article>
+      <article class="glass skill-card">
+        <div class="skill-icon">👥</div><h3>User & Market Research</h3>
+        <p>Exploring user needs, customer feedback, competitor analysis and problem discovery.</p>
+        <div class="tag-list"><span class="tag">User research</span><span class="tag">Personas</span><span class="tag">Market analysis</span></div>
+      </article>
+      <article class="glass skill-card">
+        <div class="skill-icon">📊</div><h3>Data-Informed Decisions</h3>
+        <p>Using evidence and measurable outcomes to support product decisions.</p>
+        <div class="tag-list"><span class="tag">Metrics</span><span class="tag">Excel</span><span class="tag">Analytics</span></div>
+      </article>
+      <article class="glass skill-card">
+        <div class="skill-icon">🤝</div><h3>Team Collaboration</h3>
+        <p>Connecting business, design and engineering perspectives to move ideas forward.</p>
+        <div class="tag-list"><span class="tag">Communication</span><span class="tag">Agile basics</span><span class="tag">Teamwork</span></div>
+      </article>
+      <article class="glass skill-card">
+        <div class="skill-icon">🚀</div><h3>Product Delivery</h3>
+        <p>Developing an understanding of prototypes, testing, launch planning and iteration.</p>
+        <div class="tag-list"><span class="tag">MVP</span><span class="tag">Testing</span><span class="tag">Iteration</span></div>
+      </article>
+    </div>
+    <p class="muted" style="margin-top:18px;font-size:.82rem">Edit these skills to accurately reflect your current knowledge and experience.</p>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">03 / My approach</div>
+      <h2>From problem to <span class="gradient">product impact.</span></h2>
+    </div>
+    <div class="process-grid">
+      <article class="glass process-card"><div class="process-number">01</div><h3>Discover</h3><p>Understand users, identify pain points and define the problem worth solving.</p></article>
+      <article class="glass process-card"><div class="process-number">02</div><h3>Define</h3><p>Set a clear product goal, success measures and a focused problem statement.</p></article>
+      <article class="glass process-card"><div class="process-number">03</div><h3>Design</h3><p>Explore ideas, map user journeys and create a simple prototype or solution concept.</p></article>
+      <article class="glass process-card"><div class="process-number">04</div><h3>Validate</h3><p>Test assumptions, collect feedback and use evidence to improve the solution.</p></article>
+      <article class="glass process-card"><div class="process-number">05</div><h3>Deliver</h3><p>Work with a team to plan delivery, manage priorities and communicate progress.</p></article>
+      <article class="glass process-card"><div class="process-number">06</div><h3>Improve</h3><p>Measure results, learn from outcomes and iterate based on real user needs.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">04 / Projects</div>
+      <h2>Ideas that can become <span class="gradient">real products.</span></h2>
+      <p class="muted">Sample portfolio project concepts. Replace them with your own work, prototypes and case studies.</p>
+    </div>
+    <div class="project-filter">
+      <button class="filter-btn active" data-filter="all">All projects</button>
+      <button class="filter-btn" data-filter="ai">AI products</button>
+      <button class="filter-btn" data-filter="strategy">Strategy</button>
+      <button class="filter-btn" data-filter="research">Research</button>
+    </div>
+    <div class="project-grid">
+      <article class="glass project-card" data-category="ai">
+        <div class="project-visual">✦</div><h3>AI Personal Assistant</h3>
+        <p>A concept for an AI assistant that helps users organise tasks, find information and simplify everyday workflows.</p>
+        <div class="tag-list"><span class="tag">AI product</span><span class="tag">User journey</span><span class="tag">MVP concept</span></div>
+      </article>
+      <article class="glass project-card" data-category="strategy">
+        <div class="project-visual">◈</div><h3>Smart Product Roadmap</h3>
+        <p>A sample roadmap concept showing how product opportunities could be prioritised by user value, effort and business goals.</p>
+        <div class="tag-list"><span class="tag">Strategy</span><span class="tag">Prioritisation</span><span class="tag">Roadmap</span></div>
+      </article>
+      <article class="glass project-card" data-category="research">
+        <div class="project-visual">⌕</div><h3>Customer Discovery Study</h3>
+        <p>A research concept for understanding user challenges, comparing alternatives and identifying an unmet need.</p>
+        <div class="tag-list"><span class="tag">Research</span><span class="tag">Personas</span><span class="tag">Problem framing</span></div>
+      </article>
+      <article class="glass project-card" data-category="ai">
+        <div class="project-visual">⌁</div><h3>AI Learning Companion</h3>
+        <p>A learning-product concept that adapts explanations and practice activities to a learner's needs.</p>
+        <div class="tag-list"><span class="tag">Generative AI</span><span class="tag">Learning</span><span class="tag">Responsible AI</span></div>
+      </article>
+      <article class="glass project-card" data-category="strategy">
+        <div class="project-visual">◉</div><h3>Product Metrics Framework</h3>
+        <p>A sample framework for selecting meaningful activation, engagement, retention and satisfaction measures.</p>
+        <div class="tag-list"><span class="tag">KPIs</span><span class="tag">Metrics</span><span class="tag">Product analytics</span></div>
+      </article>
+      <article class="glass project-card" data-category="research">
+        <div class="project-visual">⌘</div><h3>Digital Experience Review</h3>
+        <p>A concept for evaluating an app's onboarding experience and recommending user-centred improvements.</p>
+        <div class="tag-list"><span class="tag">UX review</span><span class="tag">Feedback</span><span class="tag">Experimentation</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">05 / Education</div>
+      <h2>The foundation behind <span class="gradient">my next step.</span></h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2023 – 2026</div>
+        <h3>Bachelor of Business Administration (BBA)</h3>
+        <p>Nirmala Arts & Science College, Mulamthuruthy, Kerala.</p>
+        <p>Business foundations, management, organisational thinking and commercial awareness.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">PROFESSIONAL DEVELOPMENT</div>
+        <h3>Professional Diploma in Data Analytics</h3>
+        <p>Include the awarding institution, completion status and dates here.</p>
+        <p>Connect analytical learning to evidence-informed business and product decisions.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">NEXT CHAPTER</div>
+        <h3>AI Product Management</h3>
+        <p>Continuously developing knowledge of AI, product strategy, customer discovery and digital innovation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">06 / Career journey</div>
+      <h2>Learning today. <span class="gradient">Building tomorrow.</span></h2>
+      <p class="muted">My direction is to combine business understanding, technology and customer needs.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="glass stat-card"><strong>01</strong><span>Understand the user</span></div>
+      <div class="glass stat-card"><strong>02</strong><span>Explore AI solutions</span></div>
+      <div class="glass stat-card"><strong>03</strong><span>Create product value</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">07 / Contact</div>
+      <h2>Have an idea? Let's <span class="gradient">connect.</span></h2>
+      <p class="muted">I welcome conversations about AI products, digital innovation, learning and collaboration.</p>
+    </div>
+    <div class="about-grid">
+      <div class="glass about-card">
+        <h3>Get in touch</h3>
+        <p>Feel free to contact me through email or connect with me on LinkedIn.</p>
+        <div class="hero-actions">
+          <!-- Replace the email below with your real email address. -->
+          <a class="btn btn-primary" href="mailto:YOUR_EMAIL@example.com">✉ Email Me</a>
+          <!-- Replace the URL below with your LinkedIn profile URL. -->
+          <a class="btn btn-secondary" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">↗ LinkedIn</a>
+        </div>
+        <p class="muted">Location: Kerala, India</p>
+      </div>
+      <form class="glass info-card" id="contactForm">
+        <h3>Send a message</h3>
+        <p class="muted" style="margin-bottom:18px">This form opens your email application. It does not send messages to a server.</p>
+        <label for="senderName">Your name</label>
+        <input id="senderName" name="name" required placeholder="Enter your name">
+        <label for="senderEmail">Your email</label>
+        <input id="senderEmail" name="email" type="email" required placeholder="you@example.com">
+        <label for="senderMessage">Message</label>
+        <textarea id="senderMessage" name="message" required rows="4" placeholder="Write your message..."></textarea>
+        <button class="btn btn-primary" type="submit">Prepare Email ↗</button>
+        <p id="formMessage" class="muted" aria-live="polite" style="margin-top:10px"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer style="border-top:1px solid var(--line);padding:25px 0">
+  <div class="container" style="display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap">
+    <p class="muted">© <span id="year"></span> PK. Amalnadh</p>
+    <a href="#home" class="muted">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+/* Animated text in the hero section */
+const words = [
+  "AI Product Management",
+  "Product Strategy",
+  "Digital Innovation",
+  "Customer-Centred Products"
+];
+
+const typingElement = document.getElementById("typing");
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeWords() {
+  const currentWord = words[wordIndex];
+
+  if (!deleting) {
+    charIndex++;
+    typingElement.textContent = currentWord.slice(0, charIndex);
+
+    if (charIndex >= currentWord.length) {
+      deleting = true;
+      setTimeout(typeWords, 1300);
+      return;
+    }
+  } else {
+    charIndex--;
+    typingElement.textContent = currentWord.slice(0, charIndex);
+
+    if (charIndex <= 0) {
+      deleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+    }
+  }
+
+  setTimeout(typeWords, deleting ? 35 : 75);
+}
+
+typeWords();
+
+/* Mobile navigation */
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+  });
+});
+
+/* Project filters */
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+
+filterButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    filterButtons.forEach(item => item.classList.remove("active"));
+    button.classList.add("active");
+
+    const filter = button.dataset.filter;
+
+    projectCards.forEach(card => {
+      card.hidden =
+        filter !== "all" && card.dataset.category !== filter;
+    });
+  });
+});
+
+/* Contact form: opens the visitor's email application */
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", event => {
+  event.preventDefault();
+
+  const name = document.getElementById("senderName").value.trim();
+  const email = document.getElementById("senderEmail").value.trim();
+  const message = document.getElementById("senderMessage").value.trim();
+
+  // Change this to your real email address.
+  const recipient = "YOUR_EMAIL@example.com";
+
+  if (recipient.includes("YOUR_EMAIL")) {
+    document.getElementById("formMessage").textContent =
+      "Please replace YOUR_EMAIL@example.com in the code with your real email address first.";
+    return;
+  }
+
+  const subject = encodeURIComponent("Portfolio contact from " + name);
+  const body = encodeURIComponent(
+    "Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message
+  );
+
+  window.location.href =
+    "mailto:" + recipient + "?subject=" + subject + "&body=" + body;
+});
+
+/* Footer year */
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* Subtle reveal animation */
+const revealStyle = document.createElement("style");
+revealStyle.textContent = `
+  .reveal { opacity:0; transform:translateY(20px); transition:opacity .7s ease,transform .7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+`;
+document.head.appendChild(revealStyle);
+
+const revealItems = document.querySelectorAll(
+  "section .glass, section .section-head"
+);
+
+revealItems.forEach(item => item.classList.add("reveal"));
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealItems.forEach(item => observer.observe(item));
+} else {
+  revealItems.forEach(item => item.classList.add("visible"));
+}
+</script>
+
+</body>
+</html>
