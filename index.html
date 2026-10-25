@@ -3,28 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#030817">
-<meta name="description" content="PK Amalnadh — aspiring AI Product Manager interested in product strategy, artificial intelligence and digital innovation.">
-<title>PK Amalnadh | AI Product Manager</title>
-<div id="ai-3d-scene" aria-hidden="true"></div>
+<meta name="theme-color" content="#030615">
+<meta name="description" content="PK. Amalnadh — aspiring AI Product Manager exploring artificial intelligence, product strategy and digital innovation.">
+<title>PK. Amalnadh | AI Product Manager</title>
+
 <style>
 :root{
-  --bg:#030817;
-  --text:#f4f8ff;
-  --muted:#a8b7d5;
-  --cyan:#42eaff;
-  --blue:#398cff;
-  --purple:#a477ff;
+  --bg:#030615;
+  --panel:rgba(8,20,44,.76);
+  --text:#f5f8ff;
+  --muted:#aab9d5;
+  --cyan:#48edff;
+  --blue:#428cff;
+  --purple:#a47aff;
   --pink:#ff68d8;
-  --green:#78ffc2;
-  --border:rgba(100,177,255,.25);
+  --green:#7dffce;
+  --border:rgba(89,190,255,.23);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
 body{
-  font-family:Arial,Helvetica,sans-serif;
   background:var(--bg);
   color:var(--text);
+  font-family:Inter,Arial,Helvetica,sans-serif;
   line-height:1.7;
   overflow-x:hidden;
 }
@@ -32,805 +33,567 @@ a{color:inherit;text-decoration:none}
 button,input,textarea{font:inherit}
 button{cursor:pointer}
 .container{width:min(1160px,92%);margin:auto}
-section{padding:88px 0;scroll-margin-top:75px}
+section{padding:100px 0;scroll-margin-top:75px}
 p{color:var(--muted)}
 .gradient{
-  background:linear-gradient(100deg,#fff,var(--cyan),#9c9aff,var(--pink));
-  -webkit-background-clip:text;background-clip:text;color:transparent
+  background:linear-gradient(100deg,#fff,var(--cyan),var(--purple),var(--pink));
+  background-size:250% auto;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  animation:gradientFlow 8s linear infinite;
 }
 .eyebrow{
-  color:var(--cyan);font-size:.74rem;font-weight:bold;
-  letter-spacing:3px;text-transform:uppercase
+  color:var(--cyan);
+  font-size:.73rem;
+  font-weight:800;
+  letter-spacing:3px;
+  text-transform:uppercase;
 }
-.section-heading{max-width:760px;margin-bottom:36px}
+.section-heading{max-width:780px;margin-bottom:40px}
 .section-heading h2{
-  font-size:clamp(2rem,5vw,3.5rem);
-  line-height:1.15;margin:12px 0;letter-spacing:-1px
+  font-size:clamp(2.1rem,5vw,3.7rem);
+  line-height:1.15;
+  letter-spacing:-1.5px;
+  margin:13px 0;
 }
-.section-heading p{max-width:690px}
+.section-heading p{max-width:680px}
 .glass{
-  background:linear-gradient(135deg,rgba(18,40,79,.76),rgba(6,13,32,.86));
-  border:1px solid var(--border);border-radius:19px;
-  backdrop-filter:blur(15px);box-shadow:inset 0 1px #ffffff09;
-  transition:transform .3s,border-color .3s,box-shadow .3s
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:linear-gradient(135deg,rgba(12,31,66,.79),rgba(5,12,29,.88));
+  border:1px solid var(--border);
+  border-radius:20px;
+  backdrop-filter:blur(18px);
+  box-shadow:inset 0 1px rgba(255,255,255,.04);
+  transition:transform .35s,border-color .35s,box-shadow .35s;
+}
+.glass::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:linear-gradient(130deg,rgba(72,237,255,.09),transparent 40%,rgba(164,122,255,.08));
+}
+.glass:hover{
+  border-color:rgba(72,237,255,.58);
+  box-shadow:0 15px 50px rgba(0,140,255,.1),inset 0 0 25px rgba(72,237,255,.025);
 }
 .btn{
-  display:inline-flex;justify-content:center;align-items:center;
-  padding:12px 19px;border-radius:9px;border:1px solid var(--border);
-  font-size:.86rem;font-weight:bold;transition:.3s
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 20px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  font-size:.85rem;
+  font-weight:750;
+  transition:transform .3s,box-shadow .3s;
 }
-.btn:hover{transform:translateY(-3px);box-shadow:0 0 25px #42eaff22}
-.primary{color:#03101e;background:linear-gradient(100deg,var(--cyan),#a9b5ff);border-color:transparent}
-.secondary{background:#ffffff08}
+.btn:hover{transform:translateY(-3px);box-shadow:0 0 30px rgba(72,237,255,.16)}
+.primary{
+  color:#03101b;
+  background:linear-gradient(110deg,var(--cyan),#a8caff);
+  border-color:transparent;
+}
+.secondary{background:rgba(255,255,255,.035)}
 #particles{
-  position:fixed;inset:0;width:100%;height:100%;
-  z-index:-2;pointer-events:none
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:-4;
+  pointer-events:none;
 }
 .site-glow{
-  position:fixed;inset:0;z-index:-3;pointer-events:none;
-  background:radial-gradient(ellipse at 5% 15%,#005bff28,transparent 38%),
-  radial-gradient(ellipse at 95% 40%,#912dff20,transparent 38%),
-  radial-gradient(ellipse at 45% 95%,#00cdff13,transparent 35%)
+  position:fixed;
+  inset:0;
+  z-index:-5;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 5% 10%,rgba(0,93,255,.17),transparent 35%),
+    radial-gradient(ellipse at 95% 40%,rgba(124,37,255,.13),transparent 37%),
+    radial-gradient(ellipse at 40% 100%,rgba(0,219,255,.09),transparent 35%);
 }
 .background-grid{
-  position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background-image:linear-gradient(#5799ff08 1px,transparent 1px),
-  linear-gradient(90deg,#5799ff08 1px,transparent 1px);
-  background-size:55px 55px
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(65,157,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(65,157,255,.045) 1px,transparent 1px);
+  background-size:52px 52px;
+  animation:gridDrift 28s linear infinite;
 }
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes blink{50%{opacity:0}}
-@keyframes pulse{0%,100%{opacity:.65}50%{opacity:1}}
+@keyframes gridDrift{
+  to{background-position:52px 52px}
+}
+@keyframes gradientFlow{
+  to{background-position:250% center}
+}
+@keyframes pulse{
+  50%{opacity:.55;transform:scale(.8)}
+}
+@keyframes float{
+  50%{transform:translateY(-12px)}
+}
+@keyframes shine{
+  0%,60%,100%{transform:translateX(-130%)}
+  85%{transform:translateX(130%)}
+}
+@keyframes rotate{
+  to{transform:rotate(360deg)}
+}
+@keyframes reverseRotate{
+  to{transform:rotate(-360deg)}
+}
+@keyframes scan{
+  0%{transform:translateY(-100%);opacity:0}
+  15%,80%{opacity:.7}
+  100%{transform:translateY(500%);opacity:0}
+}
 
 /* NAVIGATION */
 nav{
-  position:sticky;top:0;z-index:100;
-  background:#030817ed;backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border)
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(3,6,21,.86);
+  backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--border);
 }
 .nav-inner{
-  min-height:72px;display:flex;align-items:center;
-  justify-content:space-between;gap:18px
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
 }
 .logo{font-size:1.2rem;font-weight:900;white-space:nowrap}
 .logo span{color:var(--cyan)}
-.nav-links{display:flex;align-items:center;gap:15px;font-size:.78rem;color:var(--muted)}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  font-size:.76rem;
+  color:var(--muted);
+}
+.nav-links a{transition:color .2s}
 .nav-links a:hover{color:var(--cyan)}
-.nav-actions{display:flex;align-items:center;gap:8px}
 .menu-btn{
-  display:none;padding:8px 10px;border:1px solid var(--border);
-  background:#ffffff08;color:var(--cyan);border-radius:8px
+  display:none;
+  padding:8px 11px;
+  background:#ffffff08;
+  border:1px solid var(--border);
+  color:var(--cyan);
+  border-radius:9px;
 }
 
-  /* ==========================================
-   ADVANCED AI EXPERIENCE — NEURAL HOLOGRAM
-   ========================================== */
-
-.hero {
-  background-color: #020611;
-  background-image:
-    radial-gradient(ellipse at 12% 45%, #006dff42 0%, transparent 35%),
-    radial-gradient(ellipse at 88% 30%, #852bff35 0%, transparent 34%),
-    radial-gradient(ellipse at 50% 95%, #00e5ff25 0%, transparent 38%),
-    linear-gradient(135deg, #020611, #06132b 50%, #030817);
-  box-shadow: inset 0 -50px 100px #030817;
-}
-
-/* Glowing orbital rings around the hero content */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  isolation: isolate;
-}
-
-.hero-content::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  pointer-events: none;
-  width: min(78vw, 800px);
-  height: min(78vw, 800px);
-  max-height: 650px;
-  max-width: 650px;
-  left: 50%;
-  top: 48%;
-  transform: translate(-50%, -50%);
-  border: 1px solid #38dfff18;
-  border-radius: 50%;
-  box-shadow:
-    0 0 35px #008cff10,
-    inset 0 0 45px #009dff0b;
-  animation: aiOrbitPulse 6s ease-in-out infinite;
-}
-
-.hero-content::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  pointer-events: none;
-  width: min(65vw, 580px);
-  height: min(65vw, 580px);
-  max-height: 480px;
-  max-width: 480px;
-  left: 50%;
-  top: 48%;
-  transform: translate(-50%, -50%);
-  border: 1px dashed #8a7bff2e;
-  border-radius: 50%;
-  animation: aiOrbitRotate 35s linear infinite;
-}
-
-/* Cinematic glow behind the name */
-.hero h1 {
-  position: relative;
-  text-shadow:
-    0 0 12px #42eaff45,
-    0 0 40px #167bff35,
-    0 0 90px #7a3dff20;
-  animation: aiNameGlow 5s ease-in-out infinite;
-}
-
-.hero h1 .gradient {
-  background-size: 250% 100%;
-  animation: aiColorFlow 7s linear infinite;
-}
-
-/* Shimmering light across headings */
-.section-heading h2 {
-  background: linear-gradient(
-    100deg,
-    #ffffff 0%,
-    #d8f8ff 35%,
-    #8bdcff 50%,
-    #ffffff 65%,
-    #b5a4ff 85%
-  );
-  background-size: 220% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: aiHeadingShimmer 10s linear infinite;
-}
-
-.section-heading h2 .gradient {
-  background: linear-gradient(100deg, #42eaff, #a477ff, #ff68d8, #42eaff);
-  background-size: 250% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-/* Animated energy line */
-.hero {
-  background-size: auto, auto, auto, 100% 100%;
-}
-
-.hero-label {
-  box-shadow:
-    0 0 18px #42eaff18,
-    inset 0 0 15px #42eaff0a;
-  animation: aiBorderPulse 4s ease-in-out infinite;
-}
-
-/* Neon light moving across buttons */
-.hero-buttons .btn {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-buttons .btn::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    110deg,
-    transparent 20%,
-    #ffffff42 48%,
-    transparent 72%
-  );
-  transform: translateX(-120%);
-  animation: aiButtonShine 6s ease-in-out infinite;
-}
-
-.hero-buttons .btn:hover {
-  box-shadow:
-    0 0 20px #42eaff30,
-    0 0 50px #398cff20;
-}
-
-/* Holographic glass cards */
-.glass {
-  position: relative;
-  overflow: hidden;
-}
-
-.glass::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  border-radius: inherit;
-  background: linear-gradient(
-    125deg,
-    #42eaff0c,
-    transparent 35%,
-    #a477ff0b 70%,
-    transparent
-  );
-  opacity: .65;
-}
-
-.feature-card:hover,
-.project-card:hover {
-  box-shadow:
-    0 0 22px #42eaff15,
-    0 18px 45px #00000035;
-}
-
-/* Moving laser-like highlight */
-.feature-card,
-.project-card {
-  background-size: 200% 200%;
-  transition: border-color .3s, transform .3s, box-shadow .3s;
-}
-
-.feature-card:hover,
-.project-card:hover {
-  border-color: #42eaff8a;
-}
-
-/* Animated AI grid */
-.background-grid {
-  background-image:
-    linear-gradient(#42baff0b 1px, transparent 1px),
-    linear-gradient(90deg, #42baff0b 1px, transparent 1px);
-  background-size: 48px 48px;
-  animation: aiBackgroundDrift 24s linear infinite;
-}
-
-
-  function drawParticles() {
-  ctx.clearRect(0, 0, canvasW, canvasH);
-
-  for (let i = 0; i < particles.length; i++) {
-    const p = particles[i];
-
-    p.x += p.vx;
-    p.y += p.vy;
-
-    if (p.x < 0 || p.x > canvasW) p.vx *= -1;
-    if (p.y < 0 || p.y > canvasH) p.vy *= -1;
-
-    // Soft glow around every AI node
-    ctx.save();
-    ctx.shadowBlur = 16;
-    ctx.shadowColor = "#28bfff";
-
-    const glow = ctx.createRadialGradient(
-      p.x, p.y, 0,
-      p.x, p.y, 8
-    );
-
-    glow.addColorStop(0, "rgba(190,250,255,1)");
-    glow.addColorStop(0.3, "rgba(66,234,255,.8)");
-    glow.addColorStop(1, "rgba(66,234,255,0)");
-
-    ctx.fillStyle = glow;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, 8, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Bright central node
-    ctx.shadowBlur = 10;
-    ctx.fillStyle = "#b7faff";
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r + 0.5, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.restore();
-
-    // Connected neural-network lines
-    for (let j = i + 1; j < particles.length; j++) {
-      const q = particles[j];
-      const dx = p.x - q.x;
-      const dy = p.y - q.y;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-
-      if (distance < 125) {
-        const alpha = (1 - distance / 125) * 0.38;
-
-        ctx.save();
-        ctx.strokeStyle = `rgba(55,180,255,${alpha})`;
-        ctx.lineWidth = 0.8;
-        ctx.shadowBlur = 5;
-        ctx.shadowColor = "#168cff";
-
-        ctx.beginPath();
-        ctx.moveTo(p.x, p.y);
-        ctx.lineTo(q.x, q.y);
-        ctx.stroke();
-        ctx.restore();
-      }
-    }
-  }
-
-  requestAnimationFrame(drawParticles);
-}
-    /* ===== 3D AI CINEMATIC BACKGROUND ===== */
-.hero {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse at 50% 45%, #092c5b 0%, #06142d 42%, #020611 80%);
-}
-
-#ai-3d-scene {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
-  opacity: .95;
-}
-
-#ai-3d-scene canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse at 18% 45%, #007bff35, transparent 42%),
-    radial-gradient(ellipse at 85% 35%, #8b35ff30, transparent 40%),
-    linear-gradient(transparent 96%, #26d9ff13);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image:
-    linear-gradient(#44bfff0c 1px, transparent 1px),
-    linear-gradient(90deg, #44bfff0c 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: linear-gradient(transparent, black 20%, black 80%, transparent);
-  animation: aiGridFlow 18s linear infinite;
-}
-
-@keyframes aiGridFlow {
-  from { background-position: 0 0; }
-  to { background-position: 42px 42px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero::after { animation: none; }
-}
-/* Advanced animations */
-@keyframes aiOrbitPulse {
-  0%, 100% {
-    opacity: .45;
-    box-shadow: 0 0 25px #008cff10, inset 0 0 35px #009dff08;
-  }
-  50% {
-    opacity: 1;
-    box-shadow: 0 0 55px #008cff20, inset 0 0 55px #009dff12;
-  }
-}
-
-@keyframes aiOrbitRotate {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes aiNameGlow {
-  0%, 100% {
-    filter: drop-shadow(0 0 5px #42eaff10);
-  }
-  50% {
-    filter: drop-shadow(0 0 22px #42eaff30);
-  }
-}
-
-@keyframes aiColorFlow {
-  from { background-position: 0% center; }
-  to { background-position: 250% center; }
-}
-
-@keyframes aiHeadingShimmer {
-  from { background-position: 200% center; }
-  to { background-position: -20% center; }
-}
-
-@keyframes aiBorderPulse {
-  0%, 100% { border-color: #42eaff40; }
-  50% { border-color: #a477ff85; }
-}
-
-@keyframes aiButtonShine {
-  0%, 65%, 100% { transform: translateX(-120%); }
-  85% { transform: translateX(120%); }
-}
-
-@keyframes aiBackgroundDrift {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 48px 48px, 48px 48px; }
-}
-
-/* Keep effects comfortable on mobile */
-@media (max-width: 600px) {
-  .hero-content::before {
-    width: 95vw;
-    height: 95vw;
-  }
-
-  .hero-content::after {
-    width: 78vw;
-    height: 78vw;
-  }
-}
-
-/* Respect reduced-motion settings */
-@media (prefers-reduced-motion: reduce) {
-  .hero-content::before,
-  .hero-content::after,
-  .hero h1,
-  .hero h1 .gradient,
-  .hero-label,
-  .hero-buttons .btn::after,
-  .background-grid,
-  .section-heading h2 {
-    animation: none !important;
-  }
-}
-/* FUTURISTIC AI BACKGROUND */
-.hero {
-  min-height: 720px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding: 100px 0;
-  background:
-    radial-gradient(ellipse at 18% 45%, rgba(0, 110, 255, .28), transparent 38%),
-    radial-gradient(ellipse at 80% 30%, rgba(112, 45, 255, .24), transparent 36%),
-    radial-gradient(ellipse at 50% 100%, rgba(0, 220, 255, .16), transparent 45%),
-    linear-gradient(135deg, #020612 0%, #07152e 48%, #030817 100%);
-}
-
-/* MOVING NEON LIGHT */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: -40%;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    conic-gradient(
-      from 0deg at 50% 50%,
-      transparent 0deg,
-      rgba(0, 200, 255, .08) 45deg,
-      transparent 90deg,
-      rgba(140, 70, 255, .12) 180deg,
-      transparent 230deg,
-      rgba(0, 200, 255, .08) 300deg,
-      transparent 360deg
-    );
-  filter: blur(45px);
-  animation: aiLightRotation 24s linear infinite;
-}
-
-/* HOLOGRAPHIC GRID AND SCANNING LIGHT */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    linear-gradient(rgba(65, 180, 255, .055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(65, 180, 255, .055) 1px, transparent 1px),
-    linear-gradient(
-      180deg,
-      transparent 0%,
-      rgba(0, 220, 255, .04) 48%,
-      rgba(0, 220, 255, .20) 50%,
-      transparent 53%
-    );
-  background-size: 44px 44px, 44px 44px, 100% 220%;
-  animation: aiGridMove 18s linear infinite,
-             aiScan 7s ease-in-out infinite;
-  opacity: .8;
-  mask-image: linear-gradient(
-    to bottom,
-    transparent,
-    black 15%,
-    black 80%,
-    transparent
-  );
-}
-
-/* ANIMATED LIGHT EFFECTS */
-@keyframes aiLightRotation {
-  from { transform: rotate(0deg) scale(1); }
-  to { transform: rotate(360deg) scale(1); }
-}
-
-@keyframes aiGridMove {
-  from { background-position: 0 0, 0 0, 0 0; }
-  to { background-position: 0 44px, 44px 0, 0 0; }
-}
-
-@keyframes aiScan {
-  0%, 100% { background-position: 0 0, 0 0, 0 -100%; }
-  50% { background-position: 0 0, 0 0, 0 100%; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero::before,
-  .hero::after {
-    animation: none;
-  }
-}
-    /* ===== 3D AI CINEMATIC BACKGROUND ===== */
-.hero {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse at 50% 45%, #092c5b 0%, #06142d 42%, #020611 80%);
-}
-
-#ai-3d-scene {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
-  opacity: .95;
-}
-
-#ai-3d-scene canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse at 18% 45%, #007bff35, transparent 42%),
-    radial-gradient(ellipse at 85% 35%, #8b35ff30, transparent 40%),
-    linear-gradient(transparent 96%, #26d9ff13);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image:
-    linear-gradient(#44bfff0c 1px, transparent 1px),
-    linear-gradient(90deg, #44bfff0c 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: linear-gradient(transparent, black 20%, black 80%, transparent);
-  animation: aiGridFlow 18s linear infinite;
-}
-
-@keyframes aiGridFlow {
-  from { background-position: 0 0; }
-  to { background-position: 42px 42px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero::after { animation: none; }
-}
 /* CINEMATIC AI HERO */
 .hero{
-  min-height:680px;display:flex;align-items:center;
-  position:relative;isolation:isolate;overflow:hidden;padding:95px 0;
-  background:#030817 url("ai-background.png") center/cover no-repeat
+  min-height:760px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:100px 0 115px;
+  background:
+    radial-gradient(ellipse at 50% 40%,rgba(14,55,111,.3),transparent 55%),
+    linear-gradient(180deg,#030615,#040a1c 75%,#030615);
 }
+#ai-3d-scene{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  overflow:hidden;
+}
+#ai-3d-scene canvas{width:100%;height:100%;display:block}
 .hero::before{
-  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:linear-gradient(90deg,rgba(3,8,23,.22),rgba(3,8,23,.57) 48%,rgba(3,8,23,.2)),
-  linear-gradient(0deg,#030817 0%,transparent 24%,transparent 78%,#03081755)
+  content:"";
+  position:absolute;
+  inset:-40%;
+  z-index:-1;
+  pointer-events:none;
+  background:conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0deg,
+    rgba(0,187,255,.09) 55deg,
+    transparent 110deg,
+    rgba(143,60,255,.11) 190deg,
+    transparent 250deg,
+    rgba(0,187,255,.08) 320deg,
+    transparent 360deg
+  );
+  filter:blur(65px);
+  animation:rotate 35s linear infinite;
 }
-.hero-content{width:100%;max-width:900px;margin:auto;text-align:center}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    linear-gradient(rgba(72,237,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(72,237,255,.045) 1px,transparent 1px);
+  background-size:44px 44px;
+  mask-image:linear-gradient(transparent,black 18%,black 75%,transparent);
+  animation:gridDrift 20s linear infinite;
+}
+.hero-content{
+  width:100%;
+  max-width:930px;
+  margin:auto;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
 .hero-label{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:7px 14px;margin-bottom:23px;border-radius:30px;
-  border:1px solid #42eaff66;background:#06132cba;
-  color:#c7faff;font-size:.72rem;letter-spacing:1.5px
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 15px;
+  border:1px solid rgba(72,237,255,.4);
+  border-radius:40px;
+  background:rgba(5,19,43,.72);
+  color:#d3faff;
+  font-size:.69rem;
+  letter-spacing:1.6px;
+  box-shadow:0 0 30px rgba(72,237,255,.07);
+  margin-bottom:25px;
 }
 .live-dot{
-  width:7px;height:7px;background:var(--green);
-  border-radius:50%;box-shadow:0 0 12px var(--green);
-  animation:pulse 2s infinite
+  width:7px;height:7px;
+  border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 15px var(--green);
+  animation:pulse 2s infinite;
 }
-.hero-kicker{color:#b4eaff;font-size:.76rem;letter-spacing:4px}
+.hero-kicker{
+  color:#b4eaff;
+  font-size:.76rem;
+  letter-spacing:5px;
+}
 .hero h1{
-  font-size:clamp(3.4rem,8vw,6.8rem);line-height:1.03;
-  letter-spacing:-3px;margin:18px 0;text-shadow:0 0 40px #168cff45
+  font-size:clamp(3.4rem,9vw,7.3rem);
+  line-height:1.04;
+  letter-spacing:-4px;
+  margin:17px 0;
+  text-shadow:0 0 35px rgba(36,157,255,.2);
 }
-.hero h1 span{display:block}
-.hero-subtitle{font-size:clamp(1rem,2.5vw,1.55rem);font-weight:bold;letter-spacing:2px;margin-top:20px}
-.typing{font-size:1.08rem;margin:15px 0;color:white}
+.hero h1 .gradient{display:block}
+.hero-subtitle{
+  font-size:clamp(.95rem,2vw,1.3rem);
+  font-weight:800;
+  letter-spacing:4px;
+  margin-top:22px;
+}
+.typing{margin:13px 0;color:#fff;font-size:1.05rem}
 #typing{color:var(--cyan)}
-.cursor{animation:blink .8s infinite;color:var(--cyan)}
-.hero-copy{max-width:700px;margin:16px auto;color:#e0eaff;font-size:.98rem}
-.hero-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
-.hero-tags{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}
+.cursor{color:var(--cyan);animation:pulse .7s infinite}
+.hero-copy{
+  max-width:700px;
+  margin:18px auto;
+  color:#d1def6;
+  font-size:.97rem;
+}
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:13px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+.hero-buttons .btn{position:relative;overflow:hidden}
+.hero-buttons .btn::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.35),transparent 75%);
+  transform:translateX(-130%);
+  animation:shine 6s ease-in-out infinite;
+  pointer-events:none;
+}
+.hero-tags{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:25px;
+}
 .hero-tags span{
-  padding:5px 11px;border:1px solid #a8d7ff38;border-radius:30px;
-  background:#06132b8c;color:#e0edff;font-size:.72rem
+  padding:5px 11px;
+  border:1px solid rgba(154,197,255,.2);
+  border-radius:30px;
+  background:rgba(6,20,45,.7);
+  color:#dce9ff;
+  font-size:.71rem;
 }
 
-/* ABOUT AND COMMON CARDS */
-.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
-.content-card{padding:26px}
+/* REUSABLE CARDS */
+.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
+.content-card{padding:28px}
 .content-card h3{margin-bottom:12px}
 .content-card p{margin:10px 0}
 .info-row{
-  display:flex;justify-content:space-between;gap:14px;
-  padding:12px 0;border-bottom:1px solid var(--border);font-size:.84rem
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:12px 0;
+  border-bottom:1px solid var(--border);
+  font-size:.83rem;
 }
 .info-row:last-child{border:0}
 .info-row span{color:var(--muted)}
-.info-row strong{text-align:right;max-width:62%}
-.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
-.feature-card{padding:23px}
-.feature-card:hover,.project-card:hover{
-  transform:translateY(-5px);border-color:#42eaff80;
-  box-shadow:0 15px 40px #42eaff12
-}
+.info-row strong{text-align:right;max-width:65%}
+.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.feature-card{padding:25px}
+.feature-card:hover,.project-card:hover{transform:translateY(-5px)}
 .feature-icon{
-  width:46px;height:46px;display:grid;place-items:center;
-  border:1px solid #42eaff40;border-radius:12px;
-  color:var(--cyan);background:#42eaff0c;font-size:1.4rem;margin-bottom:13px
+  width:48px;height:48px;
+  display:grid;place-items:center;
+  margin-bottom:16px;
+  border:1px solid rgba(72,237,255,.3);
+  border-radius:14px;
+  color:var(--cyan);
+  background:rgba(72,237,255,.06);
+  font-size:1.45rem;
+  box-shadow:inset 0 0 20px rgba(72,237,255,.04);
 }
 .feature-card h3{font-size:1rem;margin-bottom:8px}
 .feature-card p{font-size:.87rem}
-.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}
-.tag{font-size:.68rem;padding:4px 9px;border:1px solid var(--border);border-radius:30px;color:#cbd8f3}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
+.tag{
+  font-size:.68rem;
+  padding:4px 9px;
+  border:1px solid var(--border);
+  border-radius:30px;
+  color:#d0def8;
+}
 
 /* SKILLS */
-.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.skill-panel{padding:25px}
-.skill-row{margin:19px 0}
-.skill-label{display:flex;justify-content:space-between;gap:10px;font-size:.85rem;margin-bottom:7px}
-.skill-label span:last-child{color:var(--cyan);font-size:.75rem}
-.skill-track{height:7px;border-radius:20px;background:#ffffff10;overflow:hidden}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.skill-panel{padding:27px}
+.skill-row{margin:20px 0}
+.skill-label{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  font-size:.85rem;
+  margin-bottom:8px;
+}
+.skill-label span:last-child{font-size:.74rem;color:var(--cyan)}
+.skill-track{
+  height:7px;
+  border-radius:30px;
+  background:rgba(255,255,255,.08);
+  overflow:hidden;
+}
 .skill-fill{
-  width:0;height:100%;border-radius:20px;
+  height:100%;
+  width:0;
+  border-radius:30px;
   background:linear-gradient(90deg,var(--blue),var(--cyan),var(--purple));
-  box-shadow:0 0 15px #42eaff55;transition:width 1.4s ease
+  box-shadow:0 0 16px rgba(72,237,255,.4);
+  transition:width 1.5s ease;
 }
 .skill-fill.show{width:var(--level)}
-.skill-note{font-size:.77rem;margin-top:18px}
+.skill-note{font-size:.78rem;margin-top:18px}
 
 /* PROJECTS */
 .filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:25px}
 .filter{
-  padding:8px 14px;border:1px solid var(--border);border-radius:25px;
-  background:#ffffff06;color:var(--muted);font-size:.8rem
+  padding:8px 15px;
+  border:1px solid var(--border);
+  border-radius:30px;
+  background:rgba(255,255,255,.025);
+  color:var(--muted);
+  font-size:.8rem;
 }
 .filter.active,.filter:hover{color:var(--cyan);border-color:var(--cyan)}
-.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
-.project-card{overflow:hidden}
+.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.project-card{transition:transform .3s,border-color .3s}
 .project-art{
-  height:150px;display:grid;place-items:center;
+  height:155px;
+  display:grid;
+  place-items:center;
   border-bottom:1px solid var(--border);
-  background:radial-gradient(ellipse at center,#17416d70,transparent 72%)
+  background:
+    radial-gradient(ellipse at center,rgba(30,95,165,.26),transparent 70%);
 }
-.project-art svg{width:90%;height:125px}
-.project-body{padding:20px}
-.project-meta{display:flex;justify-content:space-between;gap:8px;color:var(--cyan);font-size:.68rem;letter-spacing:1px}
-.project-body h3{margin:9px 0;font-size:1.05rem}
+.project-art svg{width:90%;height:130px}
+.project-body{padding:21px}
+.project-meta{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  color:var(--cyan);
+  font-size:.67rem;
+  letter-spacing:1px;
+}
+.project-body h3{margin:10px 0;font-size:1.05rem}
 .project-body p{font-size:.85rem}
-.project-toggle{margin-top:14px;background:none;border:0;color:var(--cyan);font-size:.83rem;font-weight:bold}
-.project-detail{display:none;margin-top:13px;padding-top:12px;border-top:1px solid var(--border);color:var(--muted);font-size:.84rem}
+.project-toggle{
+  margin-top:15px;
+  padding:0;
+  background:none;
+  border:0;
+  color:var(--cyan);
+  font-size:.83rem;
+  font-weight:800;
+}
+.project-detail{
+  display:none;
+  margin-top:14px;
+  padding-top:13px;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  font-size:.84rem;
+}
 .project-card.expanded .project-detail{display:block}
 
 /* PRODUCT THINKING */
-.process-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.process-card{padding:22px}
-.process-number{font-size:2rem;font-weight:900;color:var(--cyan)}
-.process-card h3{margin:7px 0}
+.process-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.process-card{padding:23px}
+.process-number{
+  font-size:2.2rem;
+  line-height:1.2;
+  font-weight:900;
+  color:var(--cyan);
+  text-shadow:0 0 25px rgba(72,237,255,.22);
+}
+.process-card h3{margin:10px 0}
 .process-card p{font-size:.85rem}
-.principle{padding:25px;margin-top:20px;border-left:3px solid var(--cyan)}
+.principle{padding:27px;margin-top:22px;border-left:3px solid var(--cyan)}
+.principle h3{margin-top:8px}
 .principle p{margin-top:8px}
 
 /* EDUCATION */
-.timeline{border-left:1px solid #42eaff60;margin-left:8px;padding-left:25px}
-.timeline-item{position:relative;padding-bottom:30px}
+.timeline{border-left:1px solid rgba(72,237,255,.5);margin-left:8px;padding-left:26px}
+.timeline-item{position:relative;padding-bottom:31px}
 .timeline-item:last-child{padding-bottom:0}
 .timeline-item::before{
-  content:"";position:absolute;left:-31px;top:8px;width:10px;height:10px;
-  background:var(--cyan);box-shadow:0 0 15px var(--cyan);border-radius:50%
+  content:"";
+  position:absolute;
+  left:-32px;
+  top:8px;
+  width:10px;height:10px;
+  border-radius:50%;
+  background:var(--cyan);
+  box-shadow:0 0 17px var(--cyan);
 }
 .timeline-date{font-size:.75rem;color:var(--cyan);letter-spacing:1px}
 .timeline-item h3{margin:7px 0}
-.timeline-item p{font-size:.9rem;margin-top:5px}
+.timeline-item p{font-size:.89rem;margin-top:5px}
 
 /* CONTACT */
-.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px}
-.contact-panel{padding:25px}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px}
+.contact-panel{padding:27px}
 .contact-panel h3{margin-bottom:10px}
-.contact-item{padding:14px 0;border-bottom:1px solid var(--border);overflow-wrap:anywhere}
-.contact-item small{display:block;color:var(--cyan);font-size:.7rem;letter-spacing:1px}
-.contact-item a:hover{color:var(--cyan)}
-.contact-form{display:grid;gap:13px;margin-top:17px}
-input,textarea{
-  width:100%;padding:13px 14px;border:1px solid var(--border);
-  border-radius:10px;background:#ffffff07;color:white;outline:none
+.contact-item{
+  padding:15px 0;
+  border-bottom:1px solid var(--border);
+  overflow-wrap:anywhere;
 }
-input:focus,textarea:focus{border-color:var(--cyan);box-shadow:0 0 15px #42eaff12}
+.contact-item small{
+  display:block;
+  color:var(--cyan);
+  font-size:.7rem;
+  letter-spacing:1.5px;
+}
+.contact-item a:hover{color:var(--cyan)}
+.contact-form{display:grid;gap:13px;margin-top:18px}
+input,textarea{
+  width:100%;
+  padding:13px 14px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:rgba(255,255,255,.035);
+  color:#fff;
+  outline:none;
+}
+input:focus,textarea:focus{
+  border-color:var(--cyan);
+  box-shadow:0 0 18px rgba(72,237,255,.08);
+}
 textarea{min-height:125px;resize:vertical}
 .form-message{font-size:.8rem;color:var(--cyan)}
-footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:var(--muted)}
+footer{
+  padding:26px 0;
+  border-top:1px solid var(--border);
+  font-size:.8rem;
+  color:var(--muted);
+}
 .footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 .footer-inner a{color:var(--cyan)}
 .back-top{
-  position:fixed;right:18px;bottom:18px;z-index:50;display:none;
-  width:42px;height:42px;border:1px solid var(--border);
-  border-radius:12px;background:#0b1730;color:var(--cyan)
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:50;
+  display:none;
+  width:44px;height:44px;
+  border:1px solid var(--border);
+  border-radius:13px;
+  background:#0b1730;
+  color:var(--cyan);
 }
 .back-top.visible{display:block}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-/* MOBILE */
-@media(max-width:1000px){
-  .nav-links{gap:9px;font-size:.72rem}
-  .nav-actions .contact-nav{display:none}
+/* RESPONSIVE */
+@media(max-width:1050px){
+  .nav-links{gap:9px;font-size:.7rem}
+  .nav-contact{display:none}
   .card-grid,.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-@media(max-width:760px){
-  .nav-inner{min-height:65px}
-  #menuBtn{display:block}
+@media(max-width:780px){
+  .nav-inner{min-height:66px}
+  .menu-btn{display:block}
   .nav-links{
-    display:none;position:absolute;top:65px;left:0;right:0;
-    padding:20px 5%;background:#030817f8;border-bottom:1px solid var(--border);
-    flex-direction:column;align-items:flex-start;font-size:.9rem
+    display:none;
+    position:absolute;
+    top:66px;left:0;right:0;
+    padding:20px 5%;
+    background:rgba(3,6,21,.98);
+    border-bottom:1px solid var(--border);
+    flex-direction:column;
+    align-items:flex-start;
+    font-size:.9rem;
   }
   .nav-links.open{display:flex}
-  .hero{min-height:610px;padding:75px 0;background-position:center}
+  .hero{min-height:680px;padding:85px 0}
   .hero h1{letter-spacing:-2px}
-  .hero::before{
-    background:linear-gradient(90deg,#0308178c,#0308176b),
-    linear-gradient(0deg,#030817 0%,transparent 30%,#03081755),
-    url("ai-background.png") center/cover no-repeat
-  }
-  section{padding:72px 0}
   .two-col,.skills-grid,.contact-grid{grid-template-columns:1fr}
+  section{padding:76px 0}
 }
 @media(max-width:560px){
   .card-grid,.project-grid,.process-grid{grid-template-columns:1fr}
-  .hero h1{font-size:3.15rem}
+  .hero{min-height:650px}
+  .hero h1{font-size:3.35rem}
   .hero-kicker{font-size:.65rem;letter-spacing:3px}
-  .hero-label{font-size:.62rem;letter-spacing:1px}
-  .hero-copy{font-size:.91rem}
+  .hero-label{font-size:.6rem;letter-spacing:1px}
+  .hero-copy{font-size:.9rem}
   .hero-tags{gap:7px}
-  .hero-tags span{font-size:.65rem}
-  .section-heading h2{font-size:2.15rem}
-  .content-card,.contact-panel,.skill-panel{padding:20px}
+  .hero-tags span{font-size:.64rem}
+  .section-heading h2{font-size:2.2rem}
+  .content-card,.contact-panel,.skill-panel{padding:21px}
+  .info-row{font-size:.77rem}
 }
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+  *,*::before,*::after{
+    animation:none!important;
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
   .reveal{opacity:1;transform:none}
 }
 </style>
@@ -844,6 +607,7 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
 <nav>
   <div class="container nav-inner">
     <a class="logo" href="#home">PK. <span>Amalnadh</span></a>
+
     <div class="nav-links" id="navLinks">
       <a href="#home">Home</a>
       <a href="#about">About</a>
@@ -855,9 +619,10 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </div>
-    <div class="nav-actions">
-      <a class="btn secondary contact-nav" href="#contact">Let's Connect ↗</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+
+    <div style="display:flex;align-items:center;gap:9px">
+      <a class="btn secondary nav-contact" href="#contact">Let's Connect ↗</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
     </div>
   </div>
 </nav>
@@ -866,22 +631,36 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
 
 <!-- HERO -->
 <section class="hero" id="home">
+  <div id="ai-3d-scene" aria-hidden="true"></div>
+
   <div class="container hero-content">
-    <div class="hero-label"><span class="live-dot"></span> ARTIFICIAL INTELLIGENCE · PRODUCT INNOVATION</div>
+    <div class="hero-label">
+      <span class="live-dot"></span>
+      ARTIFICIAL INTELLIGENCE · PRODUCT INNOVATION
+    </div>
+
     <div class="hero-kicker">BUSINESS · TECHNOLOGY · FUTURE</div>
+
     <h1>PK. <span class="gradient">Amalnadh</span></h1>
+
     <div class="hero-subtitle">AI PRODUCT MANAGEMENT</div>
-    <div class="typing">Interested in <span id="typing">AI Products</span><span class="cursor"> |</span></div>
+
+    <div class="typing">
+      Exploring <span id="typing">AI Products</span><span class="cursor"> |</span>
+    </div>
+
     <p class="hero-copy">
       I am an aspiring AI Product Manager interested in transforming
       artificial intelligence into useful, accessible and meaningful
       digital products. My focus is on understanding user needs,
       exploring innovative ideas and connecting technology with business goals.
     </p>
+
     <div class="hero-buttons">
       <a class="btn primary" href="#projects">Explore My Concepts ↗</a>
       <a class="btn secondary" href="#about">Discover My Journey ↓</a>
     </div>
+
     <div class="hero-tags">
       <span>AI Product Strategy</span>
       <span>Generative AI</span>
@@ -899,6 +678,7 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
       <h2>Business thinking meets <span class="gradient">intelligent technology.</span></h2>
       <p>Exploring how technology can solve real problems and create meaningful digital products.</p>
     </div>
+
     <div class="two-col">
       <div class="glass content-card reveal">
         <h3>My Journey</h3>
@@ -912,6 +692,7 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
           <span class="tag">Product Thinking</span>
         </div>
       </div>
+
       <div class="glass content-card reveal">
         <h3>Profile Overview</h3>
         <div class="info-row"><span>Name</span><strong>PK. Amalnadh</strong></div>
@@ -933,13 +714,38 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
       <h2>Exploring the future of <span class="gradient">AI-powered products.</span></h2>
       <p>Technology areas and product disciplines that inspire my learning journey.</p>
     </div>
+
     <div class="card-grid">
-      <article class="glass feature-card reveal"><div class="feature-icon">✧</div><h3>AI Product Strategy</h3><p>Exploring product vision, user problems, value propositions and the business impact of AI-powered solutions.</p><div class="tags"><span class="tag">Product Vision</span><span class="tag">Roadmaps</span></div></article>
-      <article class="glass feature-card reveal"><div class="feature-icon">◈</div><h3>Generative AI</h3><p>Understanding how generative AI can support research, writing, productivity and customer experiences.</p><div class="tags"><span class="tag">LLMs</span><span class="tag">AI Applications</span></div></article>
-      <article class="glass feature-card reveal"><div class="feature-icon">⌘</div><h3>User Experience</h3><p>Thinking about how products can become more intuitive, accessible, useful and trustworthy.</p><div class="tags"><span class="tag">User Needs</span><span class="tag">Usability</span></div></article>
-      <article class="glass feature-card reveal"><div class="feature-icon">⌁</div><h3>Product Analytics</h3><p>Exploring how feedback, experiments and meaningful metrics can guide better decisions.</p><div class="tags"><span class="tag">Metrics</span><span class="tag">Insights</span></div></article>
-      <article class="glass feature-card reveal"><div class="feature-icon">◎</div><h3>Responsible AI</h3><p>Considering privacy, transparency, fairness, reliability and human oversight in AI products.</p><div class="tags"><span class="tag">Trust</span><span class="tag">AI Ethics</span></div></article>
-      <article class="glass feature-card reveal"><div class="feature-icon">↗</div><h3>Digital Innovation</h3><p>Investigating how emerging technologies can solve problems and create business value.</p><div class="tags"><span class="tag">Innovation</span><span class="tag">Strategy</span></div></article>
+      <article class="glass feature-card reveal">
+        <div class="feature-icon">✧</div><h3>AI Product Strategy</h3>
+        <p>Exploring product vision, user problems, value propositions and the business impact of AI-powered solutions.</p>
+        <div class="tags"><span class="tag">Product Vision</span><span class="tag">Roadmaps</span></div>
+      </article>
+      <article class="glass feature-card reveal">
+        <div class="feature-icon">◈</div><h3>Generative AI</h3>
+        <p>Understanding how generative AI can support research, writing, productivity and customer experiences.</p>
+        <div class="tags"><span class="tag">LLMs</span><span class="tag">AI Applications</span></div>
+      </article>
+      <article class="glass feature-card reveal">
+        <div class="feature-icon">⌘</div><h3>User Experience</h3>
+        <p>Thinking about how products can become more intuitive, accessible, useful and trustworthy.</p>
+        <div class="tags"><span class="tag">User Needs</span><span class="tag">Usability</span></div>
+      </article>
+      <article class="glass feature-card reveal">
+        <div class="feature-icon">⌁</div><h3>Product Analytics</h3>
+        <p>Exploring how feedback, experiments and meaningful metrics can guide better decisions.</p>
+        <div class="tags"><span class="tag">Metrics</span><span class="tag">Insights</span></div>
+      </article>
+      <article class="glass feature-card reveal">
+        <div class="feature-icon">◎</div><h3>Responsible AI</h3>
+        <p>Considering privacy, transparency, fairness, reliability and human oversight in AI products.</p>
+        <div class="tags"><span class="tag">Trust</span><span class="tag">AI Ethics</span></div>
+      </article>
+      <article class="glass feature-card reveal">
+        <div class="feature-icon">↗</div><h3>Digital Innovation</h3>
+        <p>Investigating how emerging technologies can solve problems and create business value.</p>
+        <div class="tags"><span class="tag">Innovation</span><span class="tag">Strategy</span></div>
+      </article>
     </div>
   </div>
 </section>
@@ -950,8 +756,9 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
     <div class="section-heading reveal">
       <div class="eyebrow">03 / Skills & Learning</div>
       <h2>Building my <span class="gradient">product toolkit.</span></h2>
-      <p>Areas I am developing for my AI product management journey. The indicators are illustrative, not formal proficiency assessments.</p>
+      <p>Areas I am developing for my AI product management journey. Indicators are illustrative, not formal proficiency assessments.</p>
     </div>
+
     <div class="skills-grid">
       <div class="glass skill-panel reveal">
         <h3>Product & Business</h3>
@@ -960,6 +767,7 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
         <div class="skill-row"><div class="skill-label"><span>Business Analysis</span><span>Developing</span></div><div class="skill-track"><div class="skill-fill" style="--level:70%"></div></div></div>
         <div class="skill-row"><div class="skill-label"><span>Product Roadmapping</span><span>Learning</span></div><div class="skill-track"><div class="skill-fill" style="--level:50%"></div></div></div>
       </div>
+
       <div class="glass skill-panel reveal">
         <h3>AI & Digital Technologies</h3>
         <div class="skill-row"><div class="skill-label"><span>Generative AI Concepts</span><span>Learning</span></div><div class="skill-track"><div class="skill-fill" style="--level:60%"></div></div></div>
@@ -968,7 +776,7 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
         <div class="skill-row"><div class="skill-label"><span>Prototyping & UX</span><span>Developing</span></div><div class="skill-track"><div class="skill-fill" style="--level:45%"></div></div></div>
       </div>
     </div>
-    <p class="skill-note">Adjust the skill indicators to reflect your actual experience and abilities.</p>
+    <p class="skill-note">Update these indicators to reflect your actual experience and abilities.</p>
   </div>
 </section>
 
@@ -980,6 +788,7 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
       <h2>Ideas designed for <span class="gradient">real-world impact.</span></h2>
       <p>Concept projects demonstrating product thinking. These are proposals, not claims of completed commercial products.</p>
     </div>
+
     <div class="filters">
       <button class="filter active" data-filter="all">All Concepts</button>
       <button class="filter" data-filter="ai">AI Products</button>
@@ -988,35 +797,123 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
     </div>
 
     <div class="project-grid">
+
       <article class="glass project-card reveal" data-category="ai">
-        <div class="project-art"><svg viewBox="0 0 320 130" fill="none"><circle cx="160" cy="65" r="47" stroke="#398cff"/><circle cx="160" cy="65" r="32" stroke="#a477ff" stroke-dasharray="4 5"/><circle cx="160" cy="65" r="20" stroke="#42eaff"/><path d="M148 65h24M160 53v24M32 65h80M208 65h80" stroke="#42eaff"/><circle cx="32" cy="65" r="3" fill="#42eaff"/></svg></div>
-        <div class="project-body"><div class="project-meta"><span>AI PRODUCT</span><span>CONCEPT 01</span></div><h3>AI Personal Assistant</h3><p>A concept for an assistant that helps users organise tasks, find information and plan their day.</p><div class="tags"><span class="tag">Generative AI</span><span class="tag">UX</span></div><button class="project-toggle">Explore concept +</button><div class="project-detail"><strong>Product thinking:</strong> Identify target users, prioritise task-planning features, assess response usefulness and establish privacy controls. Possible metrics include task completion and retention.</div></div>
+        <div class="project-art">
+          <svg viewBox="0 0 320 130" fill="none">
+            <circle cx="160" cy="65" r="47" stroke="#398cff"/>
+            <circle cx="160" cy="65" r="32" stroke="#a477ff" stroke-dasharray="4 5"/>
+            <circle cx="160" cy="65" r="20" stroke="#42eaff"/>
+            <path d="M148 65h24M160 53v24M32 65h80M208 65h80" stroke="#42eaff"/>
+            <circle cx="32" cy="65" r="3" fill="#42eaff"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <div class="project-meta"><span>AI PRODUCT</span><span>CONCEPT 01</span></div>
+          <h3>AI Personal Assistant</h3>
+          <p>A concept for an assistant that helps users organise tasks, find information and plan their day.</p>
+          <div class="tags"><span class="tag">Generative AI</span><span class="tag">UX</span></div>
+          <button class="project-toggle">Explore concept +</button>
+          <div class="project-detail"><strong>Product thinking:</strong> Identify target users, prioritise task-planning features, assess response usefulness and establish privacy controls. Possible metrics include task completion and retention.</div>
+        </div>
       </article>
 
       <article class="glass project-card reveal" data-category="business">
-        <div class="project-art"><svg viewBox="0 0 320 130" fill="none"><path d="M30 110H290M30 15V110" stroke="#a8b7d5"/><path d="M42 92L90 76L135 83L180 45L225 55L278 20" stroke="#42eaff" stroke-width="3"/><path d="M42 92L90 76L135 83L180 45L225 55L278 20V110H42Z" fill="#42eaff" fill-opacity=".1"/><path d="M42 98L90 89L135 68L180 76L225 38L278 48" stroke="#a477ff" stroke-width="2"/></svg></div>
-        <div class="project-body"><div class="project-meta"><span>BUSINESS</span><span>CONCEPT 02</span></div><h3>Intelligent Business Insights</h3><p>A product concept that turns business information into clear decision-support summaries.</p><div class="tags"><span class="tag">Analytics</span><span class="tag">Insights</span></div><button class="project-toggle">Explore concept +</button><div class="project-detail"><strong>Product thinking:</strong> Identify a business user, use trusted data sources, explain the evidence behind insights and assess their impact on decision-making.</div></div>
+        <div class="project-art">
+          <svg viewBox="0 0 320 130" fill="none">
+            <path d="M30 110H290M30 15V110" stroke="#a8b7d5"/>
+            <path d="M42 92L90 76L135 83L180 45L225 55L278 20" stroke="#42eaff" stroke-width="3"/>
+            <path d="M42 92L90 76L135 83L180 45L225 55L278 20V110H42Z" fill="#42eaff" fill-opacity=".1"/>
+            <path d="M42 98L90 89L135 68L180 76L225 38L278 48" stroke="#a477ff" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <div class="project-meta"><span>BUSINESS</span><span>CONCEPT 02</span></div>
+          <h3>Intelligent Business Insights</h3>
+          <p>A product concept that turns business information into clear decision-support summaries.</p>
+          <div class="tags"><span class="tag">Analytics</span><span class="tag">Insights</span></div>
+          <button class="project-toggle">Explore concept +</button>
+          <div class="project-detail"><strong>Product thinking:</strong> Identify a business user, use trusted data sources, explain the evidence behind insights and assess their impact on decision-making.</div>
+        </div>
       </article>
 
       <article class="glass project-card reveal" data-category="ux">
-        <div class="project-art"><svg viewBox="0 0 320 130" fill="none"><rect x="96" y="7" width="128" height="116" rx="13" stroke="#42eaff" stroke-width="2"/><rect x="109" y="21" width="102" height="18" rx="5" stroke="#42eaff"/><rect x="109" y="48" width="45" height="28" rx="5" stroke="#a477ff"/><rect x="162" y="48" width="49" height="28" rx="5" stroke="#ff68d8"/><rect x="109" y="84" width="102" height="24" rx="5" stroke="#42eaff"/></svg></div>
-        <div class="project-body"><div class="project-meta"><span>USER EXPERIENCE</span><span>CONCEPT 03</span></div><h3>AI Learning Companion</h3><p>A learning concept that adapts explanations and practice activities to learner needs.</p><div class="tags"><span class="tag">Personalisation</span><span class="tag">Accessibility</span></div><button class="project-toggle">Explore concept +</button><div class="project-detail"><strong>Product thinking:</strong> Validate learning needs, prototype a learning journey and evaluate outcomes, completion rates and user feedback.</div></div>
+        <div class="project-art">
+          <svg viewBox="0 0 320 130" fill="none">
+            <rect x="96" y="7" width="128" height="116" rx="13" stroke="#42eaff" stroke-width="2"/>
+            <rect x="109" y="21" width="102" height="18" rx="5" stroke="#42eaff"/>
+            <rect x="109" y="48" width="45" height="28" rx="5" stroke="#a477ff"/>
+            <rect x="162" y="48" width="49" height="28" rx="5" stroke="#ff68d8"/>
+            <rect x="109" y="84" width="102" height="24" rx="5" stroke="#42eaff"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <div class="project-meta"><span>USER EXPERIENCE</span><span>CONCEPT 03</span></div>
+          <h3>AI Learning Companion</h3>
+          <p>A learning concept that adapts explanations and practice activities to learner needs.</p>
+          <div class="tags"><span class="tag">Personalisation</span><span class="tag">Accessibility</span></div>
+          <button class="project-toggle">Explore concept +</button>
+          <div class="project-detail"><strong>Product thinking:</strong> Validate learning needs, prototype a learning journey and evaluate outcomes, completion rates and user feedback.</div>
+        </div>
       </article>
 
       <article class="glass project-card reveal" data-category="ai">
-        <div class="project-art"><svg viewBox="0 0 320 130" fill="none"><rect x="43" y="24" width="234" height="82" rx="12" stroke="#42eaff"/><circle cx="73" cy="49" r="7" fill="#42eaff"/><path d="M91 49H221M60 72H257M60 89H198" stroke="#a477ff" stroke-width="3" stroke-linecap="round"/><path d="M242 41l9 9-17 18" stroke="#78ffc2" stroke-width="3" stroke-linecap="round"/></svg></div>
-        <div class="project-body"><div class="project-meta"><span>AI PRODUCT</span><span>CONCEPT 04</span></div><h3>Customer Support Copilot</h3><p>A concept that helps support agents find information and draft responses for review.</p><div class="tags"><span class="tag">Customer Experience</span><span class="tag">Human Review</span></div><button class="project-toggle">Explore concept +</button><div class="project-detail"><strong>Product thinking:</strong> Ground answers in approved information, retain human control and measure accuracy, resolution time and customer satisfaction.</div></div>
+        <div class="project-art">
+          <svg viewBox="0 0 320 130" fill="none">
+            <rect x="43" y="24" width="234" height="82" rx="12" stroke="#42eaff"/>
+            <circle cx="73" cy="49" r="7" fill="#42eaff"/>
+            <path d="M91 49H221M60 72H257M60 89H198" stroke="#a477ff" stroke-width="3" stroke-linecap="round"/>
+            <path d="M242 41l9 9-17 18" stroke="#78ffc2" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <div class="project-meta"><span>AI PRODUCT</span><span>CONCEPT 04</span></div>
+          <h3>Customer Support Copilot</h3>
+          <p>A concept that helps support agents find information and draft responses for review.</p>
+          <div class="tags"><span class="tag">Customer Experience</span><span class="tag">Human Review</span></div>
+          <button class="project-toggle">Explore concept +</button>
+          <div class="project-detail"><strong>Product thinking:</strong> Ground answers in approved information, retain human control and measure accuracy, resolution time and customer satisfaction.</div>
+        </div>
       </article>
 
       <article class="glass project-card reveal" data-category="business">
-        <div class="project-art"><svg viewBox="0 0 320 130" fill="none"><circle cx="160" cy="65" r="43" stroke="#42eaff" stroke-width="2"/><circle cx="160" cy="65" r="28" stroke="#a477ff" stroke-dasharray="5 5"/><path d="M160 22V108M117 65H203M160 65L190 40" stroke="#42eaff" stroke-width="2"/><circle cx="190" cy="40" r="5" fill="#ff68d8"/></svg></div>
-        <div class="project-body"><div class="project-meta"><span>BUSINESS</span><span>CONCEPT 05</span></div><h3>AI Opportunity Radar</h3><p>A framework for identifying business problems where AI might provide measurable value.</p><div class="tags"><span class="tag">Prioritisation</span><span class="tag">Strategy</span></div><button class="project-toggle">Explore concept +</button><div class="project-detail"><strong>Product thinking:</strong> Compare opportunities by user impact, feasibility, implementation cost, risk and expected business value.</div></div>
+        <div class="project-art">
+          <svg viewBox="0 0 320 130" fill="none">
+            <circle cx="160" cy="65" r="43" stroke="#42eaff" stroke-width="2"/>
+            <circle cx="160" cy="65" r="28" stroke="#a477ff" stroke-dasharray="5 5"/>
+            <path d="M160 22V108M117 65H203M160 65L190 40" stroke="#42eaff" stroke-width="2"/>
+            <circle cx="190" cy="40" r="5" fill="#ff68d8"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <div class="project-meta"><span>BUSINESS</span><span>CONCEPT 05</span></div>
+          <h3>AI Opportunity Radar</h3>
+          <p>A framework for identifying business problems where AI might provide measurable value.</p>
+          <div class="tags"><span class="tag">Prioritisation</span><span class="tag">Strategy</span></div>
+          <button class="project-toggle">Explore concept +</button>
+          <div class="project-detail"><strong>Product thinking:</strong> Compare opportunities by user impact, feasibility, implementation cost, risk and expected business value.</div>
+        </div>
       </article>
 
       <article class="glass project-card reveal" data-category="ux">
-        <div class="project-art"><svg viewBox="0 0 320 130" fill="none"><rect x="50" y="24" width="220" height="82" rx="12" stroke="#42eaff"/><path d="M72 47H130M72 62H112M72 78H140" stroke="#a477ff" stroke-width="3" stroke-linecap="round"/><circle cx="212" cy="64" r="22" stroke="#42eaff" stroke-width="2"/><path d="M201 64l8 8 15-17" stroke="#78ffc2" stroke-width="3" stroke-linecap="round"/></svg></div>
-        <div class="project-body"><div class="project-meta"><span>USER EXPERIENCE</span><span>CONCEPT 06</span></div><h3>Trustworthy AI Interface</h3><p>An interface concept that helps users understand generated answers and their limitations.</p><div class="tags"><span class="tag">Transparency</span><span class="tag">Responsible AI</span></div><button class="project-toggle">Explore concept +</button><div class="project-detail"><strong>Product thinking:</strong> Communicate uncertainty, make supporting evidence accessible and give users clear ways to report mistakes.</div></div>
+        <div class="project-art">
+          <svg viewBox="0 0 320 130" fill="none">
+            <rect x="50" y="24" width="220" height="82" rx="12" stroke="#42eaff"/>
+            <path d="M72 47H130M72 62H112M72 78H140" stroke="#a477ff" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="212" cy="64" r="22" stroke="#42eaff" stroke-width="2"/>
+            <path d="M201 64l8 8 15-17" stroke="#78ffc2" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <div class="project-meta"><span>USER EXPERIENCE</span><span>CONCEPT 06</span></div>
+          <h3>Trustworthy AI Interface</h3>
+          <p>An interface concept that helps users understand generated answers and their limitations.</p>
+          <div class="tags"><span class="tag">Transparency</span><span class="tag">Responsible AI</span></div>
+          <button class="project-toggle">Explore concept +</button>
+          <div class="project-detail"><strong>Product thinking:</strong> Communicate uncertainty, make supporting evidence accessible and give users clear ways to report mistakes.</div>
+        </div>
       </article>
+
     </div>
   </div>
 </section>
@@ -1029,12 +926,14 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
       <h2>From a problem to <span class="gradient">product impact.</span></h2>
       <p>A structured approach to thinking about product discovery and development.</p>
     </div>
+
     <div class="process-grid">
       <article class="glass process-card reveal"><div class="process-number">01</div><h3>Discover</h3><p>Understand users, research challenges and validate the problem worth solving.</p></article>
       <article class="glass process-card reveal"><div class="process-number">02</div><h3>Define</h3><p>Establish product goals, target users, value propositions and success measures.</p></article>
       <article class="glass process-card reveal"><div class="process-number">03</div><h3>Prototype</h3><p>Explore solutions, design an MVP concept and test assumptions with users.</p></article>
       <article class="glass process-card reveal"><div class="process-number">04</div><h3>Improve</h3><p>Use feedback and evidence to evaluate outcomes and refine the product.</p></article>
     </div>
+
     <div class="glass principle reveal">
       <div class="eyebrow">Product Principle</div>
       <h3>Start with the problem, not the technology.</h3>
@@ -1051,6 +950,7 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
       <h2>Exploring the <span class="gradient">intelligence layer.</span></h2>
       <p>Core AI concepts I am interested in learning about from a product perspective.</p>
     </div>
+
     <div class="card-grid">
       <article class="glass feature-card reveal"><div class="feature-icon">🧠</div><h3>Machine Learning</h3><p>Methods that allow systems to learn patterns from data and make predictions or classifications.</p></article>
       <article class="glass feature-card reveal"><div class="feature-icon">✧</div><h3>Generative AI</h3><p>Models that generate content such as text, images, code and other outputs.</p></article>
@@ -1069,6 +969,7 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
       <div class="eyebrow">07 / Education</div>
       <h2>My foundation for <span class="gradient">what comes next.</span></h2>
     </div>
+
     <div class="glass content-card reveal">
       <div class="timeline">
         <div class="timeline-item">
@@ -1092,7 +993,7 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
   </div>
 </section>
 
-<!-- TOOLS -->
+<!-- TOOLKIT -->
 <section id="tools">
   <div class="container">
     <div class="section-heading reveal">
@@ -1100,6 +1001,7 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
       <h2>Technology and <span class="gradient">product exploration.</span></h2>
       <p>Tools and workflows relevant to developing and communicating product ideas.</p>
     </div>
+
     <div class="card-grid">
       <article class="glass feature-card reveal"><div class="feature-icon">✧</div><h3>AI Tools</h3><p>Exploring AI assistants, prompt design and AI-powered productivity workflows.</p><div class="tags"><span class="tag">AI Assistants</span><span class="tag">Prompting</span></div></article>
       <article class="glass feature-card reveal"><div class="feature-icon">⌘</div><h3>Product Tools</h3><p>Learning to document ideas, organise requirements and communicate product plans.</p><div class="tags"><span class="tag">Product Briefs</span><span class="tag">Roadmaps</span></div></article>
@@ -1116,14 +1018,16 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
       <h2>Let's connect around <span class="gradient">ideas and innovation.</span></h2>
       <p>Interested in AI products, emerging technology or product strategy? Get in touch.</p>
     </div>
+
     <div class="contact-grid">
       <div class="glass contact-panel reveal">
         <h3>Connect with me</h3>
-        <p>Replace the example contact details below with your actual information.</p>
+        <p>Replace the example contact details with your real information.</p>
         <div class="contact-item"><small>EMAIL</small><a href="mailto:your.email@example.com">your.email@example.com</a></div>
         <div class="contact-item"><small>LINKEDIN</small><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">Visit my LinkedIn ↗</a></div>
         <div class="contact-item"><small>PRODUCT FOCUS</small><span>AI Product Management &amp; Digital Innovation</span></div>
       </div>
+
       <div class="glass contact-panel reveal">
         <h3>Send a message</h3>
         <p>This form prepares an email in your email application.</p>
@@ -1153,167 +1057,431 @@ footer{padding:25px 0;border-top:1px solid var(--border);font-size:.8rem;color:v
 <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
 <script>
-/* PARTICLE BACKGROUND */
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-let particles = [];
-let canvasW = 0;
-let canvasH = 0;
+/* =====================================================
+   CINEMATIC AI BACKGROUND
+   Canvas-generated 3D-style neural network and energy orb.
+   No external image or JavaScript library is required.
+===================================================== */
+const scene = document.getElementById("ai-3d-scene");
+const aiCanvas = document.createElement("canvas");
+scene.appendChild(aiCanvas);
 
-function resizeCanvas(){
-  const ratio = Math.min(window.devicePixelRatio || 1, 2);
-  canvasW = window.innerWidth;
-  canvasH = window.innerHeight;
-  canvas.width = canvasW * ratio;
-  canvas.height = canvasH * ratio;
-  canvas.style.width = canvasW + "px";
-  canvas.style.height = canvasH + "px";
-  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+const aiCtx = aiCanvas.getContext("2d");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const count = Math.min(65, Math.floor(canvasW / 20));
-  particles = Array.from({length:count}, () => ({
+let sceneW = 0;
+let sceneH = 0;
+let pixelRatio = 1;
+let nodes = [];
+let animationFrame = 0;
+let lastFrame = 0;
+
+function randomBetween(min,max){
+  return Math.random()*(max-min)+min;
+}
+
+function resizeAI(){
+  const rect = scene.getBoundingClientRect();
+  sceneW = Math.max(1,rect.width);
+  sceneH = Math.max(1,rect.height);
+  pixelRatio = Math.min(window.devicePixelRatio||1,1.6);
+
+  aiCanvas.width = Math.floor(sceneW*pixelRatio);
+  aiCanvas.height = Math.floor(sceneH*pixelRatio);
+  aiCanvas.style.width = sceneW+"px";
+  aiCanvas.style.height = sceneH+"px";
+  aiCtx.setTransform(pixelRatio,0,0,pixelRatio,0,0);
+
+  const count = Math.min(115,Math.max(45,Math.floor(sceneW/10)));
+
+  nodes = Array.from({length:count},()=>({
+    x:Math.random()*sceneW,
+    y:Math.random()*sceneH,
+    z:randomBetween(.3,1),
+    vx:randomBetween(-.15,.15),
+    vy:randomBetween(-.15,.15),
+    r:randomBetween(.6,1.8),
+    phase:Math.random()*Math.PI*2
+  }));
+
+  if(!reduceMotion){
+    cancelAnimationFrame(animationFrame);
+    animationFrame=requestAnimationFrame(drawAI);
+  }else{
+    drawAI(0);
+  }
+}
+
+function drawAI(timestamp){
+  if(reduceMotion) return;
+
+  if(timestamp-lastFrame<30){
+    animationFrame=requestAnimationFrame(drawAI);
+    return;
+  }
+  lastFrame=timestamp;
+
+  aiCtx.clearRect(0,0,sceneW,sceneH);
+
+  const time=timestamp*.00025;
+  const cx=sceneW*.5;
+  const cy=sceneH*.48;
+  const orbRadius=Math.min(sceneW*.23,sceneH*.33,220);
+
+  /* Soft coloured atmosphere */
+  const atmosphere=aiCtx.createRadialGradient(
+    cx,cy,0,cx,cy,orbRadius*2.7
+  );
+  atmosphere.addColorStop(0,"rgba(0,118,255,.12)");
+  atmosphere.addColorStop(.45,"rgba(64,48,255,.055)");
+  atmosphere.addColorStop(1,"rgba(0,0,0,0)");
+
+  aiCtx.fillStyle=atmosphere;
+  aiCtx.fillRect(0,0,sceneW,sceneH);
+
+  /* Orbital rings with a pseudo-3D perspective */
+  aiCtx.save();
+  aiCtx.translate(cx,cy);
+
+  for(let ring=0;ring<5;ring++){
+    const rotation=time*(ring%2===0?1:-.75)+ring*.7;
+    const radius=orbRadius*(.47+ring*.145);
+    const squash=.22+ring*.075;
+
+    aiCtx.save();
+    aiCtx.rotate(rotation);
+    aiCtx.beginPath();
+    aiCtx.ellipse(0,0,radius,radius*squash,0,0,Math.PI*2);
+
+    aiCtx.strokeStyle=ring%2===0
+      ?"rgba(72,237,255,.23)"
+      :"rgba(164,122,255,.21)";
+    aiCtx.lineWidth=ring===2?1.5:.8;
+    aiCtx.shadowBlur=ring===2?15:7;
+    aiCtx.shadowColor=ring%2===0?"#48edff":"#a47aff";
+    aiCtx.stroke();
+
+    /* Orbital light points */
+    const angle=time*(ring%2===0?1.1:-.8)+ring;
+    const px=Math.cos(angle)*radius;
+    const py=Math.sin(angle)*radius*squash;
+
+    aiCtx.beginPath();
+    aiCtx.arc(px,py,ring===2?3.4:2.2,0,Math.PI*2);
+    aiCtx.fillStyle=ring%2===0?"#a9faff":"#c8a5ff";
+    aiCtx.shadowBlur=18;
+    aiCtx.fill();
+    aiCtx.restore();
+  }
+
+  /* Inner holographic sphere */
+  const sphere=aiCtx.createRadialGradient(
+    -orbRadius*.25,-orbRadius*.3,orbRadius*.03,
+    0,0,orbRadius*.68
+  );
+  sphere.addColorStop(0,"rgba(86,221,255,.15)");
+  sphere.addColorStop(.35,"rgba(45,113,255,.09)");
+  sphere.addColorStop(.72,"rgba(107,57,255,.055)");
+  sphere.addColorStop(1,"rgba(5,15,40,0)");
+
+  aiCtx.beginPath();
+  aiCtx.arc(0,0,orbRadius*.68,0,Math.PI*2);
+  aiCtx.fillStyle=sphere;
+  aiCtx.fill();
+
+  /* Fine sphere grid */
+  aiCtx.strokeStyle="rgba(89,190,255,.11)";
+  aiCtx.lineWidth=.7;
+
+  for(let i=-4;i<=4;i++){
+    aiCtx.beginPath();
+    aiCtx.ellipse(
+      0,0,
+      orbRadius*.62,
+      Math.sqrt(Math.max(.02,1-(i/5)*(i/5)))*orbRadius*.62,
+      time*.35,0,Math.PI*2
+    );
+    aiCtx.stroke();
+  }
+
+  for(let i=0;i<7;i++){
+    aiCtx.beginPath();
+    aiCtx.ellipse(
+      0,0,
+      orbRadius*.62,
+      orbRadius*.62,
+      time*.5+i*Math.PI/7,0,Math.PI*2
+    );
+    aiCtx.stroke();
+  }
+
+  /* Core energy */
+  const core=aiCtx.createRadialGradient(0,0,1,0,0,orbRadius*.32);
+  core.addColorStop(0,"rgba(210,255,255,.3)");
+  core.addColorStop(.18,"rgba(72,237,255,.13)");
+  core.addColorStop(.58,"rgba(66,140,255,.06)");
+  core.addColorStop(1,"rgba(72,237,255,0)");
+
+  aiCtx.beginPath();
+  aiCtx.arc(0,0,orbRadius*.32,0,Math.PI*2);
+  aiCtx.fillStyle=core;
+  aiCtx.fill();
+
+  aiCtx.restore();
+
+  /* Floating nodes and connecting neural paths */
+  const projected=nodes.map(p=>{
+    p.x+=p.vx;
+    p.y+=p.vy;
+
+    if(p.x<0||p.x>sceneW)p.vx*=-1;
+    if(p.y<0||p.y>sceneH)p.vy*=-1;
+
+    const depth=.65+p.z*.55;
+    const wobble=Math.sin(time*2+p.phase)*2;
+
+    return{
+      x:cx+(p.x-cx)*depth,
+      y:cy+(p.y-cy)*depth+wobble,
+      r:p.r*depth,
+      z:p.z
+    };
+  });
+
+  for(let i=0;i<projected.length;i++){
+    const p=projected[i];
+
+    for(let j=i+1;j<projected.length;j++){
+      const q=projected[j];
+      const dx=p.x-q.x;
+      const dy=p.y-q.y;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+
+      if(dist<125){
+        const alpha=(1-dist/125)*.25;
+        aiCtx.beginPath();
+        aiCtx.moveTo(p.x,p.y);
+        aiCtx.lineTo(q.x,q.y);
+        aiCtx.strokeStyle="rgba(62,156,255,"+alpha+")";
+        aiCtx.lineWidth=.65;
+        aiCtx.stroke();
+      }
+    }
+
+    const glow=aiCtx.createRadialGradient(p.x,p.y,0,p.x,p.y,9);
+    glow.addColorStop(0,"rgba(190,250,255,.9)");
+    glow.addColorStop(.25,"rgba(72,237,255,.45)");
+    glow.addColorStop(1,"rgba(72,237,255,0)");
+
+    aiCtx.beginPath();
+    aiCtx.arc(p.x,p.y,9,0,Math.PI*2);
+    aiCtx.fillStyle=glow;
+    aiCtx.fill();
+
+    aiCtx.beginPath();
+    aiCtx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    aiCtx.fillStyle="rgba(185,249,255,.85)";
+    aiCtx.fill();
+  }
+
+  /* Moving light sweep */
+  const sweepY=(timestamp*.035)%(sceneH+100)-50;
+  const sweep=aiCtx.createLinearGradient(0,sweepY-30,0,sweepY+30);
+  sweep.addColorStop(0,"rgba(72,237,255,0)");
+  sweep.addColorStop(.5,"rgba(72,237,255,.025)");
+  sweep.addColorStop(1,"rgba(72,237,255,0)");
+  aiCtx.fillStyle=sweep;
+  aiCtx.fillRect(0,0,sceneW,sceneH);
+
+  animationFrame=requestAnimationFrame(drawAI);
+}
+
+resizeAI();
+
+window.addEventListener("resize",()=>{
+  resizeAI();
+},{passive:true});
+
+/* PAGE-WIDE FLOATING PARTICLES */
+const particleCanvas=document.getElementById("particles");
+const particleCtx=particleCanvas.getContext("2d");
+let particles=[];
+let canvasW=0;
+let canvasH=0;
+let particleFrame=0;
+
+function resizeParticles(){
+  const ratio=Math.min(window.devicePixelRatio||1,1.5);
+  canvasW=window.innerWidth;
+  canvasH=window.innerHeight;
+  particleCanvas.width=canvasW*ratio;
+  particleCanvas.height=canvasH*ratio;
+  particleCanvas.style.width=canvasW+"px";
+  particleCanvas.style.height=canvasH+"px";
+  particleCtx.setTransform(ratio,0,0,ratio,0,0);
+
+  const count=Math.min(75,Math.floor(canvasW/18));
+  particles=Array.from({length:count},()=>({
     x:Math.random()*canvasW,
     y:Math.random()*canvasH,
-    vx:(Math.random()-.5)*.3,
-    vy:(Math.random()-.5)*.3,
-    r:Math.random()*1.4+.4
+    vx:randomBetween(-.2,.2),
+    vy:randomBetween(-.2,.2),
+    r:randomBetween(.5,1.4)
   }));
+
+  if(!reduceMotion){
+    cancelAnimationFrame(particleFrame);
+    particleFrame=requestAnimationFrame(drawParticles);
+  }else{
+    drawParticles();
+  }
 }
 
 function drawParticles(){
-  ctx.clearRect(0, 0, canvasW, canvasH);
+  if(reduceMotion)return;
+
+  particleCtx.clearRect(0,0,canvasW,canvasH);
+
   for(let i=0;i<particles.length;i++){
-    const p = particles[i];
-    p.x += p.vx;
-    p.y += p.vy;
+    const p=particles[i];
+    p.x+=p.vx;
+    p.y+=p.vy;
 
-    if(p.x < 0 || p.x > canvasW) p.vx *= -1;
-    if(p.y < 0 || p.y > canvasH) p.vy *= -1;
+    if(p.x<0||p.x>canvasW)p.vx*=-1;
+    if(p.y<0||p.y>canvasH)p.vy*=-1;
 
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle = "rgba(66,234,255,.65)";
-    ctx.fill();
+    particleCtx.beginPath();
+    particleCtx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    particleCtx.fillStyle="rgba(72,237,255,.72)";
+    particleCtx.shadowBlur=8;
+    particleCtx.shadowColor="#48edff";
+    particleCtx.fill();
+    particleCtx.shadowBlur=0;
 
     for(let j=i+1;j<particles.length;j++){
-      const q = particles[j];
-      const dx = p.x-q.x;
-      const dy = p.y-q.y;
-      const distance = Math.sqrt(dx*dx+dy*dy);
+      const q=particles[j];
+      const dx=p.x-q.x;
+      const dy=p.y-q.y;
+      const dist=Math.sqrt(dx*dx+dy*dy);
 
-      if(distance < 110){
-        ctx.beginPath();
-        ctx.moveTo(p.x,p.y);
-        ctx.lineTo(q.x,q.y);
-        ctx.strokeStyle = "rgba(57,140,255,"+((1-distance/110)*.15)+")";
-        ctx.lineWidth = .7;
-        ctx.stroke();
+      if(dist<105){
+        particleCtx.beginPath();
+        particleCtx.moveTo(p.x,p.y);
+        particleCtx.lineTo(q.x,q.y);
+        particleCtx.strokeStyle="rgba(57,140,255,"+((1-dist/105)*.15)+")";
+        particleCtx.lineWidth=.6;
+        particleCtx.stroke();
       }
     }
   }
-  requestAnimationFrame(drawParticles);
+
+  particleFrame=requestAnimationFrame(drawParticles);
 }
-resizeCanvas();
-drawParticles();
-window.addEventListener("resize", resizeCanvas);
+
+resizeParticles();
+window.addEventListener("resize",resizeParticles,{passive:true});
 
 /* ANIMATED HERO TEXT */
-const words = [
+const words=[
   "AI Products",
   "Product Strategy",
   "Generative AI",
   "Digital Innovation",
-  "User Experiences"
+  "User Experiences",
+  "Intelligent Solutions"
 ];
-const typing = document.getElementById("typing");
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
+
+const typing=document.getElementById("typing");
+let wordIndex=0;
+let charIndex=0;
+let deleting=false;
 
 function typeLoop(){
-  const word = words[wordIndex];
-  typing.textContent = word.substring(0,charIndex);
+  if(reduceMotion){
+    typing.textContent="AI Products";
+    return;
+  }
+
+  const word=words[wordIndex];
+  typing.textContent=word.substring(0,charIndex);
 
   if(!deleting){
     charIndex++;
-    if(charIndex > word.length){
-      deleting = true;
+
+    if(charIndex>word.length){
+      deleting=true;
       setTimeout(typeLoop,1100);
       return;
     }
   }else{
     charIndex--;
-    if(charIndex < 0){
-      charIndex = 0;
-      deleting = false;
-      wordIndex = (wordIndex+1) % words.length;
+
+    if(charIndex<0){
+      charIndex=0;
+      deleting=false;
+      wordIndex=(wordIndex+1)%words.length;
     }
   }
-  setTimeout(typeLoop, deleting ? 42 : 82);
+
+  setTimeout(typeLoop,deleting?38:78);
 }
+
 typeLoop();
 
 /* MOBILE NAVIGATION */
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
 
 menuBtn.addEventListener("click",()=>{
-  navLinks.classList.toggle("open");
-  menuBtn.textContent = navLinks.classList.contains("open") ? "✕" : "☰";
+  const isOpen=navLinks.classList.toggle("open");
+  menuBtn.textContent=isOpen?"✕":"☰";
+  menuBtn.setAttribute("aria-expanded",String(isOpen));
 });
 
 navLinks.querySelectorAll("a").forEach(link=>{
   link.addEventListener("click",()=>{
     navLinks.classList.remove("open");
-    menuBtn.textContent = "☰";
+    menuBtn.textContent="☰";
+    menuBtn.setAttribute("aria-expanded","false");
   });
 });
 
-/* REVEAL SECTIONS ON SCROLL */
-const revealElements = document.querySelectorAll(".reveal");
-const revealObserver = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("visible");
-      entry.target.querySelectorAll(".skill-fill").forEach(bar=>{
-        bar.classList.add("show");
-      });
-      revealObserver.unobserve(entry.target);
-    }
-  });
-},{threshold:.12});
+/* SCROLL REVEAL */
+const revealElements=document.querySelectorAll(".reveal");
 
-revealElements.forEach(el=>revealObserver.observe(el));
+if("IntersectionObserver" in window){
+  const revealObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+        entry.target.querySelectorAll(".skill-fill").forEach(bar=>{
+          bar.classList.add("show");
+        });
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },{threshold:.12});
 
-/* ANIMATE SKILL BARS */
-const skillObserver = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-      skillObserver.unobserve(entry.target);
-    }
-  });
-},{threshold:.25});
-
-document.querySelectorAll(".skill-fill").forEach(bar=>{
-  skillObserver.observe(bar);
-});
+  revealElements.forEach(el=>revealObserver.observe(el));
+}else{
+  revealElements.forEach(el=>el.classList.add("visible"));
+  document.querySelectorAll(".skill-fill").forEach(el=>el.classList.add("show"));
+}
 
 /* PROJECT FILTERS */
-const filterButtons = document.querySelectorAll(".filter");
-const projectCards = document.querySelectorAll(".project-card");
+const filterButtons=document.querySelectorAll(".filter");
+const projectCards=document.querySelectorAll(".project-card");
 
 filterButtons.forEach(button=>{
   button.addEventListener("click",()=>{
     filterButtons.forEach(item=>item.classList.remove("active"));
     button.classList.add("active");
 
-    const category = button.dataset.filter;
+    const category=button.dataset.filter;
+
     projectCards.forEach(card=>{
-      card.style.display =
-        category === "all" || card.dataset.category === category
-          ? ""
-          : "none";
+      card.style.display=
+        category==="all"||card.dataset.category===category?"":"none";
     });
   });
 });
@@ -1321,49 +1489,55 @@ filterButtons.forEach(button=>{
 /* EXPAND PROJECT DETAILS */
 document.querySelectorAll(".project-toggle").forEach(button=>{
   button.addEventListener("click",()=>{
-    const card = button.closest(".project-card");
-    const expanded = card.classList.toggle("expanded");
-    button.textContent = expanded ? "Show less −" : "Explore concept +";
+    const card=button.closest(".project-card");
+    const expanded=card.classList.toggle("expanded");
+    button.textContent=expanded?"Show less −":"Explore concept +";
+    button.setAttribute("aria-expanded",String(expanded));
   });
 });
 
 /* BACK TO TOP */
-const backTop = document.getElementById("backTop");
+const backTop=document.getElementById("backTop");
+
 window.addEventListener("scroll",()=>{
   backTop.classList.toggle("visible",window.scrollY>450);
-});
+},{passive:true});
+
 backTop.addEventListener("click",()=>{
-  window.scrollTo({top:0,behavior:"smooth"});
+  window.scrollTo({
+    top:0,
+    behavior:reduceMotion?"auto":"smooth"
+  });
 });
 
 /* CONTACT FORM
-   Replace the example address with your real email.
-   This uses the visitor's default email application. */
+   IMPORTANT: replace this example address with your real email.
+   This form opens the visitor's default email application.
+*/
 document.getElementById("contactForm").addEventListener("submit",event=>{
   event.preventDefault();
 
-  const recipient = "your.email@example.com";
-  const name = document.getElementById("senderName").value.trim();
-  const email = document.getElementById("senderEmail").value.trim();
-  const subject = document.getElementById("subject").value.trim();
-  const message = document.getElementById("message").value.trim();
+  const recipient="your.email@example.com";
+  const name=document.getElementById("senderName").value.trim();
+  const email=document.getElementById("senderEmail").value.trim();
+  const subject=document.getElementById("subject").value.trim();
+  const message=document.getElementById("message").value.trim();
 
-  const body = "From: " + name +
-    "\nReply to: " + email +
-    "\n\n" + message;
+  const body="From: "+name+
+    "\nReply to: "+email+
+    "\n\n"+message;
 
-  document.getElementById("formMessage").textContent =
-    "Preparing an email. Make sure you replace the example recipient address.";
+  document.getElementById("formMessage").textContent=
+    "Opening your email application. Replace the example recipient address with your real email first.";
 
-  window.location.href =
-    "mailto:" + recipient +
-    "?subject=" + encodeURIComponent(subject) +
-    "&body=" + encodeURIComponent(body);
+  window.location.href=
+    "mailto:"+recipient+
+    "?subject="+encodeURIComponent(subject)+
+    "&body="+encodeURIComponent(body);
 });
 
 /* FOOTER YEAR */
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent=new Date().getFullYear();
 </script>
-
 </body>
 </html>
