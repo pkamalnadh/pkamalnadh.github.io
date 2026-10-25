@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PK Amalnadh | AI Product Manager</title>
+<meta name="description" content="PK Amalnadh's portfolio showcasing interests in AI Product Management, Machine Learning Engineering, artificial intelligence and data technology.">
+<title>PK Amalnadh | AI Product Manager & ML Engineer</title>
 
 <style>
 :root {
@@ -16,7 +17,6 @@
   --pink:#ff65db;
   --line:#273451;
 }
-
 [data-theme="light"] {
   --bg:#f1f5ff;
   --panel:#ffffff;
@@ -24,581 +24,257 @@
   --muted:#586681;
   --line:#d6deef;
 }
-
-* { box-sizing:border-box; margin:0; padding:0; }
-
-html { scroll-behavior:smooth; scroll-padding-top:80px; }
-
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth;scroll-padding-top:85px}
 body {
   font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.7;
-  overflow-x:hidden;
+  background:var(--bg);color:var(--text);
+  line-height:1.7;overflow-x:hidden;
   transition:background .3s,color .3s;
 }
-
-a { color:inherit; text-decoration:none; }
-
+a {color:inherit;text-decoration:none}
+button,input,textarea {font:inherit}
 #universe {
-  position:fixed;
-  inset:0;
-  width:100%;
-  height:100%;
-  z-index:-2;
-  pointer-events:none;
+  position:fixed;inset:0;width:100%;height:100%;
+  z-index:-2;pointer-events:none;
 }
-
 .glow {
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:
     radial-gradient(circle at 10% 20%,#343fff25,transparent 35%),
     radial-gradient(circle at 90% 30%,#00eeff20,transparent 35%),
     radial-gradient(circle at 50% 90%,#a020ff20,transparent 40%);
 }
-
-.container { width:min(1120px,92%); margin:auto; }
-
+.container {width:min(1120px,92%);margin:auto}
 header {
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:100;
-  background:var(--bg);
-  border-bottom:1px solid var(--line);
+  position:fixed;top:0;width:100%;z-index:100;
+  background:var(--bg);border-bottom:1px solid var(--line);
 }
-
 nav {
-  min-height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
+  min-height:72px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;
 }
-
-.logo { font-size:21px; font-weight:900; }
-.logo span { color:var(--cyan); }
-
-.links { display:flex; gap:22px; }
-.links a { color:var(--muted); font-size:14px; }
-.links a:hover { color:var(--cyan); }
-
-.nav-actions { display:flex; gap:8px; }
-
+.logo {font-size:21px;font-weight:900;white-space:nowrap}
+.logo span {color:var(--cyan)}
+.links {display:flex;gap:19px}
+.links a {color:var(--muted);font-size:13px}
+.links a:hover {color:var(--cyan)}
+.nav-actions {display:flex;gap:8px}
 .icon-btn,.menu-btn {
-  border:1px solid var(--line);
-  background:var(--panel);
-  color:var(--text);
-  border-radius:10px;
-  padding:10px 13px;
+  border:1px solid var(--line);background:var(--panel);
+  color:var(--text);border-radius:10px;padding:9px 12px;
   cursor:pointer;
 }
-
-.menu-btn { display:none; }
-
-section { padding:100px 0; }
-
-.hero {
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  padding-top:120px;
-}
-
+.menu-btn {display:none}
+section {padding:100px 0}
+.hero {min-height:100vh;display:flex;align-items:center;padding-top:125px}
 .hero-grid {
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  align-items:center;
-  gap:35px;
+  display:grid;grid-template-columns:1.1fr .9fr;
+  align-items:center;gap:35px;
 }
-
 .label {
-  display:inline-block;
-  color:var(--cyan);
-  border:1px solid var(--line);
-  background:var(--panel);
-  border-radius:30px;
-  padding:7px 14px;
-  font-size:12px;
-  letter-spacing:2px;
-  font-weight:bold;
+  display:inline-block;color:var(--cyan);border:1px solid var(--line);
+  background:var(--panel);border-radius:30px;padding:7px 14px;
+  font-size:11px;letter-spacing:2px;font-weight:bold;
 }
-
 h1 {
-  font-size:clamp(38px,6vw,76px);
-  line-height:1.1;
-  letter-spacing:-3px;
-  margin:25px 0 18px;
+  font-size:clamp(38px,6.3vw,76px);line-height:1.12;
+  letter-spacing:-3px;margin:25px 0 18px;
 }
-
 .gradient {
   background:linear-gradient(100deg,var(--cyan),var(--purple),var(--pink));
-  color:transparent;
-  background-clip:text;
-  -webkit-background-clip:text;
+  color:transparent;background-clip:text;-webkit-background-clip:text;
 }
-
-.role { font-size:clamp(19px,3vw,28px); font-weight:bold; }
-#typed { color:var(--cyan); }
-
+.role {font-size:clamp(18px,2.8vw,27px);font-weight:bold}
+#typed {color:var(--cyan)}
 .cursor {
-  display:inline-block;
-  height:1em;
-  width:2px;
-  background:var(--pink);
-  animation:blink .7s infinite;
+  display:inline-block;height:1em;width:2px;
+  background:var(--pink);animation:blink .7s infinite;
 }
-
-@keyframes blink { 50% { opacity:0; } }
-
-.description {
-  color:var(--muted);
-  margin-top:20px;
-  max-width:590px;
-}
-
-.buttons { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
-
+@keyframes blink {50%{opacity:0}}
+.description {color:var(--muted);margin-top:20px;max-width:590px}
+.buttons {display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .btn {
-  display:inline-block;
-  padding:12px 19px;
-  border-radius:11px;
-  border:1px solid var(--line);
-  font-size:14px;
-  font-weight:bold;
-  transition:.25s;
+  display:inline-block;padding:12px 18px;border-radius:11px;
+  border:1px solid var(--line);font-size:14px;font-weight:bold;
+  cursor:pointer;transition:.25s;
 }
-
-.btn:hover { transform:translateY(-3px); }
-
+.btn:hover {transform:translateY(-3px)}
 .primary {
-  color:#061020;
-  background:linear-gradient(100deg,var(--cyan),#a6a5ff);
+  color:#061020;background:linear-gradient(100deg,var(--cyan),#a6a5ff);
   border:0;
 }
+.secondary {background:var(--panel)}
+.hero-meta {display:flex;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:12px;margin-top:25px}
 
-.secondary { background:var(--panel); }
-
-.hero-meta {
-  display:flex;
-  flex-wrap:wrap;
-  gap:18px;
-  color:var(--muted);
-  font-size:13px;
-  margin-top:27px;
-}
-
-/* Futuristic 3D AI animation */
-
+/* Animated AI visual */
 .scene {
-  width:min(420px,100%);
-  aspect-ratio:1;
-  margin:auto;
-  position:relative;
-  display:grid;
-  place-items:center;
-  perspective:900px;
-  animation:float 6s ease-in-out infinite;
+  width:min(420px,100%);aspect-ratio:1;margin:auto;
+  position:relative;display:grid;place-items:center;
+  perspective:900px;animation:float 6s ease-in-out infinite;
 }
-
-@keyframes float {
-  50% { transform:translateY(-12px); }
-}
-
+@keyframes float {50%{transform:translateY(-12px)}}
 .core {
-  position:absolute;
-  width:37%;
-  height:37%;
-  border-radius:50%;
+  position:absolute;width:37%;height:37%;border-radius:50%;
   background:radial-gradient(circle at 30% 25%,white,#28cfff 15%,#3733a3 55%,#080b22);
   box-shadow:0 0 40px #48efff80,0 0 100px #a079ff50;
 }
-
 .ring {
-  position:absolute;
-  width:75%;
-  height:75%;
-  border:1px solid #48efff99;
-  border-radius:50%;
-  transform:rotateX(65deg);
-  animation:rotate 12s linear infinite;
+  position:absolute;width:75%;height:75%;
+  border:1px solid #48efff99;border-radius:50%;
+  transform:rotateX(65deg);animation:rotate 12s linear infinite;
 }
-
-.ring.two {
-  width:95%;
-  height:95%;
-  border-color:#ff65db99;
-  transform:rotateY(65deg);
-  animation-duration:18s;
-  animation-direction:reverse;
-}
-
-.ring.three {
-  width:60%;
-  height:60%;
-  border-color:#a079ff;
-  transform:rotateX(70deg) rotateZ(40deg);
-  animation-duration:9s;
-}
-
-@keyframes rotate { to { rotate:360deg; } }
-
+.ring.two {width:95%;height:95%;border-color:#ff65db99;animation-duration:18s;animation-direction:reverse}
+.ring.three {width:60%;height:60%;border-color:#a079ff;animation-duration:9s;transform:rotateX(70deg) rotateZ(40deg)}
+@keyframes rotate {to{rotate:360deg}}
 .ring::after {
-  content:"";
-  position:absolute;
-  top:0;
-  left:50%;
-  width:9px;
-  height:9px;
-  border-radius:50%;
-  background:var(--cyan);
-  box-shadow:0 0 18px var(--cyan);
+  content:"";position:absolute;top:0;left:50%;
+  width:9px;height:9px;border-radius:50%;
+  background:var(--cyan);box-shadow:0 0 18px var(--cyan);
 }
-
 .holo {
-  position:absolute;
-  padding:12px 15px;
-  border:1px solid #48efff70;
-  border-radius:12px;
-  background:var(--panel);
-  box-shadow:0 10px 35px #0003;
+  position:absolute;padding:11px 13px;border:1px solid #48efff70;
+  border-radius:12px;background:var(--panel);box-shadow:0 10px 35px #0003;
   animation:float 5s ease-in-out infinite;
 }
-
-.holo small { display:block; color:var(--muted); font-size:11px; }
-.holo strong { color:var(--cyan); font-size:17px; }
-.holo.one { top:7%; left:0; }
-.holo.two { top:18%; right:-2%; animation-delay:-2s; }
-.holo.three { bottom:10%; left:0; animation-delay:-1s; }
-.holo.four { bottom:8%; right:0; animation-delay:-3s; }
-
-.bars {
-  height:28px;
-  display:flex;
-  gap:4px;
-  align-items:end;
-  margin-top:5px;
-}
-
+.holo small {display:block;color:var(--muted);font-size:10px}
+.holo strong {color:var(--cyan);font-size:15px}
+.holo.one {top:7%;left:0}
+.holo.two {top:18%;right:-2%;animation-delay:-2s}
+.holo.three {bottom:10%;left:0;animation-delay:-1s}
+.holo.four {bottom:8%;right:0;animation-delay:-3s}
+.bars {height:25px;display:flex;gap:4px;align-items:end;margin-top:5px}
 .bars i {
-  display:block;
-  width:7px;
-  background:linear-gradient(var(--cyan),var(--purple));
-  border-radius:3px 3px 0 0;
-  animation:bar 1s ease-in-out infinite alternate;
+  display:block;width:7px;background:linear-gradient(var(--cyan),var(--purple));
+  border-radius:3px 3px 0 0;animation:bar 1s ease-in-out infinite alternate;
 }
+.bars i:nth-child(1){height:35%}
+.bars i:nth-child(2){height:70%;animation-delay:.2s}
+.bars i:nth-child(3){height:50%;animation-delay:.4s}
+.bars i:nth-child(4){height:100%;animation-delay:.1s}
+.bars i:nth-child(5){height:60%;animation-delay:.3s}
+@keyframes bar {to{height:20%}}
 
-.bars i:nth-child(1) { height:35%; }
-.bars i:nth-child(2) { height:70%; animation-delay:.2s; }
-.bars i:nth-child(3) { height:50%; animation-delay:.4s; }
-.bars i:nth-child(4) { height:100%; animation-delay:.1s; }
-.bars i:nth-child(5) { height:60%; animation-delay:.3s; }
-
-@keyframes bar { to { height:20%; } }
-
-/* Sections */
-
-.section-label {
-  color:var(--cyan);
-  font-size:12px;
-  letter-spacing:2.5px;
-  font-weight:bold;
-  margin-bottom:12px;
-}
-
-h2 {
-  font-size:clamp(30px,4vw,48px);
-  line-height:1.2;
-  letter-spacing:-1.5px;
-}
-
-.section-description {
-  color:var(--muted);
-  max-width:700px;
-  margin-top:14px;
-}
-
-.section-heading { margin-bottom:38px; }
-
-.grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
+.section-label {color:var(--cyan);font-size:12px;letter-spacing:2.5px;font-weight:bold;margin-bottom:12px}
+h2 {font-size:clamp(30px,4vw,47px);line-height:1.2;letter-spacing:-1.5px}
+.section-description {color:var(--muted);max-width:700px;margin-top:14px}
+.section-heading {margin-bottom:38px}
+.grid {display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .card {
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:17px;
-  padding:25px;
-  transition:.3s;
-  position:relative;
-  overflow:hidden;
+  background:var(--panel);border:1px solid var(--line);border-radius:17px;
+  padding:24px;transition:.3s;position:relative;overflow:hidden;
 }
-
-.card:hover {
-  transform:translateY(-6px);
-  border-color:var(--cyan);
-  box-shadow:0 12px 35px #48efff12;
-}
-
+.card:hover {transform:translateY(-5px);border-color:var(--cyan);box-shadow:0 12px 35px #48efff12}
 .card-icon {
-  width:48px;
-  height:48px;
-  display:grid;
-  place-items:center;
-  border-radius:13px;
-  color:var(--cyan);
-  background:#48efff12;
-  border:1px solid var(--line);
-  font-size:23px;
-  margin-bottom:17px;
+  width:46px;height:46px;display:grid;place-items:center;border-radius:13px;
+  color:var(--cyan);background:#48efff12;border:1px solid var(--line);
+  font-size:22px;margin-bottom:16px;
 }
-
-.card h3 { margin-bottom:9px; font-size:19px; }
-.card p { color:var(--muted); font-size:14px; }
-
-.tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:17px; }
-
-.tag {
-  padding:5px 9px;
-  border:1px solid var(--line);
-  border-radius:7px;
-  color:var(--muted);
-  font-size:11px;
-}
-
-.about-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-.about-box {
-  padding:27px;
-  border:1px solid var(--line);
-  background:var(--panel);
-  border-radius:17px;
-}
-
-.about-box p { color:var(--muted); margin-top:12px; }
-
-.fact {
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  padding:13px 0;
-  border-bottom:1px solid var(--line);
-  font-size:14px;
-}
-
-.fact:last-child { border-bottom:0; }
-.fact span { color:var(--muted); text-align:right; }
-
-.skills { display:flex; flex-wrap:wrap; gap:11px; margin-top:22px; }
-
-.skill {
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:10px;
-  padding:11px 15px;
-  font-size:14px;
-  transition:.2s;
-}
-
-.skill:hover { color:var(--cyan); border-color:var(--cyan); }
-
-.filters { display:flex; flex-wrap:wrap; gap:9px; margin-bottom:24px; }
-
-.filter {
-  padding:8px 13px;
-  border:1px solid var(--line);
-  background:var(--panel);
-  color:var(--text);
-  border-radius:8px;
-  cursor:pointer;
-}
-
-.filter.active,.filter:hover { border-color:var(--cyan); color:var(--cyan); }
-
-.project { min-height:270px; display:flex; flex-direction:column; }
-.project[hidden] { display:none; }
-.project .tags { margin-top:auto; padding-top:18px; }
-
-.project-number {
-  color:var(--cyan);
-  font-size:12px;
-  letter-spacing:2px;
-  margin-bottom:17px;
-}
-
-.timeline {
-  border-left:1px solid var(--line);
-  margin-left:10px;
-  padding-left:27px;
-  display:grid;
-  gap:20px;
-}
-
-.timeline-item {
-  position:relative;
-  padding:23px;
-  border:1px solid var(--line);
-  border-radius:15px;
-  background:var(--panel);
-}
-
+.card h3 {margin-bottom:9px;font-size:18px}
+.card p {color:var(--muted);font-size:14px}
+.tags {display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}
+.tag {padding:5px 9px;border:1px solid var(--line);border-radius:7px;color:var(--muted);font-size:11px}
+.about-grid {display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.about-box {padding:26px;border:1px solid var(--line);background:var(--panel);border-radius:17px}
+.about-box p {color:var(--muted);margin-top:12px}
+.fact {display:flex;justify-content:space-between;gap:15px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.fact:last-child {border-bottom:0}
+.fact span {color:var(--muted);text-align:right}
+.skills {display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.skill {background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:14px}
+.skill:hover {color:var(--cyan);border-color:var(--cyan)}
+.filters {display:flex;flex-wrap:wrap;gap:9px;margin-bottom:24px}
+.filter {padding:8px 13px;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:8px;cursor:pointer}
+.filter.active,.filter:hover {border-color:var(--cyan);color:var(--cyan)}
+.project {min-height:270px;display:flex;flex-direction:column}
+.project[hidden] {display:none}
+.project .tags {margin-top:auto;padding-top:18px}
+.project-number {color:var(--cyan);font-size:11px;letter-spacing:2px;margin-bottom:17px}
+.timeline {border-left:1px solid var(--line);margin-left:10px;padding-left:27px;display:grid;gap:20px}
+.timeline-item {position:relative;padding:23px;border:1px solid var(--line);border-radius:15px;background:var(--panel)}
 .timeline-item::before {
-  content:"";
-  position:absolute;
-  left:-34px;
-  top:28px;
-  width:11px;
-  height:11px;
-  border-radius:50%;
-  background:var(--cyan);
-  box-shadow:0 0 15px var(--cyan);
+  content:"";position:absolute;left:-34px;top:28px;width:11px;height:11px;
+  border-radius:50%;background:var(--cyan);box-shadow:0 0 15px var(--cyan);
 }
-
-.timeline-item p { color:var(--muted); margin-top:8px; font-size:14px; }
-.timeline-item small { color:var(--cyan); }
-
-.contact-grid {
-  display:grid;
-  grid-template-columns:.85fr 1.15fr;
-  gap:22px;
-}
-
-.contact-box {
-  padding:27px;
-  border:1px solid var(--line);
-  border-radius:17px;
-  background:var(--panel);
-}
-
-.contact-box p { color:var(--muted); margin-top:12px; }
-
-.contact-link {
-  display:block;
-  margin-top:17px;
-  color:var(--cyan);
-  overflow-wrap:anywhere;
-}
-
-form { display:grid; gap:13px; }
-
+.timeline-item p {color:var(--muted);margin-top:8px;font-size:14px}
+.timeline-item small {color:var(--cyan)}
+.contact-grid {display:grid;grid-template-columns:.85fr 1.15fr;gap:22px}
+.contact-box {padding:26px;border:1px solid var(--line);border-radius:17px;background:var(--panel)}
+.contact-box p {color:var(--muted);margin-top:12px}
+.contact-link {display:block;margin-top:17px;color:var(--cyan);overflow-wrap:anywhere}
+form {display:grid;gap:13px}
 input,textarea {
-  width:100%;
-  padding:13px 14px;
-  border-radius:10px;
-  border:1px solid var(--line);
-  background:var(--bg);
-  color:var(--text);
-  outline:none;
+  width:100%;padding:13px 14px;border-radius:10px;
+  border:1px solid var(--line);background:var(--bg);color:var(--text);outline:none;
 }
-
-input:focus,textarea:focus { border-color:var(--cyan); }
-textarea { min-height:125px; resize:vertical; }
-
-footer {
-  padding:25px 0;
-  border-top:1px solid var(--line);
-  color:var(--muted);
-  font-size:13px;
-}
-
-.footer-inner {
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:12px;
-}
-
-.reveal {
-  opacity:0;
-  transform:translateY(20px);
-  transition:opacity .7s,transform .7s;
-}
-
-.reveal.visible { opacity:1; transform:translateY(0); }
+input:focus,textarea:focus {border-color:var(--cyan)}
+textarea {min-height:125px;resize:vertical}
+footer {padding:25px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+.footer-inner {display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.reveal {opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.reveal.visible {opacity:1;transform:translateY(0)}
 
 @media(max-width:900px) {
-  .hero-grid { grid-template-columns:1fr; }
-  .scene { max-width:400px; }
-  .grid { grid-template-columns:repeat(2,1fr); }
+  .hero-grid {grid-template-columns:1fr}
+  .scene {max-width:390px}
+  .grid {grid-template-columns:repeat(2,1fr)}
 }
-
 @media(max-width:680px) {
-  .container { width:92%; }
-  .menu-btn { display:block; }
+  .container {width:92%}
+  .menu-btn {display:block}
   .links {
-    display:none;
-    position:absolute;
-    top:72px;
-    left:0;
-    right:0;
-    background:var(--bg);
-    border-bottom:1px solid var(--line);
-    padding:18px 4%;
-    flex-direction:column;
-    gap:15px;
+    display:none;position:absolute;top:72px;left:0;right:0;
+    background:var(--bg);border-bottom:1px solid var(--line);
+    padding:18px 4%;flex-direction:column;gap:15px;
   }
-  .links.open { display:flex; }
-  .hero { padding-top:115px; }
-  section { padding:75px 0; }
-  .grid,.about-grid,.contact-grid { grid-template-columns:1fr; }
-  .scene { max-width:340px; }
-  .holo { padding:8px 10px; }
-  .holo strong { font-size:14px; }
-  h1 { letter-spacing:-2px; }
+  .links.open {display:flex}
+  .hero {padding-top:115px}
+  section {padding:75px 0}
+  .grid,.about-grid,.contact-grid {grid-template-columns:1fr}
+  .scene {max-width:330px}
+  .holo {padding:8px 9px}
+  .holo strong {font-size:13px}
+  h1 {letter-spacing:-2px}
 }
-
 @media(prefers-reduced-motion:reduce) {
   *,*::before,*::after {
     animation-duration:.01ms!important;
     animation-iteration-count:1!important;
     scroll-behavior:auto!important;
   }
-  .reveal { opacity:1; transform:none; }
+  .reveal {opacity:1;transform:none}
 }
 </style>
 </head>
 
 <body>
-<canvas id="universe"></canvas>
+<canvas id="universe" aria-hidden="true"></canvas>
 <div class="glow"></div>
 
 <header>
   <nav class="container">
     <a class="logo" href="#home">PK <span>Amalnadh</span></a>
-
     <div class="links" id="navLinks">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
+      <a href="#specialisations">AI Expertise</a>
       <a href="#projects">Projects</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </div>
-
     <div class="nav-actions">
       <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☀</button>
-      <button class="menu-btn" id="menuToggle" aria-label="Open menu">☰</button>
+      <button class="menu-btn" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
   </nav>
 </header>
 
 <main>
-
 <section class="hero" id="home">
   <div class="container hero-grid">
-
     <div class="reveal">
-      <div class="label">AI · PRODUCT · INNOVATION</div>
-
+      <div class="label">AI · MACHINE LEARNING · INNOVATION</div>
       <h1>PK <span class="gradient">Amalnadh</span></h1>
 
       <div class="role">
@@ -606,9 +282,11 @@ footer {
       </div>
 
       <p class="description">
-        I’m passionate about building intelligent, useful and human-centred AI products.
-        I’m interested in connecting business strategy, emerging technology and user needs
-        to create meaningful digital experiences.
+        Aspiring AI Product Manager and Machine Learning Engineer,
+        passionate about artificial intelligence, intelligent products,
+        predictive models and data-driven solutions. I’m interested in
+        connecting business strategy with technical innovation to create
+        useful AI-powered products and solve real-world problems.
       </p>
 
       <div class="buttons">
@@ -617,42 +295,41 @@ footer {
       </div>
 
       <div class="hero-meta">
-        <span>✦ AI Product Strategy</span>
-        <span>✦ Business Thinking</span>
-        <span>✦ Emerging Technology</span>
+        <span>✦ AI Product Management</span>
+        <span>✦ Machine Learning</span>
+        <span>✦ Data & Analytics</span>
       </div>
     </div>
 
-    <div class="scene reveal">
+    <div class="scene reveal" aria-label="Animated AI visual">
       <div class="ring"></div>
       <div class="ring two"></div>
       <div class="ring three"></div>
       <div class="core"></div>
 
       <div class="holo one">
-        <small>AI SYSTEM</small>
-        <strong>INTELLIGENT</strong>
-        <small>Concept visualisation</small>
+        <small>AI PRODUCT</small>
+        <strong>Intelligent</strong>
+        <small>Business + Technology</small>
       </div>
 
       <div class="holo two">
-        <small>DATA FLOW</small>
-        <strong>↗ Connected</strong>
+        <small>MACHINE LEARNING</small>
+        <strong>Data → Insights</strong>
         <div class="bars"><i></i><i></i><i></i><i></i><i></i></div>
       </div>
 
       <div class="holo three">
-        <small>PRODUCT FOCUS</small>
+        <small>INNOVATION</small>
         <strong>Human + AI</strong>
-        <small>Designed for impact</small>
+        <small>Solving real problems</small>
       </div>
 
       <div class="holo four">
-        <small>INNOVATION</small>
-        <strong>Future Ready</strong>
+        <small>FUTURE FOCUS</small>
+        <strong>AI + ML</strong>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -662,8 +339,8 @@ footer {
       <div class="section-label">01 / ABOUT ME</div>
       <h2>Business thinking.<br><span class="gradient">Intelligent possibilities.</span></h2>
       <p class="section-description">
-        I’m developing my understanding of AI product management, business strategy
-        and how technology can solve real-world problems.
+        Exploring the intersection of artificial intelligence, machine learning,
+        business strategy and digital product development.
       </p>
     </div>
 
@@ -671,23 +348,26 @@ footer {
       <div class="about-box reveal">
         <h3>Who I Am</h3>
         <p>
-          I am a BBA graduate with an interest in artificial intelligence,
-          digital products and innovation. I enjoy exploring how ideas can
-          become useful products through research, planning and continuous improvement.
+          I am a BBA graduate interested in artificial intelligence, machine
+          learning and technology-driven business innovation. I want to develop
+          the skills needed to build intelligent solutions and understand how
+          AI can address real user and business needs.
         </p>
         <p>
-          My goal is to grow into an AI Product Manager who can understand users,
-          collaborate with technical teams and help build products that deliver value.
+          My two career interests are AI Product Management and Machine Learning
+          Engineering. I’m interested in both the product side—understanding
+          users, defining problems and shaping solutions—and the technical side
+          of building and evaluating machine learning models.
         </p>
       </div>
 
       <div class="about-box reveal">
-        <h3>My Direction</h3>
-        <div class="fact"><strong>Career Focus</strong><span>AI Product Management</span></div>
-        <div class="fact"><strong>Education</strong><span>BBA Graduate</span></div>
-        <div class="fact"><strong>Interest</strong><span>Artificial Intelligence</span></div>
-        <div class="fact"><strong>Approach</strong><span>Business + Technology</span></div>
-        <div class="fact"><strong>Goal</strong><span>Build useful AI products</span></div>
+        <h3>Career Direction</h3>
+        <div class="fact"><strong>Career Path 01</strong><span>AI Product Manager</span></div>
+        <div class="fact"><strong>Career Path 02</strong><span>ML Engineer</span></div>
+        <div class="fact"><strong>Degree</strong><span>BBA, 2023–2026</span></div>
+        <div class="fact"><strong>College</strong><span>Nirmala Arts & Science College</span></div>
+        <div class="fact"><strong>Location</strong><span>Mulamthuruthy, Kerala</span></div>
       </div>
     </div>
   </div>
@@ -696,77 +376,127 @@ footer {
 <section id="skills">
   <div class="container">
     <div class="section-heading reveal">
-      <div class="section-label">02 / SKILLS & INTERESTS</div>
-      <h2>My <span class="gradient">toolkit</span></h2>
+      <div class="section-label">02 / TECHNICAL TOOLKIT</div>
+      <h2>Tools to turn data into <span class="gradient">intelligence.</span></h2>
       <p class="section-description">
-        Areas I’m exploring and developing for a future in AI product management.
+        Programming, analytics and visualisation tools relevant to AI,
+        machine learning and data-driven product development.
       </p>
     </div>
 
     <div class="grid">
       <article class="card reveal">
+        <div class="card-icon">⌘</div>
+        <h3>Programming Languages</h3>
+        <p>Languages for data analysis, programming and machine learning workflows.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">R</span>
+          <span class="tag">SQL</span>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">▦</div>
+        <h3>Business Intelligence</h3>
+        <p>Tools for data exploration, reporting and interactive business dashboards.</p>
+        <div class="tags">
+          <span class="tag">Power BI</span>
+          <span class="tag">Tableau</span>
+          <span class="tag">Excel</span>
+        </div>
+      </article>
+
+      <article class="card reveal">
         <div class="card-icon">✧</div>
-        <h3>AI & Emerging Technology</h3>
-        <p>Exploring AI capabilities and their potential to solve business and user problems.</p>
+        <h3>Artificial Intelligence</h3>
+        <p>AI concepts and techniques for intelligent applications and solutions.</p>
         <div class="tags">
           <span class="tag">Artificial Intelligence</span>
-          <span class="tag">Generative AI</span>
           <span class="tag">Machine Learning</span>
+          <span class="tag">Deep Learning</span>
+          <span class="tag">Generative AI</span>
         </div>
       </article>
+    </div>
+  </div>
+</section>
 
+<section id="specialisations">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="section-label">03 / AI SPECIALISATIONS</div>
+      <h2>Exploring the <span class="gradient">AI landscape.</span></h2>
+      <p class="section-description">
+        Key areas I’m interested in developing across machine learning,
+        modern AI systems, data infrastructure and responsible product strategy.
+      </p>
+    </div>
+
+    <div class="grid">
       <article class="card reveal">
         <div class="card-icon">◈</div>
-        <h3>Product Management</h3>
-        <p>Learning how product ideas are researched, prioritised, planned and evaluated.</p>
+        <h3>Machine Learning</h3>
+        <p>Learning how algorithms identify patterns in data and support predictions and decisions.</p>
         <div class="tags">
-          <span class="tag">Product Strategy</span>
-          <span class="tag">Roadmaps</span>
-          <span class="tag">User Needs</span>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">⌘</div>
-        <h3>Business Analysis</h3>
-        <p>Understanding business objectives, problem-solving and data-informed decisions.</p>
-        <div class="tags">
-          <span class="tag">Business Research</span>
-          <span class="tag">Critical Thinking</span>
-          <span class="tag">Problem Solving</span>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">◎</div>
-        <h3>User-Centred Thinking</h3>
-        <p>Considering user challenges and how digital products can improve experiences.</p>
-        <div class="tags">
-          <span class="tag">User Research</span>
-          <span class="tag">Product Discovery</span>
-          <span class="tag">UX Thinking</span>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">⌬</div>
-        <h3>Product Communication</h3>
-        <p>Building skills in explaining ideas, organising requirements and communicating goals.</p>
-        <div class="tags">
-          <span class="tag">Documentation</span>
-          <span class="tag">Presentations</span>
-          <span class="tag">Collaboration</span>
+          <span class="tag">Supervised Learning</span>
+          <span class="tag">Unsupervised Learning</span>
+          <span class="tag">Model Evaluation</span>
         </div>
       </article>
 
       <article class="card reveal">
         <div class="card-icon">↗</div>
-        <h3>Continuous Learning</h3>
-        <p>Developing knowledge of product practices, AI concepts and emerging digital tools.</p>
+        <h3>Predictive Analytics</h3>
+        <p>Using historical data and analytical methods to estimate future outcomes.</p>
         <div class="tags">
-          <span class="tag">Learning</span>
-          <span class="tag">Innovation</span>
-          <span class="tag">Adaptability</span>
+          <span class="tag">Forecasting</span>
+          <span class="tag">Prediction</span>
+          <span class="tag">Statistical Analysis</span>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">✧</div>
+        <h3>Deep Learning</h3>
+        <p>Exploring neural networks and their use in complex learning tasks.</p>
+        <div class="tags">
+          <span class="tag">Neural Networks</span>
+          <span class="tag">Representation Learning</span>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">✳</div>
+        <h3>Generative AI</h3>
+        <p>Exploring AI systems that generate text, content and other useful outputs.</p>
+        <div class="tags">
+          <span class="tag">Large Language Models</span>
+          <span class="tag">Prompt Design</span>
+          <span class="tag">AI Applications</span>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">▤</div>
+        <h3>Big Data Tools & Data Engineering</h3>
+        <p>Understanding how data is collected, processed, transformed and prepared for AI systems.</p>
+        <div class="tags">
+          <span class="tag">Big Data Tools</span>
+          <span class="tag">Data Pipelines</span>
+          <span class="tag">Data Engineering</span>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">◎</div>
+        <h3>AI Strategy, Ethics & Governance</h3>
+        <p>Considering how AI products can align with business goals and responsible practices.</p>
+        <div class="tags">
+          <span class="tag">AI Strategy</span>
+          <span class="tag">AI Ethics</span>
+          <span class="tag">AI Governance</span>
+          <span class="tag">Responsible AI</span>
         </div>
       </article>
     </div>
@@ -776,19 +506,20 @@ footer {
 <section id="projects">
   <div class="container">
     <div class="section-heading reveal">
-      <div class="section-label">03 / SELECTED PROJECTS</div>
-      <h2>Ideas into <span class="gradient">possibilities.</span></h2>
+      <div class="section-label">04 / PROJECT IDEAS</div>
+      <h2>Ideas for <span class="gradient">real-world impact.</span></h2>
       <p class="section-description">
-        Concept projects that demonstrate how I approach AI product opportunities.
-        These are concepts, not claims of deployed products.
+        These are concept projects that can demonstrate my approach to AI
+        product thinking and machine learning. I will add implementation details
+        and results when I have completed each project.
       </p>
     </div>
 
     <div class="filters reveal">
       <button class="filter active" data-filter="all">All Projects</button>
-      <button class="filter" data-filter="ai">AI Concepts</button>
-      <button class="filter" data-filter="product">Product Strategy</button>
-      <button class="filter" data-filter="business">Business</button>
+      <button class="filter" data-filter="ai">AI & ML</button>
+      <button class="filter" data-filter="product">Product Management</button>
+      <button class="filter" data-filter="data">Data & Analytics</button>
     </div>
 
     <div class="grid" id="projectGrid">
@@ -797,43 +528,88 @@ footer {
         <div class="card-icon">✧</div>
         <h3>AI Personal Assistant</h3>
         <p>
-          A concept for an AI assistant that helps users organise tasks,
+          A concept for an AI assistant that helps people organise tasks,
           find information and complete everyday activities more efficiently.
         </p>
         <div class="tags">
           <span class="tag">Generative AI</span>
-          <span class="tag">User Experience</span>
           <span class="tag">Product Discovery</span>
+          <span class="tag">User Experience</span>
         </div>
       </article>
 
-      <article class="card project reveal" data-category="product business">
+      <article class="card project reveal" data-category="ai data">
         <div class="project-number">CONCEPT / 02</div>
-        <div class="card-icon">◈</div>
-        <h3>Smart Business Insights</h3>
+        <div class="card-icon">↗</div>
+        <h3>Predictive Analytics Solution</h3>
         <p>
-          A product concept that presents business information in a simple,
-          understandable format to help decision-makers identify opportunities.
+          A machine learning concept for analysing historical data,
+          evaluating predictive models and communicating forecasts clearly.
         </p>
         <div class="tags">
-          <span class="tag">Business Strategy</span>
-          <span class="tag">Decision Support</span>
+          <span class="tag">Python</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Predictive Analytics</span>
+        </div>
+      </article>
+
+      <article class="card project reveal" data-category="product ai">
+        <div class="project-number">CONCEPT / 03</div>
+        <div class="card-icon">◈</div>
+        <h3>AI Product Strategy</h3>
+        <p>
+          A product proposal covering a target user problem, AI use case,
+          product requirements, potential risks and success measures.
+        </p>
+        <div class="tags">
+          <span class="tag">AI Strategy</span>
+          <span class="tag">Product Roadmap</span>
+          <span class="tag">Responsible AI</span>
+        </div>
+      </article>
+
+      <article class="card project reveal" data-category="data">
+        <div class="project-number">CONCEPT / 04</div>
+        <div class="card-icon">▦</div>
+        <h3>Business Intelligence Dashboard</h3>
+        <p>
+          A dashboard concept for presenting business performance indicators
+          and helping users explore trends using interactive visualisations.
+        </p>
+        <div class="tags">
+          <span class="tag">Power BI</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Excel</span>
+        </div>
+      </article>
+
+      <article class="card project reveal" data-category="ai data">
+        <div class="project-number">CONCEPT / 05</div>
+        <div class="card-icon">⌬</div>
+        <h3>AI Customer Support</h3>
+        <p>
+          A conversational AI concept designed to answer common questions,
+          guide customers and help support teams manage requests.
+        </p>
+        <div class="tags">
+          <span class="tag">Generative AI</span>
+          <span class="tag">Customer Experience</span>
           <span class="tag">Product Thinking</span>
         </div>
       </article>
 
-      <article class="card project reveal" data-category="ai business">
-        <div class="project-number">CONCEPT / 03</div>
-        <div class="card-icon">⌘</div>
-        <h3>AI Customer Support</h3>
+      <article class="card project reveal" data-category="product data">
+        <div class="project-number">CONCEPT / 06</div>
+        <div class="card-icon">◎</div>
+        <h3>Responsible AI Checklist</h3>
         <p>
-          An AI-powered support concept designed to answer common questions,
-          guide customers and help support teams manage requests.
+          A framework concept for reviewing privacy, fairness, transparency,
+          risks and governance considerations during AI product development.
         </p>
         <div class="tags">
-          <span class="tag">Conversational AI</span>
-          <span class="tag">Customer Experience</span>
-          <span class="tag">Problem Solving</span>
+          <span class="tag">AI Ethics</span>
+          <span class="tag">AI Governance</span>
+          <span class="tag">Product Risk</span>
         </div>
       </article>
     </div>
@@ -843,33 +619,32 @@ footer {
 <section id="education">
   <div class="container">
     <div class="section-heading reveal">
-      <div class="section-label">04 / EDUCATION</div>
+      <div class="section-label">05 / EDUCATION</div>
       <h2>Learning for the <span class="gradient">future.</span></h2>
     </div>
 
     <div class="timeline">
       <div class="timeline-item reveal">
-        <small>UNDERGRADUATE EDUCATION</small>
+        <small>2023–2026</small>
         <h3>Bachelor of Business Administration (BBA)</h3>
-        <p>Nirmala Arts & Science College, Mulamthuruthy, Kerala.</p>
-        <p>Graduation period: 2023–2026.</p>
+        <p>Nirmala Arts & Science College, Mulamthuruthy, Kerala, India.</p>
       </div>
 
       <div class="timeline-item reveal">
         <small>PROFESSIONAL LEARNING</small>
         <h3>Professional Diploma in Data Analytics</h3>
         <p>
-          Add your training provider and completion status here.
-          Include this qualification only if it accurately reflects your studies.
+          Add the training provider and accurate completion status here.
+          Keep this entry only if it reflects your actual qualification.
         </p>
       </div>
 
       <div class="timeline-item reveal">
-        <small>FUTURE DIRECTION</small>
-        <h3>Artificial Intelligence & Product Management</h3>
+        <small>CAREER DIRECTION</small>
+        <h3>AI Product Management & Machine Learning Engineering</h3>
         <p>
-          Developing knowledge of AI applications, product strategy,
-          user needs and business innovation.
+          Continuing to develop knowledge across AI technologies, product
+          strategy, machine learning methods and responsible innovation.
         </p>
       </div>
     </div>
@@ -879,10 +654,11 @@ footer {
 <section id="contact">
   <div class="container">
     <div class="section-heading reveal">
-      <div class="section-label">05 / CONTACT</div>
-      <h2>Let's build something <span class="gradient">meaningful.</span></h2>
+      <div class="section-label">06 / CONTACT</div>
+      <h2>Let's connect and explore <span class="gradient">new ideas.</span></h2>
       <p class="section-description">
-        Interested in AI, digital products or new ideas? Feel free to connect.
+        Interested in AI, machine learning, digital products or technology?
+        Feel free to connect with me.
       </p>
     </div>
 
@@ -890,27 +666,28 @@ footer {
       <div class="contact-box reveal">
         <h3>Get in touch</h3>
         <p>
-          I’m interested in learning, sharing ideas and connecting with people
-          working in AI, technology and product development.
+          I’m interested in learning, exchanging ideas and connecting with
+          people working in artificial intelligence, machine learning and product development.
         </p>
 
-        <!-- Replace these placeholders with your real details -->
-        <a class="contact-link" href="mailto:your.email@example.com">
-          ✉ your.email@example.com
+        <!-- Replace with your real email address -->
+        <a class="contact-link" href="mailto:YOUR_EMAIL@example.com">
+          ✉ YOUR_EMAIL@example.com
         </a>
 
+        <!-- Replace with your actual LinkedIn profile URL -->
         <a class="contact-link"
            href="https://www.linkedin.com/"
            target="_blank" rel="noopener noreferrer">
           ↗ LinkedIn Profile
         </a>
 
-        <p>Location: Kerala, India</p>
+        <p>Kerala, India</p>
       </div>
 
       <div class="contact-box reveal">
         <h3>Send a message</h3>
-        <p>This form opens your email app to prepare a message.</p>
+        <p>The form prepares an email using your email application.</p>
 
         <form id="contactForm">
           <input type="text" id="senderName" placeholder="Your name" required>
@@ -923,101 +700,90 @@ footer {
     </div>
   </div>
 </section>
-
 </main>
 
 <footer>
   <div class="container footer-inner">
     <span>© <span id="year"></span> PK Amalnadh</span>
-    <span>AI · Product · Innovation</span>
+    <span>AI Product Management · Machine Learning</span>
     <a href="#home">Back to top ↑</a>
   </div>
 </footer>
 
 <script>
-/* Animated background particles */
+/* Animated particle network */
 const canvas = document.getElementById("universe");
 const ctx = canvas.getContext("2d");
-
 let particles = [];
 let width = 0;
 let height = 0;
-let animationFrame;
 
 function resizeCanvas() {
   const ratio = Math.min(window.devicePixelRatio || 1, 2);
-
   width = window.innerWidth;
   height = window.innerHeight;
-
   canvas.width = width * ratio;
   canvas.height = height * ratio;
   canvas.style.width = width + "px";
   canvas.style.height = height + "px";
-
   ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
 
-  const count = Math.min(95, Math.floor(width / 13));
-
-  particles = Array.from({ length: count }, () => ({
-    x: Math.random() * width,
-    y: Math.random() * height,
-    vx: (Math.random() - 0.5) * 0.35,
-    vy: (Math.random() - 0.5) * 0.35,
-    radius: Math.random() * 1.7 + 0.5
+  const count = Math.min(90, Math.floor(width / 13));
+  particles = Array.from({length:count}, () => ({
+    x:Math.random()*width,
+    y:Math.random()*height,
+    vx:(Math.random()-.5)*.35,
+    vy:(Math.random()-.5)*.35,
+    radius:Math.random()*1.6+.5
   }));
 }
 
 function drawParticles() {
   ctx.clearRect(0, 0, width, height);
+  const light = document.documentElement.dataset.theme === "light";
+  const color = light ? "0,100,160" : "72,239,255";
 
-  const lightMode = document.documentElement.dataset.theme === "light";
-  const particleColor = lightMode ? "0,100,160" : "72,239,255";
-
-  particles.forEach((p, i) => {
+  particles.forEach((p,i) => {
     p.x += p.vx;
     p.y += p.vy;
-
-    if (p.x < 0 || p.x > width) p.vx *= -1;
-    if (p.y < 0 || p.y > height) p.vy *= -1;
+    if(p.x < 0 || p.x > width) p.vx *= -1;
+    if(p.y < 0 || p.y > height) p.vy *= -1;
 
     ctx.beginPath();
-    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(${particleColor},0.8)`;
+    ctx.arc(p.x,p.y,p.radius,0,Math.PI*2);
+    ctx.fillStyle = `rgba(${color},0.8)`;
     ctx.fill();
 
-    for (let j = i + 1; j < particles.length; j++) {
+    for(let j=i+1;j<particles.length;j++) {
       const q = particles[j];
-      const dx = p.x - q.x;
-      const dy = p.y - q.y;
-      const distance = Math.sqrt(dx * dx + dy * dy);
+      const dx = p.x-q.x;
+      const dy = p.y-q.y;
+      const distance = Math.sqrt(dx*dx+dy*dy);
 
-      if (distance < 105) {
+      if(distance < 105) {
         ctx.beginPath();
-        ctx.moveTo(p.x, p.y);
-        ctx.lineTo(q.x, q.y);
-        ctx.strokeStyle =
-          `rgba(${particleColor},${(1 - distance / 105) * 0.17})`;
-        ctx.lineWidth = 0.7;
+        ctx.moveTo(p.x,p.y);
+        ctx.lineTo(q.x,q.y);
+        ctx.strokeStyle = `rgba(${color},${(1-distance/105)*.17})`;
+        ctx.lineWidth = .7;
         ctx.stroke();
       }
     }
   });
 
-  animationFrame = requestAnimationFrame(drawParticles);
+  requestAnimationFrame(drawParticles);
 }
 
 resizeCanvas();
 drawParticles();
-
-window.addEventListener("resize", resizeCanvas);
+window.addEventListener("resize",resizeCanvas);
 
 /* Typing animation */
 const words = [
   "AI Product Manager",
-  "Product Strategist",
-  "AI Innovation Enthusiast",
-  "Technology Explorer"
+  "Machine Learning Engineer",
+  "Artificial Intelligence Enthusiast",
+  "AI Innovation Explorer"
 ];
 
 const typedElement = document.getElementById("typed");
@@ -1027,60 +793,47 @@ let deleting = true;
 
 function typeEffect() {
   const word = words[wordIndex];
+  charIndex += deleting ? -1 : 1;
+  typedElement.textContent = word.substring(0,charIndex);
 
-  if (deleting) {
-    charIndex--;
-  } else {
-    charIndex++;
-  }
+  let delay = deleting ? 45 : 80;
 
-  typedElement.textContent = word.substring(0, charIndex);
-
-  let delay = deleting ? 45 : 85;
-
-  if (!deleting && charIndex === word.length) {
+  if(!deleting && charIndex === word.length) {
     deleting = true;
     delay = 1400;
-  } else if (deleting && charIndex === 0) {
+  } else if(deleting && charIndex === 0) {
     deleting = false;
-    wordIndex = (wordIndex + 1) % words.length;
-    delay = 350;
+    wordIndex = (wordIndex+1)%words.length;
+    delay = 300;
   }
 
-  setTimeout(typeEffect, delay);
+  setTimeout(typeEffect,delay);
 }
+setTimeout(typeEffect,1500);
 
-setTimeout(typeEffect, 1600);
-
-/* Dark and light theme */
+/* Theme toggle */
 const themeToggle = document.getElementById("themeToggle");
-
-themeToggle.addEventListener("click", () => {
+themeToggle.addEventListener("click",() => {
   const html = document.documentElement;
-  const isLight = html.dataset.theme === "light";
-
-  html.dataset.theme = isLight ? "dark" : "light";
-  themeToggle.textContent = isLight ? "☀" : "☾";
-  themeToggle.setAttribute(
-    "aria-label",
-    isLight ? "Switch to light mode" : "Switch to dark mode"
-  );
+  const light = html.dataset.theme === "light";
+  html.dataset.theme = light ? "dark" : "light";
+  themeToggle.textContent = light ? "☀" : "☾";
 });
 
 /* Mobile navigation */
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
-menuToggle.addEventListener("click", () => {
-  const opened = navLinks.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(opened));
-  menuToggle.textContent = opened ? "✕" : "☰";
+menuToggle.addEventListener("click",() => {
+  const open = navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded",String(open));
+  menuToggle.textContent = open ? "✕" : "☰";
 });
 
 navLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
+  link.addEventListener("click",() => {
     navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-expanded","false");
     menuToggle.textContent = "☰";
   });
 });
@@ -1088,15 +841,15 @@ navLinks.querySelectorAll("a").forEach(link => {
 /* Reveal sections while scrolling */
 const revealElements = document.querySelectorAll(".reveal");
 
-if ("IntersectionObserver" in window) {
+if("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
+      if(entry.isIntersecting) {
         entry.target.classList.add("visible");
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
+  },{threshold:.12});
 
   revealElements.forEach(element => observer.observe(element));
 } else {
@@ -1108,22 +861,20 @@ const filterButtons = document.querySelectorAll(".filter");
 const projects = document.querySelectorAll(".project");
 
 filterButtons.forEach(button => {
-  button.addEventListener("click", () => {
+  button.addEventListener("click",() => {
     filterButtons.forEach(item => item.classList.remove("active"));
     button.classList.add("active");
-
     const selected = button.dataset.filter;
 
     projects.forEach(project => {
       const categories = project.dataset.category.split(" ");
-      project.hidden =
-        selected !== "all" && !categories.includes(selected);
+      project.hidden = selected !== "all" && !categories.includes(selected);
     });
   });
 });
 
-/* Contact form: prepare an email in the user's email app */
-document.getElementById("contactForm").addEventListener("submit", event => {
+/* Contact form email draft */
+document.getElementById("contactForm").addEventListener("submit",event => {
   event.preventDefault();
 
   const name = document.getElementById("senderName").value.trim();
@@ -1131,15 +882,10 @@ document.getElementById("contactForm").addEventListener("submit", event => {
   const subject = document.getElementById("senderSubject").value.trim();
   const message = document.getElementById("senderMessage").value.trim();
 
-  // Replace this with your real email address.
-  const recipient = "your.email@example.com";
-
-  const body =
-    `Name: ${name}\nEmail: ${email}\n\n${message}`;
-
-  const mailto =
-    `mailto:${recipient}?subject=${encodeURIComponent(subject)}` +
-    `&body=${encodeURIComponent(body)}`;
+  /* Change this to your real email address */
+  const recipient = "YOUR_EMAIL@example.com";
+  const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+  const mailto = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   window.location.href = mailto;
 });
@@ -1147,6 +893,5 @@ document.getElementById("contactForm").addEventListener("submit", event => {
 /* Current year */
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
