@@ -101,6 +101,269 @@ nav{
   display:none;padding:8px 10px;border:1px solid var(--border);
   background:#ffffff08;color:var(--cyan);border-radius:8px
 }
+
+  /* ==========================================
+   ADVANCED AI EXPERIENCE — NEURAL HOLOGRAM
+   ========================================== */
+
+.hero {
+  background-color: #020611;
+  background-image:
+    radial-gradient(ellipse at 12% 45%, #006dff42 0%, transparent 35%),
+    radial-gradient(ellipse at 88% 30%, #852bff35 0%, transparent 34%),
+    radial-gradient(ellipse at 50% 95%, #00e5ff25 0%, transparent 38%),
+    linear-gradient(135deg, #020611, #06132b 50%, #030817);
+  box-shadow: inset 0 -50px 100px #030817;
+}
+
+/* Glowing orbital rings around the hero content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+}
+
+.hero-content::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: min(78vw, 800px);
+  height: min(78vw, 800px);
+  max-height: 650px;
+  max-width: 650px;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #38dfff18;
+  border-radius: 50%;
+  box-shadow:
+    0 0 35px #008cff10,
+    inset 0 0 45px #009dff0b;
+  animation: aiOrbitPulse 6s ease-in-out infinite;
+}
+
+.hero-content::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: min(65vw, 580px);
+  height: min(65vw, 580px);
+  max-height: 480px;
+  max-width: 480px;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  border: 1px dashed #8a7bff2e;
+  border-radius: 50%;
+  animation: aiOrbitRotate 35s linear infinite;
+}
+
+/* Cinematic glow behind the name */
+.hero h1 {
+  position: relative;
+  text-shadow:
+    0 0 12px #42eaff45,
+    0 0 40px #167bff35,
+    0 0 90px #7a3dff20;
+  animation: aiNameGlow 5s ease-in-out infinite;
+}
+
+.hero h1 .gradient {
+  background-size: 250% 100%;
+  animation: aiColorFlow 7s linear infinite;
+}
+
+/* Shimmering light across headings */
+.section-heading h2 {
+  background: linear-gradient(
+    100deg,
+    #ffffff 0%,
+    #d8f8ff 35%,
+    #8bdcff 50%,
+    #ffffff 65%,
+    #b5a4ff 85%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: aiHeadingShimmer 10s linear infinite;
+}
+
+.section-heading h2 .gradient {
+  background: linear-gradient(100deg, #42eaff, #a477ff, #ff68d8, #42eaff);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Animated energy line */
+.hero {
+  background-size: auto, auto, auto, 100% 100%;
+}
+
+.hero-label {
+  box-shadow:
+    0 0 18px #42eaff18,
+    inset 0 0 15px #42eaff0a;
+  animation: aiBorderPulse 4s ease-in-out infinite;
+}
+
+/* Neon light moving across buttons */
+.hero-buttons .btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-buttons .btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    #ffffff42 48%,
+    transparent 72%
+  );
+  transform: translateX(-120%);
+  animation: aiButtonShine 6s ease-in-out infinite;
+}
+
+.hero-buttons .btn:hover {
+  box-shadow:
+    0 0 20px #42eaff30,
+    0 0 50px #398cff20;
+}
+
+/* Holographic glass cards */
+.glass {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(
+    125deg,
+    #42eaff0c,
+    transparent 35%,
+    #a477ff0b 70%,
+    transparent
+  );
+  opacity: .65;
+}
+
+.feature-card:hover,
+.project-card:hover {
+  box-shadow:
+    0 0 22px #42eaff15,
+    0 18px 45px #00000035;
+}
+
+/* Moving laser-like highlight */
+.feature-card,
+.project-card {
+  background-size: 200% 200%;
+  transition: border-color .3s, transform .3s, box-shadow .3s;
+}
+
+.feature-card:hover,
+.project-card:hover {
+  border-color: #42eaff8a;
+}
+
+/* Animated AI grid */
+.background-grid {
+  background-image:
+    linear-gradient(#42baff0b 1px, transparent 1px),
+    linear-gradient(90deg, #42baff0b 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: aiBackgroundDrift 24s linear infinite;
+}
+
+/* Advanced animations */
+@keyframes aiOrbitPulse {
+  0%, 100% {
+    opacity: .45;
+    box-shadow: 0 0 25px #008cff10, inset 0 0 35px #009dff08;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 55px #008cff20, inset 0 0 55px #009dff12;
+  }
+}
+
+@keyframes aiOrbitRotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes aiNameGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px #42eaff10);
+  }
+  50% {
+    filter: drop-shadow(0 0 22px #42eaff30);
+  }
+}
+
+@keyframes aiColorFlow {
+  from { background-position: 0% center; }
+  to { background-position: 250% center; }
+}
+
+@keyframes aiHeadingShimmer {
+  from { background-position: 200% center; }
+  to { background-position: -20% center; }
+}
+
+@keyframes aiBorderPulse {
+  0%, 100% { border-color: #42eaff40; }
+  50% { border-color: #a477ff85; }
+}
+
+@keyframes aiButtonShine {
+  0%, 65%, 100% { transform: translateX(-120%); }
+  85% { transform: translateX(120%); }
+}
+
+@keyframes aiBackgroundDrift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 48px 48px, 48px 48px; }
+}
+
+/* Keep effects comfortable on mobile */
+@media (max-width: 600px) {
+  .hero-content::before {
+    width: 95vw;
+    height: 95vw;
+  }
+
+  .hero-content::after {
+    width: 78vw;
+    height: 78vw;
+  }
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+  .hero-content::before,
+  .hero-content::after,
+  .hero h1,
+  .hero h1 .gradient,
+  .hero-label,
+  .hero-buttons .btn::after,
+  .background-grid,
+  .section-heading h2 {
+    animation: none !important;
+  }
+}
 /* FUTURISTIC AI BACKGROUND */
 .hero {
   min-height: 720px;
