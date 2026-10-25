@@ -1,1043 +1,923 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#030615">
-<meta name="description" content="PK. Amalnadh — aspiring AI Product Manager exploring artificial intelligence, product strategy and digital innovation.">
-<title>PK. Amalnadh | AI Product Manager</title>
+<title>PK Amalnadh | AI Product Manager</title>
 
 <style>
-:root{
-  --bg:#030615;
-  --panel:rgba(8,20,44,.76);
-  --text:#f5f8ff;
-  --muted:#aab9d5;
-  --cyan:#48edff;
-  --blue:#428cff;
-  --purple:#a47aff;
-  --pink:#ff68d8;
-  --green:#7dffce;
-  --border:rgba(89,190,255,.23);
+:root {
+  --bg:#050714;
+  --panel:#10172b;
+  --text:#f5f7ff;
+  --muted:#a0aec8;
+  --cyan:#48efff;
+  --purple:#a079ff;
+  --pink:#ff65db;
+  --line:#273451;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{
+
+[data-theme="light"] {
+  --bg:#f1f5ff;
+  --panel:#ffffff;
+  --text:#11182e;
+  --muted:#586681;
+  --line:#d6deef;
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+
+html { scroll-behavior:smooth; scroll-padding-top:80px; }
+
+body {
+  font-family:Arial,Helvetica,sans-serif;
   background:var(--bg);
   color:var(--text);
-  font-family:Inter,Arial,Helvetica,sans-serif;
   line-height:1.7;
   overflow-x:hidden;
+  transition:background .3s,color .3s;
 }
-a{color:inherit;text-decoration:none}
-button,input,textarea{font:inherit}
-button{cursor:pointer}
-.container{width:min(1160px,92%);margin:auto}
-section{padding:100px 0;scroll-margin-top:75px}
-p{color:var(--muted)}
-.gradient{
-  background:linear-gradient(100deg,#fff,var(--cyan),var(--purple),var(--pink));
-  background-size:250% auto;
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-  animation:gradientFlow 8s linear infinite;
-}
-.eyebrow{
-  color:var(--cyan);
-  font-size:.73rem;
-  font-weight:800;
-  letter-spacing:3px;
-  text-transform:uppercase;
-}
-.section-heading{max-width:780px;margin-bottom:40px}
-.section-heading h2{
-  font-size:clamp(2.1rem,5vw,3.7rem);
-  line-height:1.15;
-  letter-spacing:-1.5px;
-  margin:13px 0;
-}
-.section-heading p{max-width:680px}
-.glass{
-  position:relative;
-  isolation:isolate;
-  overflow:hidden;
-  background:linear-gradient(135deg,rgba(12,31,66,.79),rgba(5,12,29,.88));
-  border:1px solid var(--border);
-  border-radius:20px;
-  backdrop-filter:blur(18px);
-  box-shadow:inset 0 1px rgba(255,255,255,.04);
-  transition:transform .35s,border-color .35s,box-shadow .35s;
-}
-.glass::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
-  background:linear-gradient(130deg,rgba(72,237,255,.09),transparent 40%,rgba(164,122,255,.08));
-}
-.glass:hover{
-  border-color:rgba(72,237,255,.58);
-  box-shadow:0 15px 50px rgba(0,140,255,.1),inset 0 0 25px rgba(72,237,255,.025);
-}
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:12px 20px;
-  border:1px solid var(--border);
-  border-radius:10px;
-  font-size:.85rem;
-  font-weight:750;
-  transition:transform .3s,box-shadow .3s;
-}
-.btn:hover{transform:translateY(-3px);box-shadow:0 0 30px rgba(72,237,255,.16)}
-.primary{
-  color:#03101b;
-  background:linear-gradient(110deg,var(--cyan),#a8caff);
-  border-color:transparent;
-}
-.secondary{background:rgba(255,255,255,.035)}
-#particles{
+
+a { color:inherit; text-decoration:none; }
+
+#universe {
   position:fixed;
   inset:0;
   width:100%;
   height:100%;
-  z-index:-4;
+  z-index:-2;
   pointer-events:none;
-}
-.site-glow{
-  position:fixed;
-  inset:0;
-  z-index:-5;
-  pointer-events:none;
-  background:
-    radial-gradient(ellipse at 5% 10%,rgba(0,93,255,.17),transparent 35%),
-    radial-gradient(ellipse at 95% 40%,rgba(124,37,255,.13),transparent 37%),
-    radial-gradient(ellipse at 40% 100%,rgba(0,219,255,.09),transparent 35%);
-}
-.background-grid{
-  position:fixed;
-  inset:0;
-  z-index:-3;
-  pointer-events:none;
-  background-image:
-    linear-gradient(rgba(65,157,255,.045) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(65,157,255,.045) 1px,transparent 1px);
-  background-size:52px 52px;
-  animation:gridDrift 28s linear infinite;
-}
-@keyframes gridDrift{
-  to{background-position:52px 52px}
-}
-@keyframes gradientFlow{
-  to{background-position:250% center}
-}
-@keyframes pulse{
-  50%{opacity:.55;transform:scale(.8)}
-}
-@keyframes float{
-  50%{transform:translateY(-12px)}
-}
-@keyframes shine{
-  0%,60%,100%{transform:translateX(-130%)}
-  85%{transform:translateX(130%)}
-}
-@keyframes rotate{
-  to{transform:rotate(360deg)}
-}
-@keyframes reverseRotate{
-  to{transform:rotate(-360deg)}
-}
-@keyframes scan{
-  0%{transform:translateY(-100%);opacity:0}
-  15%,80%{opacity:.7}
-  100%{transform:translateY(500%);opacity:0}
 }
 
-/* NAVIGATION */
-nav{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(3,6,21,.86);
-  backdrop-filter:blur(22px);
-  border-bottom:1px solid var(--border);
+.glow {
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 10% 20%,#343fff25,transparent 35%),
+    radial-gradient(circle at 90% 30%,#00eeff20,transparent 35%),
+    radial-gradient(circle at 50% 90%,#a020ff20,transparent 40%);
 }
-.nav-inner{
+
+.container { width:min(1120px,92%); margin:auto; }
+
+header {
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+  background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+
+nav {
   min-height:72px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:20px;
 }
-.logo{font-size:1.2rem;font-weight:900;white-space:nowrap}
-.logo span{color:var(--cyan)}
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:15px;
-  font-size:.76rem;
-  color:var(--muted);
-}
-.nav-links a{transition:color .2s}
-.nav-links a:hover{color:var(--cyan)}
-.menu-btn{
-  display:none;
-  padding:8px 11px;
-  background:#ffffff08;
-  border:1px solid var(--border);
-  color:var(--cyan);
-  border-radius:9px;
+
+.logo { font-size:21px; font-weight:900; }
+.logo span { color:var(--cyan); }
+
+.links { display:flex; gap:22px; }
+.links a { color:var(--muted); font-size:14px; }
+.links a:hover { color:var(--cyan); }
+
+.nav-actions { display:flex; gap:8px; }
+
+.icon-btn,.menu-btn {
+  border:1px solid var(--line);
+  background:var(--panel);
+  color:var(--text);
+  border-radius:10px;
+  padding:10px 13px;
+  cursor:pointer;
 }
 
-/* CINEMATIC AI HERO */
-.hero{
-  min-height:760px;
+.menu-btn { display:none; }
+
+section { padding:100px 0; }
+
+.hero {
+  min-height:100vh;
   display:flex;
   align-items:center;
-  position:relative;
-  isolation:isolate;
-  overflow:hidden;
-  padding:100px 0 115px;
-  background:
-    radial-gradient(ellipse at 50% 40%,rgba(14,55,111,.3),transparent 55%),
-    linear-gradient(180deg,#030615,#040a1c 75%,#030615);
+  padding-top:120px;
 }
-#ai-3d-scene{
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
-  overflow:hidden;
+
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:35px;
 }
-#ai-3d-scene canvas{width:100%;height:100%;display:block}
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:-40%;
-  z-index:-1;
-  pointer-events:none;
-  background:conic-gradient(
-    from 0deg at 50% 50%,
-    transparent 0deg,
-    rgba(0,187,255,.09) 55deg,
-    transparent 110deg,
-    rgba(143,60,255,.11) 190deg,
-    transparent 250deg,
-    rgba(0,187,255,.08) 320deg,
-    transparent 360deg
-  );
-  filter:blur(65px);
-  animation:rotate 35s linear infinite;
+
+.label {
+  display:inline-block;
+  color:var(--cyan);
+  border:1px solid var(--line);
+  background:var(--panel);
+  border-radius:30px;
+  padding:7px 14px;
+  font-size:12px;
+  letter-spacing:2px;
+  font-weight:bold;
 }
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
-  background:
-    linear-gradient(rgba(72,237,255,.045) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(72,237,255,.045) 1px,transparent 1px);
-  background-size:44px 44px;
-  mask-image:linear-gradient(transparent,black 18%,black 75%,transparent);
-  animation:gridDrift 20s linear infinite;
+
+h1 {
+  font-size:clamp(38px,6vw,76px);
+  line-height:1.1;
+  letter-spacing:-3px;
+  margin:25px 0 18px;
 }
-.hero-content{
-  width:100%;
-  max-width:930px;
+
+.gradient {
+  background:linear-gradient(100deg,var(--cyan),var(--purple),var(--pink));
+  color:transparent;
+  background-clip:text;
+  -webkit-background-clip:text;
+}
+
+.role { font-size:clamp(19px,3vw,28px); font-weight:bold; }
+#typed { color:var(--cyan); }
+
+.cursor {
+  display:inline-block;
+  height:1em;
+  width:2px;
+  background:var(--pink);
+  animation:blink .7s infinite;
+}
+
+@keyframes blink { 50% { opacity:0; } }
+
+.description {
+  color:var(--muted);
+  margin-top:20px;
+  max-width:590px;
+}
+
+.buttons { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+
+.btn {
+  display:inline-block;
+  padding:12px 19px;
+  border-radius:11px;
+  border:1px solid var(--line);
+  font-size:14px;
+  font-weight:bold;
+  transition:.25s;
+}
+
+.btn:hover { transform:translateY(-3px); }
+
+.primary {
+  color:#061020;
+  background:linear-gradient(100deg,var(--cyan),#a6a5ff);
+  border:0;
+}
+
+.secondary { background:var(--panel); }
+
+.hero-meta {
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  color:var(--muted);
+  font-size:13px;
+  margin-top:27px;
+}
+
+/* Futuristic 3D AI animation */
+
+.scene {
+  width:min(420px,100%);
+  aspect-ratio:1;
   margin:auto;
-  text-align:center;
   position:relative;
-  z-index:2;
-}
-.hero-label{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:8px 15px;
-  border:1px solid rgba(72,237,255,.4);
-  border-radius:40px;
-  background:rgba(5,19,43,.72);
-  color:#d3faff;
-  font-size:.69rem;
-  letter-spacing:1.6px;
-  box-shadow:0 0 30px rgba(72,237,255,.07);
-  margin-bottom:25px;
-}
-.live-dot{
-  width:7px;height:7px;
-  border-radius:50%;
-  background:var(--green);
-  box-shadow:0 0 15px var(--green);
-  animation:pulse 2s infinite;
-}
-.hero-kicker{
-  color:#b4eaff;
-  font-size:.76rem;
-  letter-spacing:5px;
-}
-.hero h1{
-  font-size:clamp(3.4rem,9vw,7.3rem);
-  line-height:1.04;
-  letter-spacing:-4px;
-  margin:17px 0;
-  text-shadow:0 0 35px rgba(36,157,255,.2);
-}
-.hero h1 .gradient{display:block}
-.hero-subtitle{
-  font-size:clamp(.95rem,2vw,1.3rem);
-  font-weight:800;
-  letter-spacing:4px;
-  margin-top:22px;
-}
-.typing{margin:13px 0;color:#fff;font-size:1.05rem}
-#typing{color:var(--cyan)}
-.cursor{color:var(--cyan);animation:pulse .7s infinite}
-.hero-copy{
-  max-width:700px;
-  margin:18px auto;
-  color:#d1def6;
-  font-size:.97rem;
-}
-.hero-buttons{
-  display:flex;
-  justify-content:center;
-  gap:13px;
-  flex-wrap:wrap;
-  margin-top:28px;
-}
-.hero-buttons .btn{position:relative;overflow:hidden}
-.hero-buttons .btn::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.35),transparent 75%);
-  transform:translateX(-130%);
-  animation:shine 6s ease-in-out infinite;
-  pointer-events:none;
-}
-.hero-tags{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:9px;
-  margin-top:25px;
-}
-.hero-tags span{
-  padding:5px 11px;
-  border:1px solid rgba(154,197,255,.2);
-  border-radius:30px;
-  background:rgba(6,20,45,.7);
-  color:#dce9ff;
-  font-size:.71rem;
-}
-
-/* REUSABLE CARDS */
-.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
-.content-card{padding:28px}
-.content-card h3{margin-bottom:12px}
-.content-card p{margin:10px 0}
-.info-row{
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  padding:12px 0;
-  border-bottom:1px solid var(--border);
-  font-size:.83rem;
-}
-.info-row:last-child{border:0}
-.info-row span{color:var(--muted)}
-.info-row strong{text-align:right;max-width:65%}
-.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.feature-card{padding:25px}
-.feature-card:hover,.project-card:hover{transform:translateY(-5px)}
-.feature-icon{
-  width:48px;height:48px;
-  display:grid;place-items:center;
-  margin-bottom:16px;
-  border:1px solid rgba(72,237,255,.3);
-  border-radius:14px;
-  color:var(--cyan);
-  background:rgba(72,237,255,.06);
-  font-size:1.45rem;
-  box-shadow:inset 0 0 20px rgba(72,237,255,.04);
-}
-.feature-card h3{font-size:1rem;margin-bottom:8px}
-.feature-card p{font-size:.87rem}
-.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
-.tag{
-  font-size:.68rem;
-  padding:4px 9px;
-  border:1px solid var(--border);
-  border-radius:30px;
-  color:#d0def8;
-}
-
-/* SKILLS */
-.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.skill-panel{padding:27px}
-.skill-row{margin:20px 0}
-.skill-label{
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-  font-size:.85rem;
-  margin-bottom:8px;
-}
-.skill-label span:last-child{font-size:.74rem;color:var(--cyan)}
-.skill-track{
-  height:7px;
-  border-radius:30px;
-  background:rgba(255,255,255,.08);
-  overflow:hidden;
-}
-.skill-fill{
-  height:100%;
-  width:0;
-  border-radius:30px;
-  background:linear-gradient(90deg,var(--blue),var(--cyan),var(--purple));
-  box-shadow:0 0 16px rgba(72,237,255,.4);
-  transition:width 1.5s ease;
-}
-.skill-fill.show{width:var(--level)}
-.skill-note{font-size:.78rem;margin-top:18px}
-
-/* PROJECTS */
-.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:25px}
-.filter{
-  padding:8px 15px;
-  border:1px solid var(--border);
-  border-radius:30px;
-  background:rgba(255,255,255,.025);
-  color:var(--muted);
-  font-size:.8rem;
-}
-.filter.active,.filter:hover{color:var(--cyan);border-color:var(--cyan)}
-.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.project-card{transition:transform .3s,border-color .3s}
-.project-art{
-  height:155px;
   display:grid;
   place-items:center;
-  border-bottom:1px solid var(--border);
-  background:
-    radial-gradient(ellipse at center,rgba(30,95,165,.26),transparent 70%);
+  perspective:900px;
+  animation:float 6s ease-in-out infinite;
 }
-.project-art svg{width:90%;height:130px}
-.project-body{padding:21px}
-.project-meta{
-  display:flex;
-  justify-content:space-between;
-  gap:8px;
-  color:var(--cyan);
-  font-size:.67rem;
-  letter-spacing:1px;
-}
-.project-body h3{margin:10px 0;font-size:1.05rem}
-.project-body p{font-size:.85rem}
-.project-toggle{
-  margin-top:15px;
-  padding:0;
-  background:none;
-  border:0;
-  color:var(--cyan);
-  font-size:.83rem;
-  font-weight:800;
-}
-.project-detail{
-  display:none;
-  margin-top:14px;
-  padding-top:13px;
-  border-top:1px solid var(--border);
-  color:var(--muted);
-  font-size:.84rem;
-}
-.project-card.expanded .project-detail{display:block}
 
-/* PRODUCT THINKING */
-.process-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
-.process-card{padding:23px}
-.process-number{
-  font-size:2.2rem;
-  line-height:1.2;
-  font-weight:900;
-  color:var(--cyan);
-  text-shadow:0 0 25px rgba(72,237,255,.22);
+@keyframes float {
+  50% { transform:translateY(-12px); }
 }
-.process-card h3{margin:10px 0}
-.process-card p{font-size:.85rem}
-.principle{padding:27px;margin-top:22px;border-left:3px solid var(--cyan)}
-.principle h3{margin-top:8px}
-.principle p{margin-top:8px}
 
-/* EDUCATION */
-.timeline{border-left:1px solid rgba(72,237,255,.5);margin-left:8px;padding-left:26px}
-.timeline-item{position:relative;padding-bottom:31px}
-.timeline-item:last-child{padding-bottom:0}
-.timeline-item::before{
+.core {
+  position:absolute;
+  width:37%;
+  height:37%;
+  border-radius:50%;
+  background:radial-gradient(circle at 30% 25%,white,#28cfff 15%,#3733a3 55%,#080b22);
+  box-shadow:0 0 40px #48efff80,0 0 100px #a079ff50;
+}
+
+.ring {
+  position:absolute;
+  width:75%;
+  height:75%;
+  border:1px solid #48efff99;
+  border-radius:50%;
+  transform:rotateX(65deg);
+  animation:rotate 12s linear infinite;
+}
+
+.ring.two {
+  width:95%;
+  height:95%;
+  border-color:#ff65db99;
+  transform:rotateY(65deg);
+  animation-duration:18s;
+  animation-direction:reverse;
+}
+
+.ring.three {
+  width:60%;
+  height:60%;
+  border-color:#a079ff;
+  transform:rotateX(70deg) rotateZ(40deg);
+  animation-duration:9s;
+}
+
+@keyframes rotate { to { rotate:360deg; } }
+
+.ring::after {
   content:"";
   position:absolute;
-  left:-32px;
-  top:8px;
-  width:10px;height:10px;
+  top:0;
+  left:50%;
+  width:9px;
+  height:9px;
   border-radius:50%;
   background:var(--cyan);
-  box-shadow:0 0 17px var(--cyan);
+  box-shadow:0 0 18px var(--cyan);
 }
-.timeline-date{font-size:.75rem;color:var(--cyan);letter-spacing:1px}
-.timeline-item h3{margin:7px 0}
-.timeline-item p{font-size:.89rem;margin-top:5px}
 
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px}
-.contact-panel{padding:27px}
-.contact-panel h3{margin-bottom:10px}
-.contact-item{
-  padding:15px 0;
-  border-bottom:1px solid var(--border);
+.holo {
+  position:absolute;
+  padding:12px 15px;
+  border:1px solid #48efff70;
+  border-radius:12px;
+  background:var(--panel);
+  box-shadow:0 10px 35px #0003;
+  animation:float 5s ease-in-out infinite;
+}
+
+.holo small { display:block; color:var(--muted); font-size:11px; }
+.holo strong { color:var(--cyan); font-size:17px; }
+.holo.one { top:7%; left:0; }
+.holo.two { top:18%; right:-2%; animation-delay:-2s; }
+.holo.three { bottom:10%; left:0; animation-delay:-1s; }
+.holo.four { bottom:8%; right:0; animation-delay:-3s; }
+
+.bars {
+  height:28px;
+  display:flex;
+  gap:4px;
+  align-items:end;
+  margin-top:5px;
+}
+
+.bars i {
+  display:block;
+  width:7px;
+  background:linear-gradient(var(--cyan),var(--purple));
+  border-radius:3px 3px 0 0;
+  animation:bar 1s ease-in-out infinite alternate;
+}
+
+.bars i:nth-child(1) { height:35%; }
+.bars i:nth-child(2) { height:70%; animation-delay:.2s; }
+.bars i:nth-child(3) { height:50%; animation-delay:.4s; }
+.bars i:nth-child(4) { height:100%; animation-delay:.1s; }
+.bars i:nth-child(5) { height:60%; animation-delay:.3s; }
+
+@keyframes bar { to { height:20%; } }
+
+/* Sections */
+
+.section-label {
+  color:var(--cyan);
+  font-size:12px;
+  letter-spacing:2.5px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+h2 {
+  font-size:clamp(30px,4vw,48px);
+  line-height:1.2;
+  letter-spacing:-1.5px;
+}
+
+.section-description {
+  color:var(--muted);
+  max-width:700px;
+  margin-top:14px;
+}
+
+.section-heading { margin-bottom:38px; }
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:25px;
+  transition:.3s;
+  position:relative;
+  overflow:hidden;
+}
+
+.card:hover {
+  transform:translateY(-6px);
+  border-color:var(--cyan);
+  box-shadow:0 12px 35px #48efff12;
+}
+
+.card-icon {
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border-radius:13px;
+  color:var(--cyan);
+  background:#48efff12;
+  border:1px solid var(--line);
+  font-size:23px;
+  margin-bottom:17px;
+}
+
+.card h3 { margin-bottom:9px; font-size:19px; }
+.card p { color:var(--muted); font-size:14px; }
+
+.tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:17px; }
+
+.tag {
+  padding:5px 9px;
+  border:1px solid var(--line);
+  border-radius:7px;
+  color:var(--muted);
+  font-size:11px;
+}
+
+.about-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.about-box {
+  padding:27px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  border-radius:17px;
+}
+
+.about-box p { color:var(--muted); margin-top:12px; }
+
+.fact {
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:13px 0;
+  border-bottom:1px solid var(--line);
+  font-size:14px;
+}
+
+.fact:last-child { border-bottom:0; }
+.fact span { color:var(--muted); text-align:right; }
+
+.skills { display:flex; flex-wrap:wrap; gap:11px; margin-top:22px; }
+
+.skill {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:11px 15px;
+  font-size:14px;
+  transition:.2s;
+}
+
+.skill:hover { color:var(--cyan); border-color:var(--cyan); }
+
+.filters { display:flex; flex-wrap:wrap; gap:9px; margin-bottom:24px; }
+
+.filter {
+  padding:8px 13px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  color:var(--text);
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.filter.active,.filter:hover { border-color:var(--cyan); color:var(--cyan); }
+
+.project { min-height:270px; display:flex; flex-direction:column; }
+.project[hidden] { display:none; }
+.project .tags { margin-top:auto; padding-top:18px; }
+
+.project-number {
+  color:var(--cyan);
+  font-size:12px;
+  letter-spacing:2px;
+  margin-bottom:17px;
+}
+
+.timeline {
+  border-left:1px solid var(--line);
+  margin-left:10px;
+  padding-left:27px;
+  display:grid;
+  gap:20px;
+}
+
+.timeline-item {
+  position:relative;
+  padding:23px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:var(--panel);
+}
+
+.timeline-item::before {
+  content:"";
+  position:absolute;
+  left:-34px;
+  top:28px;
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  background:var(--cyan);
+  box-shadow:0 0 15px var(--cyan);
+}
+
+.timeline-item p { color:var(--muted); margin-top:8px; font-size:14px; }
+.timeline-item small { color:var(--cyan); }
+
+.contact-grid {
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:22px;
+}
+
+.contact-box {
+  padding:27px;
+  border:1px solid var(--line);
+  border-radius:17px;
+  background:var(--panel);
+}
+
+.contact-box p { color:var(--muted); margin-top:12px; }
+
+.contact-link {
+  display:block;
+  margin-top:17px;
+  color:var(--cyan);
   overflow-wrap:anywhere;
 }
-.contact-item small{
-  display:block;
-  color:var(--cyan);
-  font-size:.7rem;
-  letter-spacing:1.5px;
-}
-.contact-item a:hover{color:var(--cyan)}
-.contact-form{display:grid;gap:13px;margin-top:18px}
-input,textarea{
+
+form { display:grid; gap:13px; }
+
+input,textarea {
   width:100%;
   padding:13px 14px;
-  border:1px solid var(--border);
   border-radius:10px;
-  background:rgba(255,255,255,.035);
-  color:#fff;
+  border:1px solid var(--line);
+  background:var(--bg);
+  color:var(--text);
   outline:none;
 }
-input:focus,textarea:focus{
-  border-color:var(--cyan);
-  box-shadow:0 0 18px rgba(72,237,255,.08);
-}
-textarea{min-height:125px;resize:vertical}
-.form-message{font-size:.8rem;color:var(--cyan)}
-footer{
-  padding:26px 0;
-  border-top:1px solid var(--border);
-  font-size:.8rem;
-  color:var(--muted);
-}
-.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-.footer-inner a{color:var(--cyan)}
-.back-top{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  z-index:50;
-  display:none;
-  width:44px;height:44px;
-  border:1px solid var(--border);
-  border-radius:13px;
-  background:#0b1730;
-  color:var(--cyan);
-}
-.back-top.visible{display:block}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
-.reveal.visible{opacity:1;transform:translateY(0)}
 
-/* RESPONSIVE */
-@media(max-width:1050px){
-  .nav-links{gap:9px;font-size:.7rem}
-  .nav-contact{display:none}
-  .card-grid,.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+input:focus,textarea:focus { border-color:var(--cyan); }
+textarea { min-height:125px; resize:vertical; }
+
+footer {
+  padding:25px 0;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:13px;
 }
-@media(max-width:780px){
-  .nav-inner{min-height:66px}
-  .menu-btn{display:block}
-  .nav-links{
+
+.footer-inner {
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.reveal {
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .7s,transform .7s;
+}
+
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+@media(max-width:900px) {
+  .hero-grid { grid-template-columns:1fr; }
+  .scene { max-width:400px; }
+  .grid { grid-template-columns:repeat(2,1fr); }
+}
+
+@media(max-width:680px) {
+  .container { width:92%; }
+  .menu-btn { display:block; }
+  .links {
     display:none;
     position:absolute;
-    top:66px;left:0;right:0;
-    padding:20px 5%;
-    background:rgba(3,6,21,.98);
-    border-bottom:1px solid var(--border);
+    top:72px;
+    left:0;
+    right:0;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    padding:18px 4%;
     flex-direction:column;
-    align-items:flex-start;
-    font-size:.9rem;
+    gap:15px;
   }
-  .nav-links.open{display:flex}
-  .hero{min-height:680px;padding:85px 0}
-  .hero h1{letter-spacing:-2px}
-  .two-col,.skills-grid,.contact-grid{grid-template-columns:1fr}
-  section{padding:76px 0}
+  .links.open { display:flex; }
+  .hero { padding-top:115px; }
+  section { padding:75px 0; }
+  .grid,.about-grid,.contact-grid { grid-template-columns:1fr; }
+  .scene { max-width:340px; }
+  .holo { padding:8px 10px; }
+  .holo strong { font-size:14px; }
+  h1 { letter-spacing:-2px; }
 }
-@media(max-width:560px){
-  .card-grid,.project-grid,.process-grid{grid-template-columns:1fr}
-  .hero{min-height:650px}
-  .hero h1{font-size:3.35rem}
-  .hero-kicker{font-size:.65rem;letter-spacing:3px}
-  .hero-label{font-size:.6rem;letter-spacing:1px}
-  .hero-copy{font-size:.9rem}
-  .hero-tags{gap:7px}
-  .hero-tags span{font-size:.64rem}
-  .section-heading h2{font-size:2.2rem}
-  .content-card,.contact-panel,.skill-panel{padding:21px}
-  .info-row{font-size:.77rem}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{
-    animation:none!important;
+
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
     scroll-behavior:auto!important;
-    transition:none!important;
   }
-  .reveal{opacity:1;transform:none}
+  .reveal { opacity:1; transform:none; }
 }
 </style>
 </head>
 
 <body>
-<canvas id="particles" aria-hidden="true"></canvas>
-<div class="site-glow"></div>
-<div class="background-grid"></div>
+<canvas id="universe"></canvas>
+<div class="glow"></div>
 
-<nav>
-  <div class="container nav-inner">
-    <a class="logo" href="#home">PK. <span>Amalnadh</span></a>
+<header>
+  <nav class="container">
+    <a class="logo" href="#home">PK <span>Amalnadh</span></a>
 
-    <div class="nav-links" id="navLinks">
+    <div class="links" id="navLinks">
       <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#interests">Interests</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#product">Product Thinking</a>
-      <a href="#ai">AI Technology</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </div>
 
-    <div style="display:flex;align-items:center;gap:9px">
-      <a class="btn secondary nav-contact" href="#contact">Let's Connect ↗</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☀</button>
+      <button class="menu-btn" id="menuToggle" aria-label="Open menu">☰</button>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>
 
 <main>
 
-<!-- HERO -->
 <section class="hero" id="home">
-  <div id="ai-3d-scene" aria-hidden="true"></div>
+  <div class="container hero-grid">
 
-  <div class="container hero-content">
-    <div class="hero-label">
-      <span class="live-dot"></span>
-      ARTIFICIAL INTELLIGENCE · PRODUCT INNOVATION
+    <div class="reveal">
+      <div class="label">AI · PRODUCT · INNOVATION</div>
+
+      <h1>PK <span class="gradient">Amalnadh</span></h1>
+
+      <div class="role">
+        Aspiring <span id="typed">AI Product Manager</span><span class="cursor"></span>
+      </div>
+
+      <p class="description">
+        I’m passionate about building intelligent, useful and human-centred AI products.
+        I’m interested in connecting business strategy, emerging technology and user needs
+        to create meaningful digital experiences.
+      </p>
+
+      <div class="buttons">
+        <a class="btn primary" href="#projects">Explore My Work ↗</a>
+        <a class="btn secondary" href="#contact">Let's Connect</a>
+      </div>
+
+      <div class="hero-meta">
+        <span>✦ AI Product Strategy</span>
+        <span>✦ Business Thinking</span>
+        <span>✦ Emerging Technology</span>
+      </div>
     </div>
 
-    <div class="hero-kicker">BUSINESS · TECHNOLOGY · FUTURE</div>
+    <div class="scene reveal">
+      <div class="ring"></div>
+      <div class="ring two"></div>
+      <div class="ring three"></div>
+      <div class="core"></div>
 
-    <h1>PK. <span class="gradient">Amalnadh</span></h1>
+      <div class="holo one">
+        <small>AI SYSTEM</small>
+        <strong>INTELLIGENT</strong>
+        <small>Concept visualisation</small>
+      </div>
 
-    <div class="hero-subtitle">AI PRODUCT MANAGEMENT</div>
+      <div class="holo two">
+        <small>DATA FLOW</small>
+        <strong>↗ Connected</strong>
+        <div class="bars"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
 
-    <div class="typing">
-      Exploring <span id="typing">AI Products</span><span class="cursor"> |</span>
+      <div class="holo three">
+        <small>PRODUCT FOCUS</small>
+        <strong>Human + AI</strong>
+        <small>Designed for impact</small>
+      </div>
+
+      <div class="holo four">
+        <small>INNOVATION</small>
+        <strong>Future Ready</strong>
+      </div>
     </div>
 
-    <p class="hero-copy">
-      I am an aspiring AI Product Manager interested in transforming
-      artificial intelligence into useful, accessible and meaningful
-      digital products. My focus is on understanding user needs,
-      exploring innovative ideas and connecting technology with business goals.
-    </p>
-
-    <div class="hero-buttons">
-      <a class="btn primary" href="#projects">Explore My Concepts ↗</a>
-      <a class="btn secondary" href="#about">Discover My Journey ↓</a>
-    </div>
-
-    <div class="hero-tags">
-      <span>AI Product Strategy</span>
-      <span>Generative AI</span>
-      <span>Digital Innovation</span>
-      <span>User-Centred Thinking</span>
-    </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="container">
     <div class="section-heading reveal">
-      <div class="eyebrow">01 / About Me</div>
-      <h2>Business thinking meets <span class="gradient">intelligent technology.</span></h2>
-      <p>Exploring how technology can solve real problems and create meaningful digital products.</p>
+      <div class="section-label">01 / ABOUT ME</div>
+      <h2>Business thinking.<br><span class="gradient">Intelligent possibilities.</span></h2>
+      <p class="section-description">
+        I’m developing my understanding of AI product management, business strategy
+        and how technology can solve real-world problems.
+      </p>
     </div>
 
-    <div class="two-col">
-      <div class="glass content-card reveal">
-        <h3>My Journey</h3>
-        <p>I am a BBA graduate with an interest in artificial intelligence, product development, business strategy and emerging technologies.</p>
-        <p>I want to understand how AI products are researched, designed, built, evaluated and improved. I am particularly interested in translating complex technology into simple solutions that people can use.</p>
-        <p>My business education gives me a foundation for thinking about customers, business objectives, operations and value creation.</p>
-        <div class="tags">
-          <span class="tag">Business Mindset</span>
-          <span class="tag">AI Innovation</span>
-          <span class="tag">Problem Solving</span>
-          <span class="tag">Product Thinking</span>
-        </div>
+    <div class="about-grid">
+      <div class="about-box reveal">
+        <h3>Who I Am</h3>
+        <p>
+          I am a BBA graduate with an interest in artificial intelligence,
+          digital products and innovation. I enjoy exploring how ideas can
+          become useful products through research, planning and continuous improvement.
+        </p>
+        <p>
+          My goal is to grow into an AI Product Manager who can understand users,
+          collaborate with technical teams and help build products that deliver value.
+        </p>
       </div>
 
-      <div class="glass content-card reveal">
-        <h3>Profile Overview</h3>
-        <div class="info-row"><span>Name</span><strong>PK. Amalnadh</strong></div>
-        <div class="info-row"><span>Career Focus</span><strong>AI Product Management</strong></div>
-        <div class="info-row"><span>Education</span><strong>BBA Graduate</strong></div>
-        <div class="info-row"><span>Additional Learning</span><strong>Professional Diploma in Data Analytics</strong></div>
-        <div class="info-row"><span>Interests</span><strong>AI, Products, Innovation</strong></div>
-        <div class="info-row"><span>Location</span><strong>Kerala, India</strong></div>
+      <div class="about-box reveal">
+        <h3>My Direction</h3>
+        <div class="fact"><strong>Career Focus</strong><span>AI Product Management</span></div>
+        <div class="fact"><strong>Education</strong><span>BBA Graduate</span></div>
+        <div class="fact"><strong>Interest</strong><span>Artificial Intelligence</span></div>
+        <div class="fact"><strong>Approach</strong><span>Business + Technology</span></div>
+        <div class="fact"><strong>Goal</strong><span>Build useful AI products</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INTERESTS -->
-<section id="interests">
-  <div class="container">
-    <div class="section-heading reveal">
-      <div class="eyebrow">02 / Areas of Interest</div>
-      <h2>Exploring the future of <span class="gradient">AI-powered products.</span></h2>
-      <p>Technology areas and product disciplines that inspire my learning journey.</p>
-    </div>
-
-    <div class="card-grid">
-      <article class="glass feature-card reveal">
-        <div class="feature-icon">✧</div><h3>AI Product Strategy</h3>
-        <p>Exploring product vision, user problems, value propositions and the business impact of AI-powered solutions.</p>
-        <div class="tags"><span class="tag">Product Vision</span><span class="tag">Roadmaps</span></div>
-      </article>
-      <article class="glass feature-card reveal">
-        <div class="feature-icon">◈</div><h3>Generative AI</h3>
-        <p>Understanding how generative AI can support research, writing, productivity and customer experiences.</p>
-        <div class="tags"><span class="tag">LLMs</span><span class="tag">AI Applications</span></div>
-      </article>
-      <article class="glass feature-card reveal">
-        <div class="feature-icon">⌘</div><h3>User Experience</h3>
-        <p>Thinking about how products can become more intuitive, accessible, useful and trustworthy.</p>
-        <div class="tags"><span class="tag">User Needs</span><span class="tag">Usability</span></div>
-      </article>
-      <article class="glass feature-card reveal">
-        <div class="feature-icon">⌁</div><h3>Product Analytics</h3>
-        <p>Exploring how feedback, experiments and meaningful metrics can guide better decisions.</p>
-        <div class="tags"><span class="tag">Metrics</span><span class="tag">Insights</span></div>
-      </article>
-      <article class="glass feature-card reveal">
-        <div class="feature-icon">◎</div><h3>Responsible AI</h3>
-        <p>Considering privacy, transparency, fairness, reliability and human oversight in AI products.</p>
-        <div class="tags"><span class="tag">Trust</span><span class="tag">AI Ethics</span></div>
-      </article>
-      <article class="glass feature-card reveal">
-        <div class="feature-icon">↗</div><h3>Digital Innovation</h3>
-        <p>Investigating how emerging technologies can solve problems and create business value.</p>
-        <div class="tags"><span class="tag">Innovation</span><span class="tag">Strategy</span></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
 <section id="skills">
   <div class="container">
     <div class="section-heading reveal">
-      <div class="eyebrow">03 / Skills & Learning</div>
-      <h2>Building my <span class="gradient">product toolkit.</span></h2>
-      <p>Areas I am developing for my AI product management journey. Indicators are illustrative, not formal proficiency assessments.</p>
+      <div class="section-label">02 / SKILLS & INTERESTS</div>
+      <h2>My <span class="gradient">toolkit</span></h2>
+      <p class="section-description">
+        Areas I’m exploring and developing for a future in AI product management.
+      </p>
     </div>
 
-    <div class="skills-grid">
-      <div class="glass skill-panel reveal">
-        <h3>Product & Business</h3>
-        <div class="skill-row"><div class="skill-label"><span>Product Strategy</span><span>Learning</span></div><div class="skill-track"><div class="skill-fill" style="--level:65%"></div></div></div>
-        <div class="skill-row"><div class="skill-label"><span>User Research</span><span>Learning</span></div><div class="skill-track"><div class="skill-fill" style="--level:60%"></div></div></div>
-        <div class="skill-row"><div class="skill-label"><span>Business Analysis</span><span>Developing</span></div><div class="skill-track"><div class="skill-fill" style="--level:70%"></div></div></div>
-        <div class="skill-row"><div class="skill-label"><span>Product Roadmapping</span><span>Learning</span></div><div class="skill-track"><div class="skill-fill" style="--level:50%"></div></div></div>
-      </div>
+    <div class="grid">
+      <article class="card reveal">
+        <div class="card-icon">✧</div>
+        <h3>AI & Emerging Technology</h3>
+        <p>Exploring AI capabilities and their potential to solve business and user problems.</p>
+        <div class="tags">
+          <span class="tag">Artificial Intelligence</span>
+          <span class="tag">Generative AI</span>
+          <span class="tag">Machine Learning</span>
+        </div>
+      </article>
 
-      <div class="glass skill-panel reveal">
-        <h3>AI & Digital Technologies</h3>
-        <div class="skill-row"><div class="skill-label"><span>Generative AI Concepts</span><span>Learning</span></div><div class="skill-track"><div class="skill-fill" style="--level:60%"></div></div></div>
-        <div class="skill-row"><div class="skill-label"><span>AI Product Use Cases</span><span>Learning</span></div><div class="skill-track"><div class="skill-fill" style="--level:60%"></div></div></div>
-        <div class="skill-row"><div class="skill-label"><span>Data-Informed Decisions</span><span>Learning</span></div><div class="skill-track"><div class="skill-fill" style="--level:60%"></div></div></div>
-        <div class="skill-row"><div class="skill-label"><span>Prototyping & UX</span><span>Developing</span></div><div class="skill-track"><div class="skill-fill" style="--level:45%"></div></div></div>
-      </div>
+      <article class="card reveal">
+        <div class="card-icon">◈</div>
+        <h3>Product Management</h3>
+        <p>Learning how product ideas are researched, prioritised, planned and evaluated.</p>
+        <div class="tags">
+          <span class="tag">Product Strategy</span>
+          <span class="tag">Roadmaps</span>
+          <span class="tag">User Needs</span>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">⌘</div>
+        <h3>Business Analysis</h3>
+        <p>Understanding business objectives, problem-solving and data-informed decisions.</p>
+        <div class="tags">
+          <span class="tag">Business Research</span>
+          <span class="tag">Critical Thinking</span>
+          <span class="tag">Problem Solving</span>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">◎</div>
+        <h3>User-Centred Thinking</h3>
+        <p>Considering user challenges and how digital products can improve experiences.</p>
+        <div class="tags">
+          <span class="tag">User Research</span>
+          <span class="tag">Product Discovery</span>
+          <span class="tag">UX Thinking</span>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">⌬</div>
+        <h3>Product Communication</h3>
+        <p>Building skills in explaining ideas, organising requirements and communicating goals.</p>
+        <div class="tags">
+          <span class="tag">Documentation</span>
+          <span class="tag">Presentations</span>
+          <span class="tag">Collaboration</span>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">↗</div>
+        <h3>Continuous Learning</h3>
+        <p>Developing knowledge of product practices, AI concepts and emerging digital tools.</p>
+        <div class="tags">
+          <span class="tag">Learning</span>
+          <span class="tag">Innovation</span>
+          <span class="tag">Adaptability</span>
+        </div>
+      </article>
     </div>
-    <p class="skill-note">Update these indicators to reflect your actual experience and abilities.</p>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="container">
     <div class="section-heading reveal">
-      <div class="eyebrow">04 / Product Concepts</div>
-      <h2>Ideas designed for <span class="gradient">real-world impact.</span></h2>
-      <p>Concept projects demonstrating product thinking. These are proposals, not claims of completed commercial products.</p>
+      <div class="section-label">03 / SELECTED PROJECTS</div>
+      <h2>Ideas into <span class="gradient">possibilities.</span></h2>
+      <p class="section-description">
+        Concept projects that demonstrate how I approach AI product opportunities.
+        These are concepts, not claims of deployed products.
+      </p>
     </div>
 
-    <div class="filters">
-      <button class="filter active" data-filter="all">All Concepts</button>
-      <button class="filter" data-filter="ai">AI Products</button>
+    <div class="filters reveal">
+      <button class="filter active" data-filter="all">All Projects</button>
+      <button class="filter" data-filter="ai">AI Concepts</button>
+      <button class="filter" data-filter="product">Product Strategy</button>
       <button class="filter" data-filter="business">Business</button>
-      <button class="filter" data-filter="ux">User Experience</button>
     </div>
 
-    <div class="project-grid">
-
-      <article class="glass project-card reveal" data-category="ai">
-        <div class="project-art">
-          <svg viewBox="0 0 320 130" fill="none">
-            <circle cx="160" cy="65" r="47" stroke="#398cff"/>
-            <circle cx="160" cy="65" r="32" stroke="#a477ff" stroke-dasharray="4 5"/>
-            <circle cx="160" cy="65" r="20" stroke="#42eaff"/>
-            <path d="M148 65h24M160 53v24M32 65h80M208 65h80" stroke="#42eaff"/>
-            <circle cx="32" cy="65" r="3" fill="#42eaff"/>
-          </svg>
-        </div>
-        <div class="project-body">
-          <div class="project-meta"><span>AI PRODUCT</span><span>CONCEPT 01</span></div>
-          <h3>AI Personal Assistant</h3>
-          <p>A concept for an assistant that helps users organise tasks, find information and plan their day.</p>
-          <div class="tags"><span class="tag">Generative AI</span><span class="tag">UX</span></div>
-          <button class="project-toggle">Explore concept +</button>
-          <div class="project-detail"><strong>Product thinking:</strong> Identify target users, prioritise task-planning features, assess response usefulness and establish privacy controls. Possible metrics include task completion and retention.</div>
+    <div class="grid" id="projectGrid">
+      <article class="card project reveal" data-category="ai product">
+        <div class="project-number">CONCEPT / 01</div>
+        <div class="card-icon">✧</div>
+        <h3>AI Personal Assistant</h3>
+        <p>
+          A concept for an AI assistant that helps users organise tasks,
+          find information and complete everyday activities more efficiently.
+        </p>
+        <div class="tags">
+          <span class="tag">Generative AI</span>
+          <span class="tag">User Experience</span>
+          <span class="tag">Product Discovery</span>
         </div>
       </article>
 
-      <article class="glass project-card reveal" data-category="business">
-        <div class="project-art">
-          <svg viewBox="0 0 320 130" fill="none">
-            <path d="M30 110H290M30 15V110" stroke="#a8b7d5"/>
-            <path d="M42 92L90 76L135 83L180 45L225 55L278 20" stroke="#42eaff" stroke-width="3"/>
-            <path d="M42 92L90 76L135 83L180 45L225 55L278 20V110H42Z" fill="#42eaff" fill-opacity=".1"/>
-            <path d="M42 98L90 89L135 68L180 76L225 38L278 48" stroke="#a477ff" stroke-width="2"/>
-          </svg>
-        </div>
-        <div class="project-body">
-          <div class="project-meta"><span>BUSINESS</span><span>CONCEPT 02</span></div>
-          <h3>Intelligent Business Insights</h3>
-          <p>A product concept that turns business information into clear decision-support summaries.</p>
-          <div class="tags"><span class="tag">Analytics</span><span class="tag">Insights</span></div>
-          <button class="project-toggle">Explore concept +</button>
-          <div class="project-detail"><strong>Product thinking:</strong> Identify a business user, use trusted data sources, explain the evidence behind insights and assess their impact on decision-making.</div>
+      <article class="card project reveal" data-category="product business">
+        <div class="project-number">CONCEPT / 02</div>
+        <div class="card-icon">◈</div>
+        <h3>Smart Business Insights</h3>
+        <p>
+          A product concept that presents business information in a simple,
+          understandable format to help decision-makers identify opportunities.
+        </p>
+        <div class="tags">
+          <span class="tag">Business Strategy</span>
+          <span class="tag">Decision Support</span>
+          <span class="tag">Product Thinking</span>
         </div>
       </article>
 
-      <article class="glass project-card reveal" data-category="ux">
-        <div class="project-art">
-          <svg viewBox="0 0 320 130" fill="none">
-            <rect x="96" y="7" width="128" height="116" rx="13" stroke="#42eaff" stroke-width="2"/>
-            <rect x="109" y="21" width="102" height="18" rx="5" stroke="#42eaff"/>
-            <rect x="109" y="48" width="45" height="28" rx="5" stroke="#a477ff"/>
-            <rect x="162" y="48" width="49" height="28" rx="5" stroke="#ff68d8"/>
-            <rect x="109" y="84" width="102" height="24" rx="5" stroke="#42eaff"/>
-          </svg>
-        </div>
-        <div class="project-body">
-          <div class="project-meta"><span>USER EXPERIENCE</span><span>CONCEPT 03</span></div>
-          <h3>AI Learning Companion</h3>
-          <p>A learning concept that adapts explanations and practice activities to learner needs.</p>
-          <div class="tags"><span class="tag">Personalisation</span><span class="tag">Accessibility</span></div>
-          <button class="project-toggle">Explore concept +</button>
-          <div class="project-detail"><strong>Product thinking:</strong> Validate learning needs, prototype a learning journey and evaluate outcomes, completion rates and user feedback.</div>
+      <article class="card project reveal" data-category="ai business">
+        <div class="project-number">CONCEPT / 03</div>
+        <div class="card-icon">⌘</div>
+        <h3>AI Customer Support</h3>
+        <p>
+          An AI-powered support concept designed to answer common questions,
+          guide customers and help support teams manage requests.
+        </p>
+        <div class="tags">
+          <span class="tag">Conversational AI</span>
+          <span class="tag">Customer Experience</span>
+          <span class="tag">Problem Solving</span>
         </div>
       </article>
-
-      <article class="glass project-card reveal" data-category="ai">
-        <div class="project-art">
-          <svg viewBox="0 0 320 130" fill="none">
-            <rect x="43" y="24" width="234" height="82" rx="12" stroke="#42eaff"/>
-            <circle cx="73" cy="49" r="7" fill="#42eaff"/>
-            <path d="M91 49H221M60 72H257M60 89H198" stroke="#a477ff" stroke-width="3" stroke-linecap="round"/>
-            <path d="M242 41l9 9-17 18" stroke="#78ffc2" stroke-width="3" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="project-body">
-          <div class="project-meta"><span>AI PRODUCT</span><span>CONCEPT 04</span></div>
-          <h3>Customer Support Copilot</h3>
-          <p>A concept that helps support agents find information and draft responses for review.</p>
-          <div class="tags"><span class="tag">Customer Experience</span><span class="tag">Human Review</span></div>
-          <button class="project-toggle">Explore concept +</button>
-          <div class="project-detail"><strong>Product thinking:</strong> Ground answers in approved information, retain human control and measure accuracy, resolution time and customer satisfaction.</div>
-        </div>
-      </article>
-
-      <article class="glass project-card reveal" data-category="business">
-        <div class="project-art">
-          <svg viewBox="0 0 320 130" fill="none">
-            <circle cx="160" cy="65" r="43" stroke="#42eaff" stroke-width="2"/>
-            <circle cx="160" cy="65" r="28" stroke="#a477ff" stroke-dasharray="5 5"/>
-            <path d="M160 22V108M117 65H203M160 65L190 40" stroke="#42eaff" stroke-width="2"/>
-            <circle cx="190" cy="40" r="5" fill="#ff68d8"/>
-          </svg>
-        </div>
-        <div class="project-body">
-          <div class="project-meta"><span>BUSINESS</span><span>CONCEPT 05</span></div>
-          <h3>AI Opportunity Radar</h3>
-          <p>A framework for identifying business problems where AI might provide measurable value.</p>
-          <div class="tags"><span class="tag">Prioritisation</span><span class="tag">Strategy</span></div>
-          <button class="project-toggle">Explore concept +</button>
-          <div class="project-detail"><strong>Product thinking:</strong> Compare opportunities by user impact, feasibility, implementation cost, risk and expected business value.</div>
-        </div>
-      </article>
-
-      <article class="glass project-card reveal" data-category="ux">
-        <div class="project-art">
-          <svg viewBox="0 0 320 130" fill="none">
-            <rect x="50" y="24" width="220" height="82" rx="12" stroke="#42eaff"/>
-            <path d="M72 47H130M72 62H112M72 78H140" stroke="#a477ff" stroke-width="3" stroke-linecap="round"/>
-            <circle cx="212" cy="64" r="22" stroke="#42eaff" stroke-width="2"/>
-            <path d="M201 64l8 8 15-17" stroke="#78ffc2" stroke-width="3" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="project-body">
-          <div class="project-meta"><span>USER EXPERIENCE</span><span>CONCEPT 06</span></div>
-          <h3>Trustworthy AI Interface</h3>
-          <p>An interface concept that helps users understand generated answers and their limitations.</p>
-          <div class="tags"><span class="tag">Transparency</span><span class="tag">Responsible AI</span></div>
-          <button class="project-toggle">Explore concept +</button>
-          <div class="project-detail"><strong>Product thinking:</strong> Communicate uncertainty, make supporting evidence accessible and give users clear ways to report mistakes.</div>
-        </div>
-      </article>
-
     </div>
   </div>
 </section>
 
-<!-- PRODUCT THINKING -->
-<section id="product">
-  <div class="container">
-    <div class="section-heading reveal">
-      <div class="eyebrow">05 / Product Thinking</div>
-      <h2>From a problem to <span class="gradient">product impact.</span></h2>
-      <p>A structured approach to thinking about product discovery and development.</p>
-    </div>
-
-    <div class="process-grid">
-      <article class="glass process-card reveal"><div class="process-number">01</div><h3>Discover</h3><p>Understand users, research challenges and validate the problem worth solving.</p></article>
-      <article class="glass process-card reveal"><div class="process-number">02</div><h3>Define</h3><p>Establish product goals, target users, value propositions and success measures.</p></article>
-      <article class="glass process-card reveal"><div class="process-number">03</div><h3>Prototype</h3><p>Explore solutions, design an MVP concept and test assumptions with users.</p></article>
-      <article class="glass process-card reveal"><div class="process-number">04</div><h3>Improve</h3><p>Use feedback and evidence to evaluate outcomes and refine the product.</p></article>
-    </div>
-
-    <div class="glass principle reveal">
-      <div class="eyebrow">Product Principle</div>
-      <h3>Start with the problem, not the technology.</h3>
-      <p>An AI product should solve a genuine problem, deliver a clear benefit and work reliably while respecting user privacy and safety.</p>
-    </div>
-  </div>
-</section>
-
-<!-- AI TECHNOLOGY -->
-<section id="ai">
-  <div class="container">
-    <div class="section-heading reveal">
-      <div class="eyebrow">06 / AI Technology</div>
-      <h2>Exploring the <span class="gradient">intelligence layer.</span></h2>
-      <p>Core AI concepts I am interested in learning about from a product perspective.</p>
-    </div>
-
-    <div class="card-grid">
-      <article class="glass feature-card reveal"><div class="feature-icon">🧠</div><h3>Machine Learning</h3><p>Methods that allow systems to learn patterns from data and make predictions or classifications.</p></article>
-      <article class="glass feature-card reveal"><div class="feature-icon">✧</div><h3>Generative AI</h3><p>Models that generate content such as text, images, code and other outputs.</p></article>
-      <article class="glass feature-card reveal"><div class="feature-icon">⌘</div><h3>Large Language Models</h3><p>Language models that can assist with summarising, drafting, explaining and information tasks.</p></article>
-      <article class="glass feature-card reveal"><div class="feature-icon">◈</div><h3>AI Agents</h3><p>Systems that can perform multi-step tasks using tools within defined permissions and boundaries.</p></article>
-      <article class="glass feature-card reveal"><div class="feature-icon">◎</div><h3>Responsible AI</h3><p>Considering reliability, privacy, transparency, fairness and appropriate human oversight.</p></article>
-      <article class="glass feature-card reveal"><div class="feature-icon">↗</div><h3>AI Evaluation</h3><p>Assessing whether AI products are useful, safe, reliable and aligned with user expectations.</p></article>
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
 <section id="education">
   <div class="container">
     <div class="section-heading reveal">
-      <div class="eyebrow">07 / Education</div>
-      <h2>My foundation for <span class="gradient">what comes next.</span></h2>
+      <div class="section-label">04 / EDUCATION</div>
+      <h2>Learning for the <span class="gradient">future.</span></h2>
     </div>
 
-    <div class="glass content-card reveal">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">2023 – 2026</div>
-          <h3>Bachelor of Business Administration (BBA)</h3>
-          <p>Nirmala Arts &amp; Science College, Mulamthuruthy, Kerala.</p>
-          <p>Business foundations, management, organisational thinking and commercial awareness.</p>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">PROFESSIONAL LEARNING</div>
-          <h3>Professional Diploma in Data Analytics</h3>
-          <p>Developing analytical thinking and an understanding of how data can support business decisions.</p>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">CONTINUOUS LEARNING</div>
-          <h3>AI Product Management</h3>
-          <p>Building knowledge of AI concepts, product discovery, product strategy, user experience and responsible AI.</p>
-        </div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <small>UNDERGRADUATE EDUCATION</small>
+        <h3>Bachelor of Business Administration (BBA)</h3>
+        <p>Nirmala Arts & Science College, Mulamthuruthy, Kerala.</p>
+        <p>Graduation period: 2023–2026.</p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <small>PROFESSIONAL LEARNING</small>
+        <h3>Professional Diploma in Data Analytics</h3>
+        <p>
+          Add your training provider and completion status here.
+          Include this qualification only if it accurately reflects your studies.
+        </p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <small>FUTURE DIRECTION</small>
+        <h3>Artificial Intelligence & Product Management</h3>
+        <p>
+          Developing knowledge of AI applications, product strategy,
+          user needs and business innovation.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TOOLKIT -->
-<section id="tools">
-  <div class="container">
-    <div class="section-heading reveal">
-      <div class="eyebrow">08 / Toolkit</div>
-      <h2>Technology and <span class="gradient">product exploration.</span></h2>
-      <p>Tools and workflows relevant to developing and communicating product ideas.</p>
-    </div>
-
-    <div class="card-grid">
-      <article class="glass feature-card reveal"><div class="feature-icon">✧</div><h3>AI Tools</h3><p>Exploring AI assistants, prompt design and AI-powered productivity workflows.</p><div class="tags"><span class="tag">AI Assistants</span><span class="tag">Prompting</span></div></article>
-      <article class="glass feature-card reveal"><div class="feature-icon">⌘</div><h3>Product Tools</h3><p>Learning to document ideas, organise requirements and communicate product plans.</p><div class="tags"><span class="tag">Product Briefs</span><span class="tag">Roadmaps</span></div></article>
-      <article class="glass feature-card reveal"><div class="feature-icon">◇</div><h3>Digital Prototyping</h3><p>Building interactive web experiences and exploring ways to demonstrate product concepts.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div></article>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <div class="section-heading reveal">
-      <div class="eyebrow">09 / Contact</div>
-      <h2>Let's connect around <span class="gradient">ideas and innovation.</span></h2>
-      <p>Interested in AI products, emerging technology or product strategy? Get in touch.</p>
+      <div class="section-label">05 / CONTACT</div>
+      <h2>Let's build something <span class="gradient">meaningful.</span></h2>
+      <p class="section-description">
+        Interested in AI, digital products or new ideas? Feel free to connect.
+      </p>
     </div>
 
     <div class="contact-grid">
-      <div class="glass contact-panel reveal">
-        <h3>Connect with me</h3>
-        <p>Replace the example contact details with your real information.</p>
-        <div class="contact-item"><small>EMAIL</small><a href="mailto:your.email@example.com">your.email@example.com</a></div>
-        <div class="contact-item"><small>LINKEDIN</small><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">Visit my LinkedIn ↗</a></div>
-        <div class="contact-item"><small>PRODUCT FOCUS</small><span>AI Product Management &amp; Digital Innovation</span></div>
+      <div class="contact-box reveal">
+        <h3>Get in touch</h3>
+        <p>
+          I’m interested in learning, sharing ideas and connecting with people
+          working in AI, technology and product development.
+        </p>
+
+        <!-- Replace these placeholders with your real details -->
+        <a class="contact-link" href="mailto:your.email@example.com">
+          ✉ your.email@example.com
+        </a>
+
+        <a class="contact-link"
+           href="https://www.linkedin.com/"
+           target="_blank" rel="noopener noreferrer">
+          ↗ LinkedIn Profile
+        </a>
+
+        <p>Location: Kerala, India</p>
       </div>
 
-      <div class="glass contact-panel reveal">
+      <div class="contact-box reveal">
         <h3>Send a message</h3>
-        <p>This form prepares an email in your email application.</p>
-        <form class="contact-form" id="contactForm">
-          <input id="senderName" type="text" placeholder="Your name" required>
-          <input id="senderEmail" type="email" placeholder="Your email address" required>
-          <input id="subject" type="text" placeholder="Subject" required>
-          <textarea id="message" placeholder="Write your message..." required></textarea>
+        <p>This form opens your email app to prepare a message.</p>
+
+        <form id="contactForm">
+          <input type="text" id="senderName" placeholder="Your name" required>
+          <input type="email" id="senderEmail" placeholder="Your email" required>
+          <input type="text" id="senderSubject" placeholder="Subject" required>
+          <textarea id="senderMessage" placeholder="Your message" required></textarea>
           <button class="btn primary" type="submit">Prepare Email ↗</button>
-          <div class="form-message" id="formMessage" aria-live="polite"></div>
         </form>
       </div>
     </div>
@@ -1048,496 +928,225 @@ footer{
 
 <footer>
   <div class="container footer-inner">
-    <span>© <span id="year"></span> PK. Amalnadh</span>
-    <span>Artificial Intelligence · Product Thinking · Innovation</span>
+    <span>© <span id="year"></span> PK Amalnadh</span>
+    <span>AI · Product · Innovation</span>
     <a href="#home">Back to top ↑</a>
   </div>
 </footer>
 
-<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
-
 <script>
-/* =====================================================
-   CINEMATIC AI BACKGROUND
-   Canvas-generated 3D-style neural network and energy orb.
-   No external image or JavaScript library is required.
-===================================================== */
-const scene = document.getElementById("ai-3d-scene");
-const aiCanvas = document.createElement("canvas");
-scene.appendChild(aiCanvas);
+/* Animated background particles */
+const canvas = document.getElementById("universe");
+const ctx = canvas.getContext("2d");
 
-const aiCtx = aiCanvas.getContext("2d");
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let particles = [];
+let width = 0;
+let height = 0;
+let animationFrame;
 
-let sceneW = 0;
-let sceneH = 0;
-let pixelRatio = 1;
-let nodes = [];
-let animationFrame = 0;
-let lastFrame = 0;
+function resizeCanvas() {
+  const ratio = Math.min(window.devicePixelRatio || 1, 2);
 
-function randomBetween(min,max){
-  return Math.random()*(max-min)+min;
-}
+  width = window.innerWidth;
+  height = window.innerHeight;
 
-function resizeAI(){
-  const rect = scene.getBoundingClientRect();
-  sceneW = Math.max(1,rect.width);
-  sceneH = Math.max(1,rect.height);
-  pixelRatio = Math.min(window.devicePixelRatio||1,1.6);
+  canvas.width = width * ratio;
+  canvas.height = height * ratio;
+  canvas.style.width = width + "px";
+  canvas.style.height = height + "px";
 
-  aiCanvas.width = Math.floor(sceneW*pixelRatio);
-  aiCanvas.height = Math.floor(sceneH*pixelRatio);
-  aiCanvas.style.width = sceneW+"px";
-  aiCanvas.style.height = sceneH+"px";
-  aiCtx.setTransform(pixelRatio,0,0,pixelRatio,0,0);
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
 
-  const count = Math.min(115,Math.max(45,Math.floor(sceneW/10)));
+  const count = Math.min(95, Math.floor(width / 13));
 
-  nodes = Array.from({length:count},()=>({
-    x:Math.random()*sceneW,
-    y:Math.random()*sceneH,
-    z:randomBetween(.3,1),
-    vx:randomBetween(-.15,.15),
-    vy:randomBetween(-.15,.15),
-    r:randomBetween(.6,1.8),
-    phase:Math.random()*Math.PI*2
+  particles = Array.from({ length: count }, () => ({
+    x: Math.random() * width,
+    y: Math.random() * height,
+    vx: (Math.random() - 0.5) * 0.35,
+    vy: (Math.random() - 0.5) * 0.35,
+    radius: Math.random() * 1.7 + 0.5
   }));
-
-  if(!reduceMotion){
-    cancelAnimationFrame(animationFrame);
-    animationFrame=requestAnimationFrame(drawAI);
-  }else{
-    drawAI(0);
-  }
 }
 
-function drawAI(timestamp){
-  if(reduceMotion) return;
+function drawParticles() {
+  ctx.clearRect(0, 0, width, height);
 
-  if(timestamp-lastFrame<30){
-    animationFrame=requestAnimationFrame(drawAI);
-    return;
-  }
-  lastFrame=timestamp;
+  const lightMode = document.documentElement.dataset.theme === "light";
+  const particleColor = lightMode ? "0,100,160" : "72,239,255";
 
-  aiCtx.clearRect(0,0,sceneW,sceneH);
+  particles.forEach((p, i) => {
+    p.x += p.vx;
+    p.y += p.vy;
 
-  const time=timestamp*.00025;
-  const cx=sceneW*.5;
-  const cy=sceneH*.48;
-  const orbRadius=Math.min(sceneW*.23,sceneH*.33,220);
+    if (p.x < 0 || p.x > width) p.vx *= -1;
+    if (p.y < 0 || p.y > height) p.vy *= -1;
 
-  /* Soft coloured atmosphere */
-  const atmosphere=aiCtx.createRadialGradient(
-    cx,cy,0,cx,cy,orbRadius*2.7
-  );
-  atmosphere.addColorStop(0,"rgba(0,118,255,.12)");
-  atmosphere.addColorStop(.45,"rgba(64,48,255,.055)");
-  atmosphere.addColorStop(1,"rgba(0,0,0,0)");
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(${particleColor},0.8)`;
+    ctx.fill();
 
-  aiCtx.fillStyle=atmosphere;
-  aiCtx.fillRect(0,0,sceneW,sceneH);
+    for (let j = i + 1; j < particles.length; j++) {
+      const q = particles[j];
+      const dx = p.x - q.x;
+      const dy = p.y - q.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
 
-  /* Orbital rings with a pseudo-3D perspective */
-  aiCtx.save();
-  aiCtx.translate(cx,cy);
-
-  for(let ring=0;ring<5;ring++){
-    const rotation=time*(ring%2===0?1:-.75)+ring*.7;
-    const radius=orbRadius*(.47+ring*.145);
-    const squash=.22+ring*.075;
-
-    aiCtx.save();
-    aiCtx.rotate(rotation);
-    aiCtx.beginPath();
-    aiCtx.ellipse(0,0,radius,radius*squash,0,0,Math.PI*2);
-
-    aiCtx.strokeStyle=ring%2===0
-      ?"rgba(72,237,255,.23)"
-      :"rgba(164,122,255,.21)";
-    aiCtx.lineWidth=ring===2?1.5:.8;
-    aiCtx.shadowBlur=ring===2?15:7;
-    aiCtx.shadowColor=ring%2===0?"#48edff":"#a47aff";
-    aiCtx.stroke();
-
-    /* Orbital light points */
-    const angle=time*(ring%2===0?1.1:-.8)+ring;
-    const px=Math.cos(angle)*radius;
-    const py=Math.sin(angle)*radius*squash;
-
-    aiCtx.beginPath();
-    aiCtx.arc(px,py,ring===2?3.4:2.2,0,Math.PI*2);
-    aiCtx.fillStyle=ring%2===0?"#a9faff":"#c8a5ff";
-    aiCtx.shadowBlur=18;
-    aiCtx.fill();
-    aiCtx.restore();
-  }
-
-  /* Inner holographic sphere */
-  const sphere=aiCtx.createRadialGradient(
-    -orbRadius*.25,-orbRadius*.3,orbRadius*.03,
-    0,0,orbRadius*.68
-  );
-  sphere.addColorStop(0,"rgba(86,221,255,.15)");
-  sphere.addColorStop(.35,"rgba(45,113,255,.09)");
-  sphere.addColorStop(.72,"rgba(107,57,255,.055)");
-  sphere.addColorStop(1,"rgba(5,15,40,0)");
-
-  aiCtx.beginPath();
-  aiCtx.arc(0,0,orbRadius*.68,0,Math.PI*2);
-  aiCtx.fillStyle=sphere;
-  aiCtx.fill();
-
-  /* Fine sphere grid */
-  aiCtx.strokeStyle="rgba(89,190,255,.11)";
-  aiCtx.lineWidth=.7;
-
-  for(let i=-4;i<=4;i++){
-    aiCtx.beginPath();
-    aiCtx.ellipse(
-      0,0,
-      orbRadius*.62,
-      Math.sqrt(Math.max(.02,1-(i/5)*(i/5)))*orbRadius*.62,
-      time*.35,0,Math.PI*2
-    );
-    aiCtx.stroke();
-  }
-
-  for(let i=0;i<7;i++){
-    aiCtx.beginPath();
-    aiCtx.ellipse(
-      0,0,
-      orbRadius*.62,
-      orbRadius*.62,
-      time*.5+i*Math.PI/7,0,Math.PI*2
-    );
-    aiCtx.stroke();
-  }
-
-  /* Core energy */
-  const core=aiCtx.createRadialGradient(0,0,1,0,0,orbRadius*.32);
-  core.addColorStop(0,"rgba(210,255,255,.3)");
-  core.addColorStop(.18,"rgba(72,237,255,.13)");
-  core.addColorStop(.58,"rgba(66,140,255,.06)");
-  core.addColorStop(1,"rgba(72,237,255,0)");
-
-  aiCtx.beginPath();
-  aiCtx.arc(0,0,orbRadius*.32,0,Math.PI*2);
-  aiCtx.fillStyle=core;
-  aiCtx.fill();
-
-  aiCtx.restore();
-
-  /* Floating nodes and connecting neural paths */
-  const projected=nodes.map(p=>{
-    p.x+=p.vx;
-    p.y+=p.vy;
-
-    if(p.x<0||p.x>sceneW)p.vx*=-1;
-    if(p.y<0||p.y>sceneH)p.vy*=-1;
-
-    const depth=.65+p.z*.55;
-    const wobble=Math.sin(time*2+p.phase)*2;
-
-    return{
-      x:cx+(p.x-cx)*depth,
-      y:cy+(p.y-cy)*depth+wobble,
-      r:p.r*depth,
-      z:p.z
-    };
+      if (distance < 105) {
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(q.x, q.y);
+        ctx.strokeStyle =
+          `rgba(${particleColor},${(1 - distance / 105) * 0.17})`;
+        ctx.lineWidth = 0.7;
+        ctx.stroke();
+      }
+    }
   });
 
-  for(let i=0;i<projected.length;i++){
-    const p=projected[i];
-
-    for(let j=i+1;j<projected.length;j++){
-      const q=projected[j];
-      const dx=p.x-q.x;
-      const dy=p.y-q.y;
-      const dist=Math.sqrt(dx*dx+dy*dy);
-
-      if(dist<125){
-        const alpha=(1-dist/125)*.25;
-        aiCtx.beginPath();
-        aiCtx.moveTo(p.x,p.y);
-        aiCtx.lineTo(q.x,q.y);
-        aiCtx.strokeStyle="rgba(62,156,255,"+alpha+")";
-        aiCtx.lineWidth=.65;
-        aiCtx.stroke();
-      }
-    }
-
-    const glow=aiCtx.createRadialGradient(p.x,p.y,0,p.x,p.y,9);
-    glow.addColorStop(0,"rgba(190,250,255,.9)");
-    glow.addColorStop(.25,"rgba(72,237,255,.45)");
-    glow.addColorStop(1,"rgba(72,237,255,0)");
-
-    aiCtx.beginPath();
-    aiCtx.arc(p.x,p.y,9,0,Math.PI*2);
-    aiCtx.fillStyle=glow;
-    aiCtx.fill();
-
-    aiCtx.beginPath();
-    aiCtx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    aiCtx.fillStyle="rgba(185,249,255,.85)";
-    aiCtx.fill();
-  }
-
-  /* Moving light sweep */
-  const sweepY=(timestamp*.035)%(sceneH+100)-50;
-  const sweep=aiCtx.createLinearGradient(0,sweepY-30,0,sweepY+30);
-  sweep.addColorStop(0,"rgba(72,237,255,0)");
-  sweep.addColorStop(.5,"rgba(72,237,255,.025)");
-  sweep.addColorStop(1,"rgba(72,237,255,0)");
-  aiCtx.fillStyle=sweep;
-  aiCtx.fillRect(0,0,sceneW,sceneH);
-
-  animationFrame=requestAnimationFrame(drawAI);
+  animationFrame = requestAnimationFrame(drawParticles);
 }
 
-resizeAI();
+resizeCanvas();
+drawParticles();
 
-window.addEventListener("resize",()=>{
-  resizeAI();
-},{passive:true});
+window.addEventListener("resize", resizeCanvas);
 
-/* PAGE-WIDE FLOATING PARTICLES */
-const particleCanvas=document.getElementById("particles");
-const particleCtx=particleCanvas.getContext("2d");
-let particles=[];
-let canvasW=0;
-let canvasH=0;
-let particleFrame=0;
-
-function resizeParticles(){
-  const ratio=Math.min(window.devicePixelRatio||1,1.5);
-  canvasW=window.innerWidth;
-  canvasH=window.innerHeight;
-  particleCanvas.width=canvasW*ratio;
-  particleCanvas.height=canvasH*ratio;
-  particleCanvas.style.width=canvasW+"px";
-  particleCanvas.style.height=canvasH+"px";
-  particleCtx.setTransform(ratio,0,0,ratio,0,0);
-
-  const count=Math.min(75,Math.floor(canvasW/18));
-  particles=Array.from({length:count},()=>({
-    x:Math.random()*canvasW,
-    y:Math.random()*canvasH,
-    vx:randomBetween(-.2,.2),
-    vy:randomBetween(-.2,.2),
-    r:randomBetween(.5,1.4)
-  }));
-
-  if(!reduceMotion){
-    cancelAnimationFrame(particleFrame);
-    particleFrame=requestAnimationFrame(drawParticles);
-  }else{
-    drawParticles();
-  }
-}
-
-function drawParticles(){
-  if(reduceMotion)return;
-
-  particleCtx.clearRect(0,0,canvasW,canvasH);
-
-  for(let i=0;i<particles.length;i++){
-    const p=particles[i];
-    p.x+=p.vx;
-    p.y+=p.vy;
-
-    if(p.x<0||p.x>canvasW)p.vx*=-1;
-    if(p.y<0||p.y>canvasH)p.vy*=-1;
-
-    particleCtx.beginPath();
-    particleCtx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    particleCtx.fillStyle="rgba(72,237,255,.72)";
-    particleCtx.shadowBlur=8;
-    particleCtx.shadowColor="#48edff";
-    particleCtx.fill();
-    particleCtx.shadowBlur=0;
-
-    for(let j=i+1;j<particles.length;j++){
-      const q=particles[j];
-      const dx=p.x-q.x;
-      const dy=p.y-q.y;
-      const dist=Math.sqrt(dx*dx+dy*dy);
-
-      if(dist<105){
-        particleCtx.beginPath();
-        particleCtx.moveTo(p.x,p.y);
-        particleCtx.lineTo(q.x,q.y);
-        particleCtx.strokeStyle="rgba(57,140,255,"+((1-dist/105)*.15)+")";
-        particleCtx.lineWidth=.6;
-        particleCtx.stroke();
-      }
-    }
-  }
-
-  particleFrame=requestAnimationFrame(drawParticles);
-}
-
-resizeParticles();
-window.addEventListener("resize",resizeParticles,{passive:true});
-
-/* ANIMATED HERO TEXT */
-const words=[
-  "AI Products",
-  "Product Strategy",
-  "Generative AI",
-  "Digital Innovation",
-  "User Experiences",
-  "Intelligent Solutions"
+/* Typing animation */
+const words = [
+  "AI Product Manager",
+  "Product Strategist",
+  "AI Innovation Enthusiast",
+  "Technology Explorer"
 ];
 
-const typing=document.getElementById("typing");
-let wordIndex=0;
-let charIndex=0;
-let deleting=false;
+const typedElement = document.getElementById("typed");
+let wordIndex = 0;
+let charIndex = words[0].length;
+let deleting = true;
 
-function typeLoop(){
-  if(reduceMotion){
-    typing.textContent="AI Products";
-    return;
-  }
+function typeEffect() {
+  const word = words[wordIndex];
 
-  const word=words[wordIndex];
-  typing.textContent=word.substring(0,charIndex);
-
-  if(!deleting){
-    charIndex++;
-
-    if(charIndex>word.length){
-      deleting=true;
-      setTimeout(typeLoop,1100);
-      return;
-    }
-  }else{
+  if (deleting) {
     charIndex--;
-
-    if(charIndex<0){
-      charIndex=0;
-      deleting=false;
-      wordIndex=(wordIndex+1)%words.length;
-    }
+  } else {
+    charIndex++;
   }
 
-  setTimeout(typeLoop,deleting?38:78);
+  typedElement.textContent = word.substring(0, charIndex);
+
+  let delay = deleting ? 45 : 85;
+
+  if (!deleting && charIndex === word.length) {
+    deleting = true;
+    delay = 1400;
+  } else if (deleting && charIndex === 0) {
+    deleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+    delay = 350;
+  }
+
+  setTimeout(typeEffect, delay);
 }
 
-typeLoop();
+setTimeout(typeEffect, 1600);
 
-/* MOBILE NAVIGATION */
-const menuBtn=document.getElementById("menuBtn");
-const navLinks=document.getElementById("navLinks");
+/* Dark and light theme */
+const themeToggle = document.getElementById("themeToggle");
 
-menuBtn.addEventListener("click",()=>{
-  const isOpen=navLinks.classList.toggle("open");
-  menuBtn.textContent=isOpen?"✕":"☰";
-  menuBtn.setAttribute("aria-expanded",String(isOpen));
+themeToggle.addEventListener("click", () => {
+  const html = document.documentElement;
+  const isLight = html.dataset.theme === "light";
+
+  html.dataset.theme = isLight ? "dark" : "light";
+  themeToggle.textContent = isLight ? "☀" : "☾";
+  themeToggle.setAttribute(
+    "aria-label",
+    isLight ? "Switch to light mode" : "Switch to dark mode"
+  );
 });
 
-navLinks.querySelectorAll("a").forEach(link=>{
-  link.addEventListener("click",()=>{
+/* Mobile navigation */
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  const opened = navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(opened));
+  menuToggle.textContent = opened ? "✕" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
     navLinks.classList.remove("open");
-    menuBtn.textContent="☰";
-    menuBtn.setAttribute("aria-expanded","false");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
   });
 });
 
-/* SCROLL REVEAL */
-const revealElements=document.querySelectorAll(".reveal");
+/* Reveal sections while scrolling */
+const revealElements = document.querySelectorAll(".reveal");
 
-if("IntersectionObserver" in window){
-  const revealObserver=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        entry.target.querySelectorAll(".skill-fill").forEach(bar=>{
-          bar.classList.add("show");
-        });
-        revealObserver.unobserve(entry.target);
+        observer.unobserve(entry.target);
       }
     });
-  },{threshold:.12});
+  }, { threshold: 0.12 });
 
-  revealElements.forEach(el=>revealObserver.observe(el));
-}else{
-  revealElements.forEach(el=>el.classList.add("visible"));
-  document.querySelectorAll(".skill-fill").forEach(el=>el.classList.add("show"));
+  revealElements.forEach(element => observer.observe(element));
+} else {
+  revealElements.forEach(element => element.classList.add("visible"));
 }
 
-/* PROJECT FILTERS */
-const filterButtons=document.querySelectorAll(".filter");
-const projectCards=document.querySelectorAll(".project-card");
+/* Project filters */
+const filterButtons = document.querySelectorAll(".filter");
+const projects = document.querySelectorAll(".project");
 
-filterButtons.forEach(button=>{
-  button.addEventListener("click",()=>{
-    filterButtons.forEach(item=>item.classList.remove("active"));
+filterButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    filterButtons.forEach(item => item.classList.remove("active"));
     button.classList.add("active");
 
-    const category=button.dataset.filter;
+    const selected = button.dataset.filter;
 
-    projectCards.forEach(card=>{
-      card.style.display=
-        category==="all"||card.dataset.category===category?"":"none";
+    projects.forEach(project => {
+      const categories = project.dataset.category.split(" ");
+      project.hidden =
+        selected !== "all" && !categories.includes(selected);
     });
   });
 });
 
-/* EXPAND PROJECT DETAILS */
-document.querySelectorAll(".project-toggle").forEach(button=>{
-  button.addEventListener("click",()=>{
-    const card=button.closest(".project-card");
-    const expanded=card.classList.toggle("expanded");
-    button.textContent=expanded?"Show less −":"Explore concept +";
-    button.setAttribute("aria-expanded",String(expanded));
-  });
-});
-
-/* BACK TO TOP */
-const backTop=document.getElementById("backTop");
-
-window.addEventListener("scroll",()=>{
-  backTop.classList.toggle("visible",window.scrollY>450);
-},{passive:true});
-
-backTop.addEventListener("click",()=>{
-  window.scrollTo({
-    top:0,
-    behavior:reduceMotion?"auto":"smooth"
-  });
-});
-
-/* CONTACT FORM
-   IMPORTANT: replace this example address with your real email.
-   This form opens the visitor's default email application.
-*/
-document.getElementById("contactForm").addEventListener("submit",event=>{
+/* Contact form: prepare an email in the user's email app */
+document.getElementById("contactForm").addEventListener("submit", event => {
   event.preventDefault();
 
-  const recipient="your.email@example.com";
-  const name=document.getElementById("senderName").value.trim();
-  const email=document.getElementById("senderEmail").value.trim();
-  const subject=document.getElementById("subject").value.trim();
-  const message=document.getElementById("message").value.trim();
+  const name = document.getElementById("senderName").value.trim();
+  const email = document.getElementById("senderEmail").value.trim();
+  const subject = document.getElementById("senderSubject").value.trim();
+  const message = document.getElementById("senderMessage").value.trim();
 
-  const body="From: "+name+
-    "\nReply to: "+email+
-    "\n\n"+message;
+  // Replace this with your real email address.
+  const recipient = "your.email@example.com";
 
-  document.getElementById("formMessage").textContent=
-    "Opening your email application. Replace the example recipient address with your real email first.";
+  const body =
+    `Name: ${name}\nEmail: ${email}\n\n${message}`;
 
-  window.location.href=
-    "mailto:"+recipient+
-    "?subject="+encodeURIComponent(subject)+
-    "&body="+encodeURIComponent(body);
+  const mailto =
+    `mailto:${recipient}?subject=${encodeURIComponent(subject)}` +
+    `&body=${encodeURIComponent(body)}`;
+
+  window.location.href = mailto;
 });
 
-/* FOOTER YEAR */
-document.getElementById("year").textContent=new Date().getFullYear();
+/* Current year */
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
