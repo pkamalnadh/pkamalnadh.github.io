@@ -101,7 +101,96 @@ nav{
   display:none;padding:8px 10px;border:1px solid var(--border);
   background:#ffffff08;color:var(--cyan);border-radius:8px
 }
+/* FUTURISTIC AI BACKGROUND */
+.hero {
+  min-height: 720px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 100px 0;
+  background:
+    radial-gradient(ellipse at 18% 45%, rgba(0, 110, 255, .28), transparent 38%),
+    radial-gradient(ellipse at 80% 30%, rgba(112, 45, 255, .24), transparent 36%),
+    radial-gradient(ellipse at 50% 100%, rgba(0, 220, 255, .16), transparent 45%),
+    linear-gradient(135deg, #020612 0%, #07152e 48%, #030817 100%);
+}
 
+/* MOVING NEON LIGHT */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    conic-gradient(
+      from 0deg at 50% 50%,
+      transparent 0deg,
+      rgba(0, 200, 255, .08) 45deg,
+      transparent 90deg,
+      rgba(140, 70, 255, .12) 180deg,
+      transparent 230deg,
+      rgba(0, 200, 255, .08) 300deg,
+      transparent 360deg
+    );
+  filter: blur(45px);
+  animation: aiLightRotation 24s linear infinite;
+}
+
+/* HOLOGRAPHIC GRID AND SCANNING LIGHT */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(65, 180, 255, .055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(65, 180, 255, .055) 1px, transparent 1px),
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(0, 220, 255, .04) 48%,
+      rgba(0, 220, 255, .20) 50%,
+      transparent 53%
+    );
+  background-size: 44px 44px, 44px 44px, 100% 220%;
+  animation: aiGridMove 18s linear infinite,
+             aiScan 7s ease-in-out infinite;
+  opacity: .8;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 15%,
+    black 80%,
+    transparent
+  );
+}
+
+/* ANIMATED LIGHT EFFECTS */
+@keyframes aiLightRotation {
+  from { transform: rotate(0deg) scale(1); }
+  to { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes aiGridMove {
+  from { background-position: 0 0, 0 0, 0 0; }
+  to { background-position: 0 44px, 44px 0, 0 0; }
+}
+
+@keyframes aiScan {
+  0%, 100% { background-position: 0 0, 0 0, 0 -100%; }
+  50% { background-position: 0 0, 0 0, 0 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .hero::after {
+    animation: none;
+  }
+}
 /* CINEMATIC AI HERO */
 .hero{
   min-height:680px;display:flex;align-items:center;
