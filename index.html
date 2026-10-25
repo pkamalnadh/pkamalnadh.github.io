@@ -521,6 +521,64 @@ nav{
     animation: none;
   }
 }
+    /* ===== 3D AI CINEMATIC BACKGROUND ===== */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 45%, #092c5b 0%, #06142d 42%, #020611 80%);
+}
+
+#ai-3d-scene {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: .95;
+}
+
+#ai-3d-scene canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 18% 45%, #007bff35, transparent 42%),
+    radial-gradient(ellipse at 85% 35%, #8b35ff30, transparent 40%),
+    linear-gradient(transparent 96%, #26d9ff13);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(#44bfff0c 1px, transparent 1px),
+    linear-gradient(90deg, #44bfff0c 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(transparent, black 20%, black 80%, transparent);
+  animation: aiGridFlow 18s linear infinite;
+}
+
+@keyframes aiGridFlow {
+  from { background-position: 0 0; }
+  to { background-position: 42px 42px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::after { animation: none; }
+}
 /* CINEMATIC AI HERO */
 .hero{
   min-height:680px;display:flex;align-items:center;
